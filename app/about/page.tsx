@@ -62,7 +62,7 @@ const milestones = [
   { year: '2015', event: 'Expanded to full-fledged eye hospital', icon: '🏥' },
   { year: '2017', event: 'Introduced advanced retina services', icon: '🔬' },
   { year: '2019', event: 'Achieved NABH Certification', icon: '🏆' },
-  { year: '2025', event: 'Launched Paediatric Ophthalmology services', icon: '👶' },
+  { year: '2025', event: 'Introduced Paediatric Ophthalmology services', icon: '👶' },
 ];
 
 const accreditations = [
