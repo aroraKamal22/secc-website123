@@ -54,7 +54,7 @@ export default function AboutSection() {
           </div>
 
           <h2 className="about-title">
-            Excellence in <span className="highlight">Eye Care</span> Since 2006
+            Excellence in <span className="highlight">Eye Care</span> Since 2010
           </h2>
 
           <p className="about-desc">

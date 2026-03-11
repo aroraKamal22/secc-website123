@@ -81,7 +81,7 @@ export default function HeroSlider() {
             </svg>
             NABH Certified Eye Hospital
           </span>
-          <span className="hero-badge-secondary">Since 2006</span>
+          <span className="hero-badge-secondary">Since 2010</span>
         </div>
 
         <h1 className="hero-title">
