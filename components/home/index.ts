@@ -1,0 +1,11 @@
+export { default as HeroSlider } from './HeroSlider';
+export { default as AboutSection } from './AboutSection';
+export { default as DoctorCards } from './DoctorCards';
+export { default as ServicesGrid } from './ServicesGrid';
+export { default as MediaGallery } from './MediaGallery';
+export { default as WhyChooseUs } from './WhyChooseUs';
+export { default as GoogleReviews } from './GoogleReviews';
+export { default as Testimonials } from './Testimonials';
+export { default as VideoGallery } from './VideoGallery';
+export { default as BlogSection } from './BlogSection';
+export { default as CTASection } from './CTASection';

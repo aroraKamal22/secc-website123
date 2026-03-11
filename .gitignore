@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference/backup files
+extracted_frontend/
+reference/
+frontend*.zip
+nul
+image.png
