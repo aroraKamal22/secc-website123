@@ -58,11 +58,11 @@ const values = [
 ];
 
 const milestones = [
-  { year: '2008', event: 'Founded as a small eye clinic in Jind', icon: '🏠' },
-  { year: '2012', event: 'Expanded to full-fledged eye hospital', icon: '🏥' },
-  { year: '2018', event: 'Introduced advanced retina services', icon: '🔬' },
-  { year: '2022', event: 'Achieved NABH Certification', icon: '🏆' },
-  { year: '2024', event: 'Crossed 50,000+ happy patients', icon: '🎉' },
+  { year: '2010', event: 'Founded as a small eye clinic in Jind', icon: '🏠' },
+  { year: '2015', event: 'Expanded to full-fledged eye hospital', icon: '🏥' },
+  { year: '2017', event: 'Introduced advanced retina services', icon: '🔬' },
+  { year: '2019', event: 'Achieved NABH Certification', icon: '🏆' },
+  { year: '2025', event: 'Launched Paediatric Ophthalmology services', icon: '👶' },
 ];
 
 const accreditations = [
@@ -153,7 +153,7 @@ export default function AboutPage() {
               <div className="visual-card">
                 <div className="visual-icon">👁️</div>
                 <h3>Caring for Your Vision</h3>
-                <p>Since 2008</p>
+                <p>Since 2010</p>
               </div>
               <div className="rating-badge">
                 <span className="rating-stars">⭐⭐⭐⭐⭐</span>
