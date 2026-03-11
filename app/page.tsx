@@ -1,10 +1,14 @@
 import {
   HeroSlider,
   AboutSection,
-  ServicesGrid,
   DoctorCards,
+  ServicesGrid,
+  MediaGallery,
   WhyChooseUs,
+  GoogleReviews,
   Testimonials,
+  VideoGallery,
+  BlogSection,
   CTASection,
 } from '@/components/home';
 
@@ -13,10 +17,14 @@ export default function Home() {
     <>
       <HeroSlider />
       <AboutSection />
-      <ServicesGrid />
       <DoctorCards />
+      <ServicesGrid />
+      <MediaGallery />
       <WhyChooseUs />
+      <GoogleReviews />
       <Testimonials />
+      <VideoGallery />
+      <BlogSection />
       <CTASection />
     </>
   );
