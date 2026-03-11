@@ -171,9 +171,18 @@ export default function Header() {
       <MobileMenu isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} navLinks={navLinks} />
 
       {/* Spacer */}
-      <div style={{ height: '115px' }} />
+      <div className="header-spacer" />
 
       <style jsx global>{`
+        .header-spacer {
+          height: 115px;
+        }
+        @media (max-width: 768px) {
+          .header-spacer { height: 100px; }
+        }
+        @media (max-width: 500px) {
+          .header-spacer { height: 90px; }
+        }
         .logo-link {
           text-decoration: none;
           display: flex;
