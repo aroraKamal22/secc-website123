@@ -1,10 +1,10 @@
 'use client';
 
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { useState } from 'react';
 
 // SVG Icons for each service - crisp at any size
-const ServiceIcons: { [key: string]: JSX.Element } = {
+const ServiceIcons: { [key: string]: React.ReactElement } = {
   cataract: (
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="32" cy="32" r="28" stroke="#7157A0" strokeWidth="3" fill="#f8f6fc"/>
