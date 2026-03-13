@@ -75,8 +75,8 @@ export default function ContactPage() {
           <span className="hero-badge">Get In Touch</span>
           <h1>Contact Us</h1>
           <p>
-            Have questions about our services? We're here to help.
-            Reach out to us and we'll respond as soon as possible.
+            Have questions about our services? We&apos;re here to help.
+            Reach out to us and we&apos;ll respond as soon as possible.
           </p>
         </div>
       </section>
@@ -117,15 +117,15 @@ export default function ContactPage() {
           <div className="form-wrapper">
             <div className="form-header">
               <span className="form-badge">Send Message</span>
-              <h2>We'd Love to Hear From You</h2>
-              <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+              <h2>We&apos;d Love to Hear From You</h2>
+              <p>Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
             </div>
 
             {submitted ? (
               <div className="success-message">
                 <div className="success-icon">✓</div>
                 <h3>Message Sent Successfully!</h3>
-                <p>Thank you for contacting us. We'll get back to you soon.</p>
+                <p>Thank you for contacting us. We&apos;ll get back to you soon.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form">
@@ -154,11 +154,10 @@ export default function ContactPage() {
 
                 <div className="form-row">
                   <div className="form-group">
-                    <label>Email Address *</label>
+                    <label>Email Address</label>
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />

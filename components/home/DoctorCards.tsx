@@ -8,12 +8,12 @@ const doctors = [
   {
     name: 'Dr. Rajesh Garg',
     designation: 'Founder & Chairman',
-    specialty: 'Cataract & Glaucoma',
+    specialty: 'Cataract, Glaucoma & Refractive Surgery',
     image: '/images/sarswati_rajesh.png',
     qualifications: 'MBBS, MS Ophthalmology, Fellowship Glaucoma',
-    experience: '15+ Years',
-    description: 'Senior anterior segment surgeon with expertise in customized cataract surgery and glaucoma management.',
-    specializations: ['Cataract Surgery', 'Glaucoma', 'Premium IOLs'],
+    experience: '17+ Years',
+    description: 'Senior anterior segment surgeon with expertise in customized cataract surgery, glaucoma management and refractive surgery.',
+    specializations: ['Cataract Surgery', 'Glaucoma', 'Premium IOLs', 'Refractive Surgery'],
   },
   {
     name: 'Dr. Ajay Garg',
@@ -31,7 +31,7 @@ const doctors = [
     specialty: 'Pediatric & Squint',
     image: '/images/Saraswati DR Khushboo Gupta[1].png',
     qualifications: 'MBBS, MS, Fellowship Pediatric',
-    experience: '8+ Years',
+    experience: '10+ Years',
     description: 'Specialist in pediatric eye care, squint correction, and amblyopia treatment with child-friendly approach.',
     specializations: ['Pediatric Eye', 'Squint', 'Lazy Eye'],
   },
@@ -173,9 +173,13 @@ export default function DoctorCards() {
             </div>
 
             <div className="modal-footer">
-              <Link href="/appointment" className="book-btn">
+              <button
+                type="button"
+                className="book-btn"
+                onClick={() => window.location.href = '/appointment'}
+              >
                 Book Appointment
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -533,11 +537,14 @@ export default function DoctorCards() {
           padding: 14px 35px;
           border-radius: 50px;
           font-weight: 700;
-          text-decoration: none;
+          font-size: 1rem;
+          border: none;
+          cursor: pointer;
           transition: all 0.3s;
         }
 
         .book-btn:hover {
+          background: #FFC000;
           transform: translateY(-2px);
           box-shadow: 0 8px 25px rgba(255, 214, 0, 0.4);
         }

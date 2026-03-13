@@ -15,11 +15,11 @@ const doctors = [
   {
     name: 'Dr. Rajesh Garg',
     role: 'Director & Senior Consultant',
-    specialty: 'Anterior Segment & Cataract Surgery',
+    specialty: 'Anterior Segment, Cataract & Refractive Surgery',
     image: '/images/doctor1.jpg',
-    experience: '20+ Years',
+    experience: '17+ Years',
     qualifications: 'MBBS, MS (Ophthalmology)',
-    description: 'Pioneer in customized cataract surgery with premium IOLs. Founder of Saraswati Eye Care Centre.',
+    description: 'Pioneer in customized cataract surgery with premium IOLs and refractive surgery. Founder of Saraswati Eye Care Centre.',
   },
   {
     name: 'Dr. Ajay Garg',
@@ -35,7 +35,7 @@ const doctors = [
     role: 'Pediatric Ophthalmologist',
     specialty: 'Pediatric Eye Care & Squint',
     image: '/images/doctor4.jpg',
-    experience: '8+ Years',
+    experience: '10+ Years',
     qualifications: 'MBBS, MS, Fellowship (Pediatric)',
     description: 'Specialist in children\'s eye care, squint correction, and myopia control.',
   },
@@ -68,6 +68,7 @@ const milestones = [
 const accreditations = [
   { name: 'NABH Certified', icon: '🏆', desc: 'National Accreditation Board for Hospitals' },
   { name: 'PM-JAY Empanelled', icon: '🏛️', desc: 'Ayushman Bharat Scheme' },
+  { name: 'Haryana Govt', icon: '🏛️', desc: 'Haryana Government Health Scheme' },
   { name: 'ECHS Approved', icon: '⭐', desc: 'Ex-Servicemen Healthcare' },
   { name: 'All Major TPAs', icon: '🤝', desc: 'Insurance Partners' },
 ];

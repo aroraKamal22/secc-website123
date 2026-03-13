@@ -49,7 +49,7 @@ const features = [
       </svg>
     ),
     title: 'Cashless Treatment',
-    desc: 'Empaneled with Ayushman, ECHS & major TPAs',
+    desc: 'Empaneled with Ayushman, Haryana Govt, ECHS & major TPAs',
     color: '#F59E0B',
     link: '/empanelment'
   },

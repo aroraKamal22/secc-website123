@@ -133,7 +133,7 @@ const processSteps = [
 const faqs = [
   {
     question: 'What documents do I need for cashless treatment?',
-    answer: 'You need to bring your insurance card/policy document, a valid photo ID (Aadhaar/PAN), and your health card if applicable (ECHS/PM-JAY).',
+    answer: 'You need to bring your insurance card/policy document, a valid photo ID (Aadhaar/PAN), Family ID, and your health card if applicable (ECHS/PM-JAY).',
   },
   {
     question: 'How long does pre-authorization take?',
@@ -281,11 +281,6 @@ export default function EmpanelmentPage() {
           <p className="section-subtitle">Experience hassle-free healthcare with these advantages</p>
 
           <div className="benefits-grid">
-            <div className="benefit-card">
-              <div className="benefit-icon">💰</div>
-              <h3>100% Cashless Treatment</h3>
-              <p>No upfront payment required. We directly settle bills with your insurance company or government scheme.</p>
-            </div>
             <div className="benefit-card">
               <div className="benefit-icon">⚡</div>
               <h3>Fast Pre-Authorization</h3>
