@@ -10,10 +10,10 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/video', label: 'Videos' },
   { href: '/blog', label: 'Blog' },
   { href: '/equipment', label: 'Equipments' },
   { href: '/empanelment', label: 'Empanelment' },
+  { href: '/career', label: 'Career' },
   { href: '/contact', label: 'Contact' },
 ];
 

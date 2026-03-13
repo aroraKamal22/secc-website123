@@ -21,9 +21,12 @@ const quickLinks = [
   { href: '/gallery', label: 'Gallery' },
   { href: '/video', label: 'Videos' },
   { href: '/blog', label: 'Blog' },
+  { href: '/career', label: 'Careers' },
   { href: '/contact', label: 'Contact' },
   { href: '/privacy-policy', label: 'Privacy Policy' },
   { href: '/terms-conditions', label: 'Terms of Use' },
+  { href: '/cancellation-refund', label: 'Cancellation & Refund' },
+  { href: '/shipping-delivery', label: 'Shipping & Delivery' },
 ];
 
 export default function Footer() {
