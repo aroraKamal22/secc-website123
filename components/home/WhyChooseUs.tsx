@@ -392,24 +392,31 @@ export default function WhyChooseUs() {
         @media (max-width: 700px) {
           .why-content h2 { font-size: 2rem; }
           .features-grid { grid-template-columns: 1fr; }
-          .visual-wrapper { height: 450px; }
-          .main-image { height: 320px; }
+          .visual-wrapper { height: auto; min-height: 500px; display: flex; flex-direction: column; gap: 20px; }
+          .main-image { position: relative; height: 280px; width: 100%; }
           .nabh-badge {
+            position: absolute;
             top: 15px;
             left: 50%;
             transform: translateX(-50%);
           }
-          .stats-card {
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-          }
           .experience-badge {
-            right: 10px;
-            bottom: 160px;
-            padding: 15px 18px;
+            position: relative;
+            right: auto;
+            bottom: auto;
+            padding: 15px 20px;
+            align-self: flex-end;
+            margin-top: -40px;
+            margin-right: 15px;
           }
           .exp-number { font-size: 1.6rem; }
+          .stats-card {
+            position: relative;
+            left: auto;
+            transform: none;
+            width: 100%;
+            margin-top: 10px;
+          }
         }
       `}</style>
     </section>

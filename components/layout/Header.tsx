@@ -56,26 +56,27 @@ export default function Header() {
             gap: '10px'
           }}>
             {/* Contact Info */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-              <a href="mailto:saraswatieyecarecentre@gmail.com" style={{
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flexWrap: 'wrap' }}>
+              <a href="mailto:saraswatieyecarecentre@gmail.com" className="header-email-link" style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
-                color: 'white', textDecoration: 'none', fontSize: '0.9rem'
+                color: 'white', textDecoration: 'none', fontSize: '0.85rem'
               }}>
                 <svg width="16" height="16" fill="#FFD600" viewBox="0 0 20 20">
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
-                <span className="hide-on-small">saraswatieyecarecentre@gmail.com</span>
+                <span className="email-full">saraswatieyecarecentre@gmail.com</span>
+                <span className="email-short">Email Us</span>
               </a>
-              <span style={{ color: 'rgba(255,255,255,0.3)' }} className="hide-on-small">|</span>
+              <span style={{ color: 'rgba(255,255,255,0.3)' }} className="hide-on-mobile">|</span>
               <a href="tel:+919729236700" style={{
                 display: 'flex', alignItems: 'center', gap: '8px',
-                color: 'white', textDecoration: 'none', fontSize: '0.9rem'
+                color: 'white', textDecoration: 'none', fontSize: '0.85rem'
               }}>
                 <svg width="16" height="16" fill="#FFD600" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                +91 97292-36700
+                <span className="phone-text">+91 97292-36700</span>
               </a>
             </div>
 
@@ -94,16 +95,17 @@ export default function Header() {
                   <svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d={social.icon}/></svg>
                 </a>
               ))}
-              <Link href="/appointment" style={{
+              <Link href="/appointment" className="appointment-btn" style={{
                 marginLeft: '8px', background: '#FFD600', color: '#7157A0',
-                padding: '8px 20px', borderRadius: '50px', fontWeight: 600,
-                fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '8px',
-                textDecoration: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.15)'
+                padding: '8px 16px', borderRadius: '50px', fontWeight: 600,
+                fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px',
+                textDecoration: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                whiteSpace: 'nowrap'
               }}>
-                <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
                 </svg>
-                <span className="hide-on-small">Appointment</span>
+                Appointment
               </Link>
             </div>
           </div>
@@ -196,6 +198,8 @@ export default function Header() {
           transition: all 0.3s ease;
         }
         .nav-link:hover { color: #7157A0 !important; background: rgba(113, 87, 160, 0.08) !important; }
+        .email-short { display: none; }
+        .email-full { display: inline; }
         @media (max-width: 1024px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
@@ -203,13 +207,17 @@ export default function Header() {
         @media (max-width: 768px) {
           .hide-on-mobile { display: none !important; }
           .header-logo-img { height: 55px !important; max-width: 200px !important; }
+          .email-full { display: none !important; }
+          .email-short { display: inline !important; }
         }
         @media (max-width: 600px) {
           .hide-on-small { display: none !important; }
           .header-logo-img { height: 50px !important; max-width: 180px !important; }
+          .appointment-btn { padding: 6px 12px !important; font-size: 0.8rem !important; }
         }
         @media (max-width: 400px) {
           .header-logo-img { height: 45px !important; max-width: 160px !important; }
+          .phone-text { font-size: 0.75rem; }
         }
       `}</style>
     </>
