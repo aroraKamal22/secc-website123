@@ -10,55 +10,44 @@ const doctors = [
     designation: 'Founder & Chairman',
     specialty: 'Anterior Segment & Cataract Surgeon',
     image: '/images/sarswati_rajesh.png',
-    qualifications: 'MBBS, MS (Ophthalmology), FICS, Fellowship in Phaco & IOL',
-    experience: '17+ Years',
-    description: 'Renowned anterior segment surgeon and expert in customized cataract surgery. Founded Saraswati Eye Care Centre and transformed it from a small clinic into a state-of-the-art super-speciality eye centre. Pioneer in introducing latest phacoemulsification techniques and premium IOL implantation in the region.',
-    specializations: ['Phaco Cataract Surgery', 'Premium IOLs', 'FLACS (Femto Laser)', 'Refractive Surgery', 'Glaucoma Management'],
-    achievements: ['50,000+ Successful Surgeries', 'Pioneer in FLACS Technology', 'International Fellowship Trained'],
+    qualifications: 'MBBS, MS (Ophthalmology)',
+    experience: '15+ Years',
+    description: 'Renowned anterior segment surgeon and expert in customized cataract surgery. Founded Saraswati Eye Care Centre in 2010 and transformed it from a small clinic into a state-of-the-art NABH-certified super-speciality eye centre, serving thousands of patients with compassion and precision.',
+    specializations: ['Customized Cataract Surgery', 'Phacoemulsification', 'Premium IOL Implantation', 'FLACS (Femto Laser Cataract)', 'Anterior Segment Surgery'],
+    achievements: ['Founded First NABH Certified Eye Hospital in Jind', '1,00,000+ Happy Patients Worldwide', 'Pioneer in AI-based IOL Selection'],
   },
   {
     name: 'Dr. Ajay Garg',
     designation: 'Retina & Vitreous Specialist',
     specialty: 'Vitreo-Retinal Surgeon',
     image: '/images/Saraswati DR Ajay Garg[1].png',
-    qualifications: 'MBBS, DOMS, DNB (Ophthalmology), Fellowship Vitreo-Retina',
+    qualifications: 'MBBS, MS (Ophthalmology), Fellowship in Vitreo-Retina',
     experience: '12+ Years',
-    description: 'Expert vitreo-retina surgeon specializing in complex retinal surgeries, diabetic retinopathy management, and retinal detachment repairs. Skilled in advanced diagnostic techniques and intravitreal injections for various retinal disorders.',
-    specializations: ['Retina Surgery', 'Diabetic Retinopathy', 'Retinal Detachment', 'Intravitreal Injections', 'Macular Disorders'],
-    achievements: ['Advanced Retina Fellowship', 'Expert in Complex Retinal Cases', 'Latest OCT & Angiography'],
-  },
-  {
-    name: 'Dr. Kamal Garg',
-    designation: 'Glaucoma Specialist',
-    specialty: 'Glaucoma & Anterior Segment',
-    image: '/images/kamalgarg.png',
-    qualifications: 'MBBS, MS (Ophthalmology), Fellowship in Glaucoma',
-    experience: '10+ Years',
-    description: 'Specialized in diagnosis and management of all types of glaucoma including medical management, laser procedures, and glaucoma surgeries. Expert in early detection and prevention of vision loss due to glaucoma using advanced diagnostic equipment.',
-    specializations: ['Glaucoma Surgery', 'Laser Trabeculoplasty', 'Glaucoma Diagnosis', 'Visual Field Analysis', 'IOP Management'],
-    achievements: ['Fellowship in Glaucoma', 'Advanced Glaucoma Lasers', 'Expert in Complex Glaucoma'],
+    description: 'Expert vitreo-retina surgeon specializing in complex retinal surgeries, diabetic retinopathy management, and retinal detachment repairs. Known for his expertise in advanced diagnostic techniques using latest OCT and angiography technology.',
+    specializations: ['Vitreo-Retinal Surgery', 'Diabetic Retinopathy', 'Retinal Detachment Surgery', 'Intravitreal Injections', 'Macular Disorders'],
+    achievements: ['Fellowship Trained Retina Specialist', 'Advanced OCT & Angiography Expert', 'Complex Retinal Cases Expertise'],
   },
   {
     name: 'Dr. Khushboo Gupta',
     designation: 'Pediatric Ophthalmologist',
     specialty: 'Pediatric Eye & Squint Specialist',
     image: '/images/Saraswati DR Khushboo Gupta[1].png',
-    qualifications: 'MBBS, MS (Ophthalmology), Fellowship in Pediatric Ophthalmology & Strabismus',
+    qualifications: 'MBBS, MS (Ophthalmology), Fellowship in Pediatric Ophthalmology',
     experience: '10+ Years',
-    description: 'Specialist in pediatric eye care with expertise in squint correction, amblyopia (lazy eye) treatment, and childhood eye disorders. Known for child-friendly approach and comprehensive vision screening programs for children.',
-    specializations: ['Pediatric Eye Care', 'Squint Surgery', 'Amblyopia Treatment', 'ROP Screening', 'Vision Therapy'],
-    achievements: ['Pediatric Fellowship Trained', 'Child-Friendly Approach', 'School Vision Programs'],
+    description: 'Specialist in pediatric eye care with expertise in squint correction, amblyopia (lazy eye) treatment, and childhood eye disorders. Amazing with kids and known for her child-friendly approach in the well-equipped pediatric section.',
+    specializations: ['Pediatric Eye Care', 'Squint (Strabismus) Surgery', 'Amblyopia Treatment', 'ROP Screening', 'Childhood Eye Disorders'],
+    achievements: ['Fellowship Trained Pediatric Specialist', 'Child-Friendly Care Approach', 'School Vision Screening Programs'],
   },
   {
     name: 'Dr. Yogendra Gupta',
     designation: 'Consultant Anaesthesiologist',
     specialty: 'Ophthalmic Anaesthesia',
     image: '/images/dryogendergupt.png',
-    qualifications: 'MBBS, DA, DNB (Anaesthesiology)',
+    qualifications: 'MBBS, MD (Anaesthesiology)',
     experience: '15+ Years',
     description: 'Highly experienced anaesthesiologist ensuring highest safety standards for all surgical procedures. Expert in ophthalmic anaesthesia including local, regional and general anaesthesia for eye surgeries with special focus on high-risk and pediatric patients.',
-    specializations: ['Ophthalmic Anaesthesia', 'Pediatric Anaesthesia', 'High-Risk Patients', 'Sedation', 'Pain Management'],
-    achievements: ['15000+ Safe Anaesthesia Cases', 'Expert in High-Risk Cases', 'Zero Complication Record'],
+    specializations: ['Ophthalmic Anaesthesia', 'Pediatric Anaesthesia', 'High-Risk Patient Care', 'Monitored Sedation', 'Pain Management'],
+    achievements: ['15+ Years of Safe Practice', 'Expert in Complex Cases', 'Highest Safety Standards'],
   },
 ];
 
@@ -306,8 +295,8 @@ export default function DoctorCards() {
 
         .doctors-grid {
           display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
         }
 
         .doctor-card {
@@ -691,28 +680,10 @@ export default function DoctorCards() {
           box-shadow: 0 10px 30px rgba(255, 214, 0, 0.4);
         }
 
-        @media (max-width: 1300px) {
-          .doctors-grid {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-          }
-        }
-
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .doctors-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-          }
-          .card-image-section {
-            height: 180px;
-          }
-          .doctor-image {
-            width: 110px;
-            height: 110px;
-          }
-          .image-ring {
-            width: 120px;
-            height: 120px;
+            gap: 20px;
           }
         }
 
