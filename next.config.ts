@@ -2,10 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  experimental: {
-    // Disable Turbopack for build
-    turbo: undefined,
-  },
   images: {
     // Improve image quality and formats
     formats: ['image/webp', 'image/avif'],
