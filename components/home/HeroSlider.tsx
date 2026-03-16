@@ -32,7 +32,7 @@ export default function HeroSlider() {
 
           <p className="hero-description">
             Experience world-class eye care with cutting-edge technology,
-            expert doctors, and compassionate treatment at Jind's most trusted eye hospital.
+            expert doctors, and compassionate treatment at Jind&apos;s most trusted eye hospital.
           </p>
 
           {/* Features Pills */}
