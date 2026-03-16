@@ -83,12 +83,9 @@ export default function Testimonials() {
       <div className="testimonials-container">
         {/* Header */}
         <div className="section-header">
-          <div className="section-tag">
-            <i className="fas fa-quote-left"></i>
-            Patient Testimonials
-          </div>
-          <h2>Real Stories from <span>Our Patients</span></h2>
-          <p>Read what our patients have to say about their experience at Saraswati Eye Care Centre</p>
+          <span className="section-tag">Testimonials</span>
+          <h2>What Our <span>Patients</span> Say</h2>
+          <p>Real stories from real patients who trusted us with their vision</p>
         </div>
 
         {/* Cards Container */}
@@ -189,18 +186,13 @@ export default function Testimonials() {
         }
 
         .section-tag {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          color: white;
-          padding: 8px 20px;
-          border-radius: 50px;
-          font-size: 0.85rem;
+          display: inline-block;
+          color: #7157A0;
+          font-size: 0.95rem;
           font-weight: 600;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          margin-bottom: 20px;
+          letter-spacing: 2px;
+          margin-bottom: 15px;
         }
 
         .section-header h2 {
