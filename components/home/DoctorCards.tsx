@@ -224,8 +224,8 @@ export default function DoctorCards() {
 
       <style jsx>{`
         .doctors-section {
-          padding: 100px 20px;
-          background: linear-gradient(180deg, #1a1230 0%, #0f0a1f 100%);
+          padding: 80px 20px;
+          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
           position: relative;
           overflow: hidden;
         }
@@ -233,33 +233,47 @@ export default function DoctorCards() {
         .doctors-section::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, rgba(113, 87, 160, 0.3), transparent);
+          top: -50%;
+          right: -20%;
+          width: 600px;
+          height: 600px;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 50%;
+        }
+
+        .doctors-section::after {
+          content: '';
+          position: absolute;
+          bottom: -30%;
+          left: -10%;
+          width: 400px;
+          height: 400px;
+          background: rgba(255, 214, 0, 0.08);
+          border-radius: 50%;
         }
 
         .doctors-container {
           max-width: 1300px;
           margin: 0 auto;
+          position: relative;
+          z-index: 1;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 60px;
+          margin-bottom: 50px;
         }
 
         .section-tag {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(113, 87, 160, 0.2);
-          border: 1px solid rgba(113, 87, 160, 0.3);
-          padding: 10px 20px;
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          padding: 10px 24px;
           border-radius: 50px;
           font-size: 0.9rem;
-          color: #a78bfa;
+          color: white;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1px;
@@ -281,14 +295,11 @@ export default function DoctorCards() {
         }
 
         .gradient-text {
-          background: linear-gradient(135deg, #FFD600, #FFA500);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
+          color: #FFD600;
         }
 
         .section-header p {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.85);
           font-size: 1.1rem;
           margin: 0;
         }
@@ -301,34 +312,21 @@ export default function DoctorCards() {
 
         .doctor-card {
           position: relative;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 24px;
+          background: white;
+          border-radius: 20px;
           overflow: hidden;
           cursor: pointer;
           transition: all 0.4s ease;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .doctor-card:hover {
           transform: translateY(-10px);
-          border-color: rgba(113, 87, 160, 0.5);
-          background: rgba(255, 255, 255, 0.06);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
         }
 
         .card-glow {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 150px;
-          height: 150px;
-          background: radial-gradient(circle, rgba(113, 87, 160, 0.4) 0%, transparent 70%);
-          opacity: 0;
-          transition: opacity 0.4s;
-        }
-
-        .doctor-card:hover .card-glow {
-          opacity: 1;
+          display: none;
         }
 
         .card-image-section {
@@ -337,6 +335,7 @@ export default function DoctorCards() {
           display: flex;
           align-items: center;
           justify-content: center;
+          background: linear-gradient(135deg, #f8f6fc 0%, #ede9f7 100%);
           padding-top: 20px;
         }
 
@@ -359,13 +358,14 @@ export default function DoctorCards() {
           z-index: 2;
           width: 130px;
           height: 130px;
-          background: linear-gradient(135deg, rgba(113, 87, 160, 0.3), rgba(139, 107, 196, 0.2));
+          background: white;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           overflow: hidden;
-          border: 3px solid rgba(255, 255, 255, 0.1);
+          border: 4px solid white;
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.2);
         }
 
         .experience-badge {
@@ -379,16 +379,18 @@ export default function DoctorCards() {
           font-size: 0.75rem;
           font-weight: 700;
           z-index: 3;
+          box-shadow: 0 4px 15px rgba(255, 214, 0, 0.4);
         }
 
         .card-content {
           padding: 20px;
           text-align: center;
+          background: white;
         }
 
         .card-content h3 {
           font-size: 1.15rem;
-          color: white;
+          color: #7157A0;
           margin: 0 0 5px;
           font-weight: 700;
         }
@@ -396,12 +398,13 @@ export default function DoctorCards() {
         .designation {
           color: #FFD600;
           font-size: 0.85rem;
-          font-weight: 600;
+          font-weight: 700;
           margin: 0 0 3px;
+          text-shadow: 0 0 1px rgba(0,0,0,0.1);
         }
 
         .specialty {
-          color: rgba(255, 255, 255, 0.5);
+          color: #666;
           font-size: 0.8rem;
           margin: 0 0 15px;
         }
@@ -415,21 +418,20 @@ export default function DoctorCards() {
         }
 
         .spec-tag {
-          background: rgba(113, 87, 160, 0.2);
-          border: 1px solid rgba(113, 87, 160, 0.3);
-          color: #a78bfa;
+          background: linear-gradient(135deg, rgba(113, 87, 160, 0.1), rgba(139, 107, 196, 0.15));
+          color: #7157A0;
           padding: 4px 10px;
           border-radius: 15px;
           font-size: 0.7rem;
-          font-weight: 500;
+          font-weight: 600;
         }
 
         .view-profile-btn {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          background: transparent;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          border: none;
           color: white;
           padding: 10px 20px;
           border-radius: 25px;
@@ -440,8 +442,8 @@ export default function DoctorCards() {
         }
 
         .view-profile-btn:hover {
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          border-color: transparent;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(113, 87, 160, 0.4);
         }
 
         .view-all-wrap {
@@ -453,18 +455,21 @@ export default function DoctorCards() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          color: #FFD600;
+          color: white;
           font-weight: 600;
           text-decoration: none;
           font-size: 1rem;
           transition: all 0.3s;
-          padding: 12px 30px;
-          border: 2px solid rgba(255, 214, 0, 0.3);
+          padding: 14px 35px;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border: 2px solid rgba(255, 255, 255, 0.3);
           border-radius: 50px;
         }
 
         .view-all-link:hover {
-          background: rgba(255, 214, 0, 0.1);
+          background: white;
+          color: #7157A0;
           gap: 15px;
         }
 
@@ -472,7 +477,7 @@ export default function DoctorCards() {
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.9);
+          background: rgba(113, 87, 160, 0.9);
           backdrop-filter: blur(10px);
           z-index: 2000;
           display: flex;
@@ -482,14 +487,14 @@ export default function DoctorCards() {
         }
 
         .modal-content {
-          background: linear-gradient(180deg, #1a1230 0%, #0f0a1f 100%);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: white;
           border-radius: 24px;
           max-width: 550px;
           width: 100%;
           max-height: 90vh;
           overflow-y: auto;
           position: relative;
+          box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
         }
 
         .modal-close {
@@ -499,23 +504,24 @@ export default function DoctorCards() {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(113, 87, 160, 0.1);
           border: none;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: white;
+          color: #7157A0;
           z-index: 10;
           transition: all 0.3s;
         }
 
         .modal-close:hover {
-          background: rgba(255, 255, 255, 0.2);
+          background: #7157A0;
+          color: white;
         }
 
         .modal-header {
-          background: linear-gradient(135deg, rgba(113, 87, 160, 0.3), rgba(139, 107, 196, 0.2));
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
           padding: 30px;
           display: flex;
           align-items: center;
@@ -525,13 +531,14 @@ export default function DoctorCards() {
         .modal-image {
           width: 100px;
           height: 100px;
-          background: rgba(255, 255, 255, 0.1);
+          background: white;
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          border: 4px solid rgba(255, 255, 255, 0.3);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
 
         .modal-title h2 {
@@ -542,12 +549,12 @@ export default function DoctorCards() {
 
         .modal-designation {
           color: #FFD600;
-          font-weight: 600;
+          font-weight: 700;
           margin: 0 0 3px;
         }
 
         .modal-specialty {
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.85);
           font-size: 0.9rem;
           margin: 0;
         }
@@ -566,8 +573,7 @@ export default function DoctorCards() {
         .info-item {
           display: flex;
           gap: 12px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: linear-gradient(135deg, #f8f6fc 0%, #ede9f7 100%);
           padding: 15px;
           border-radius: 12px;
         }
@@ -587,24 +593,24 @@ export default function DoctorCards() {
         .info-label {
           display: block;
           font-size: 0.75rem;
-          color: rgba(255, 255, 255, 0.5);
+          color: #888;
           margin-bottom: 2px;
         }
 
         .info-value {
           font-size: 0.85rem;
-          color: white;
+          color: #333;
           font-weight: 600;
         }
 
         .modal-description {
-          color: rgba(255, 255, 255, 0.7);
+          color: #555;
           line-height: 1.7;
           margin: 0 0 20px;
         }
 
         .modal-specs h4 {
-          color: #FFD600;
+          color: #7157A0;
           margin: 0 0 12px;
           font-size: 1rem;
         }
@@ -627,11 +633,11 @@ export default function DoctorCards() {
         .modal-achievements {
           margin-top: 20px;
           padding-top: 20px;
-          border-top: 1px solid rgba(255, 255, 255, 0.1);
+          border-top: 1px solid #eee;
         }
 
         .modal-achievements h4 {
-          color: #FFD600;
+          color: #7157A0;
           margin: 0 0 12px;
           font-size: 1rem;
         }
@@ -646,12 +652,12 @@ export default function DoctorCards() {
           display: flex;
           align-items: center;
           gap: 10px;
-          color: rgba(255, 255, 255, 0.8);
+          color: #555;
           font-size: 0.9rem;
         }
 
         .achievement-item i {
-          color: #4ade80;
+          color: #FFD600;
           font-size: 1rem;
         }
 
@@ -673,11 +679,12 @@ export default function DoctorCards() {
           border: none;
           cursor: pointer;
           transition: all 0.3s;
+          box-shadow: 0 8px 25px rgba(255, 214, 0, 0.4);
         }
 
         .book-btn:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 30px rgba(255, 214, 0, 0.4);
+          box-shadow: 0 12px 35px rgba(255, 214, 0, 0.5);
         }
 
         @media (max-width: 1100px) {
