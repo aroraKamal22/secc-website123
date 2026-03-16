@@ -18,17 +18,21 @@ const doctors = [
     specialty: 'Anterior Segment & Cataract Surgeon',
     image: '/images/sarswati_rajesh.png',
     experience: '17+ Years',
-    qualifications: 'MBBS (PGIMS Rohtak), MS Ophthalmology (GMC Patiala), Fellowship in Glaucoma (Aravind Eye Hospital)',
-    description: 'Visionary founder inspired by his grandmother Saraswati Devi. Pioneer in customized cataract surgery with cutting-edge technologies. His love for innovation reflects in every aspect of the hospital. Envisions expanding advanced eye care across India.',
+    qualifications: 'MBBS (PGIMS Rohtak), MS Ophthalmology (GMC Patiala), Fellowship in Glaucoma (Aravind Eye Hospital, Madurai)',
+    description: 'Dr. Rajesh Garg is the visionary founder and chairman of Saraswati Eye Care Centre, Jind. A distinguished anterior segment surgeon with a passion for innovation, he completed his MBBS from PGIMS Rohtak, MS in Ophthalmology from GMC Patiala, and Fellowship in Glaucoma from the world-renowned Aravind Eye Hospital, Madurai. Inspired by his grandmother Saraswati Devi, he established this centre which expanded to its current state-of-the-art premises in 2016. Dr. Garg has a special interest in advanced, customized cataract surgeries, using cutting-edge technologies to provide high-definition visual outcomes tailored to each patient. Under his leadership, Saraswati Eye Care Centre has evolved into a super-speciality eye hospital. He envisions expanding the legacy by establishing a world-class super-speciality eye hospital in Haryana and scaling advanced eye care across India.',
+    specializations: ['Customized Cataract Surgery', 'Phacoemulsification', 'Premium IOL Implantation', 'FLACS (Femto Laser Cataract)', 'Glaucoma Management'],
+    achievements: ['Founded First NABH Certified Eye Hospital in Jind', 'Fellowship from Aravind Eye Hospital', 'Pioneer in AI-based IOL Selection', '50,000+ Happy Patients'],
   },
   {
     name: 'Dr. Ajay Garg',
     role: 'Vice Chairman & Vitreo-Retina Surgeon',
-    specialty: 'Vitreo-Retinal Surgery',
+    specialty: 'Vitreo-Retinal Surgeon',
     image: '/images/Saraswati DR Ajay Garg[1].png',
-    experience: '15+ Years',
-    qualifications: 'MBBS, DOMS (PGIMS Rohtak), Fellowship Vitreo-Retina (M.M. Joshi Eye Institute, Hubli)',
-    description: 'Known for speed, precision & courage in complex retinal surgeries. Expert in diabetic retinopathy, retinal detachments, macular disorders.',
+    experience: '10+ Years',
+    qualifications: 'MBBS, DOMS Ophthalmology (PGIMS Rohtak), Fellowship in Vitreo-Retina (M.M. Joshi Eye Institute, Hubli)',
+    description: 'Dr. Ajay Garg is the Vice Chairman and senior Vitreo-Retina Surgeon at Saraswati Eye Care Centre. A dynamic and highly skilled surgeon, Dr. Garg is known for his speed, precision, and courage in performing complex retinal surgeries. He completed both his MBBS and DOMS in Ophthalmology from the prestigious PGIMS, Rohtak, and pursued advanced training in Vitreo-Retinal surgery from M.M. Joshi Eye Institute, one of India\'s premier retina training centers in Hubli. Dr. Garg joined Saraswati Eye Care Centre in 2017, significantly expanding the hospital\'s capabilities in managing retinal diseases such as diabetic retinopathy, retinal detachments, macular disorders, and intraocular infections. He is deeply committed to restoring sight in some of the most challenging cases and has earned a reputation for surgical excellence and compassionate care.',
+    specializations: ['Vitreo-Retinal Surgery', 'Diabetic Retinopathy', 'Retinal Detachment Repair', 'Macular Disorders', 'Intraocular Infections'],
+    achievements: ['Vice Chairman of SECC', 'Fellowship from M.M. Joshi Eye Institute', 'Expert in Complex Retinal Surgeries', 'Known for Speed & Precision'],
   },
   {
     name: 'Dr. Khushboo Gupta',
@@ -36,17 +40,21 @@ const doctors = [
     specialty: 'Pediatric Eye & Squint Specialist',
     image: '/images/Saraswati DR Khushboo Gupta[1].png',
     experience: '10+ Years',
-    qualifications: 'MBBS (GMC Patiala), MS (GMC Amritsar), Fellowship (Sankara Eye Hospital, Bangalore)',
-    description: 'Child-friendly approach. Expert in squint, amblyopia, congenital cataracts. Also skilled cataract surgeon with phacoemulsification expertise.',
+    qualifications: 'MBBS (GMC Patiala), MS Ophthalmology (GMC Amritsar), Fellowship in Pediatric Ophthalmology & Strabismus (Sankara Eye Hospital, Bangalore)',
+    description: 'Dr. Khushboo Gupta is a skilled Pediatric Ophthalmologist and Strabismus Specialist at Saraswati Eye Care Centre. She offers a gentle, child-friendly approach to treating a wide range of pediatric eye conditions including refractive errors, amblyopia (lazy eye), squint, and congenital cataracts. She completed her MBBS from GMC Patiala, MS in Ophthalmology from GMC Amritsar, and Fellowship from the prestigious Sankara Eye Hospital, Bangalore, where she received extensive training in both medical and surgical management of childhood eye disorders. In addition to her pediatric expertise, Dr. Khushboo is a highly efficient cataract surgeon with a strong track record using modern phacoemulsification techniques. She has been instrumental in expanding the hospital\'s subspecialty offerings and is committed to providing quality, ethical care to children, adults, and elderly patients alike.',
+    specializations: ['Pediatric Eye Care', 'Squint (Strabismus) Surgery', 'Amblyopia Treatment', 'Congenital Cataracts', 'Phacoemulsification Cataract Surgery'],
+    achievements: ['Fellowship from Sankara Eye Hospital Bangalore', 'Expert in Pediatric & Adult Cataract Surgery', 'Child-Friendly Care Excellence', 'Subspecialty Expansion Leader'],
   },
   {
     name: 'Dr. Yogendra Gupta',
     role: 'Consultant Anaesthesiologist',
     specialty: 'Ophthalmic Anaesthesia',
     image: '/images/dryogendergupt.png',
-    experience: '15+ Years',
-    qualifications: 'MBBS (SBHGMC Dhule), DA (Lady Hardinge, Delhi), DNB (Sterling Hospitals)',
-    description: 'Ex-Medanta & Artemis Hospital. Leads Pre-Anaesthesia Check-up (PAC), manages perioperative care. Expert in pediatric & geriatric anaesthesia.',
+    experience: '12+ Years',
+    qualifications: 'MBBS (SBHGMC Dhule), DA (Lady Hardinge Medical College, Delhi), DNB Anaesthesiology (Sterling Hospitals, Ahmedabad)',
+    description: 'Dr. Yogendra Gupta is a highly qualified and experienced Consultant Anaesthesiologist at Saraswati Eye Care Centre. With advanced training and a calm, precise approach, he ensures the highest standards of safety and comfort for surgical patients. He completed his MBBS from SBHGMC, Dhule (Maharashtra), followed by a Diploma in Anaesthesia from Lady Hardinge Medical College, New Delhi, and DNB in Anaesthesiology from Sterling Hospitals, Ahmedabad. Dr. Gupta has previously served at premier institutions including Medanta – The Medicity and Artemis Hospital, Gurugram, where he gained extensive experience in managing high-risk cases, advanced anesthesia techniques, and critical care. At Saraswati Eye Care Centre, he leads the Pre-Anaesthesia Check-up (PAC) process, assesses patient fitness for surgery, manages perioperative care for high-risk patients, and ensures complete surgical comfort. His presence brings an added layer of safety, especially in pediatric and geriatric cases requiring general anaesthesia.',
+    specializations: ['Pre-Anaesthesia Check-up (PAC)', 'Pediatric Anaesthesia', 'Geriatric Anaesthesia', 'High-Risk Patient Management', 'Perioperative Care'],
+    achievements: ['Ex-Medanta & Artemis Hospital', 'DNB from Sterling Hospitals', 'DA from Lady Hardinge Medical College', 'Expert in Critical Care'],
   },
 ];
 
@@ -359,6 +367,26 @@ export default function AboutPage() {
               <div className="modal-description">
                 <p>{selectedDoctor.description}</p>
               </div>
+              {selectedDoctor.specializations && (
+                <div className="modal-specializations">
+                  <strong>Specializations</strong>
+                  <div className="spec-tags">
+                    {selectedDoctor.specializations.map((spec, i) => (
+                      <span key={i} className="spec-tag">{spec}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {selectedDoctor.achievements && (
+                <div className="modal-achievements">
+                  <strong>Achievements</strong>
+                  <ul>
+                    {selectedDoctor.achievements.map((achievement, i) => (
+                      <li key={i}>{achievement}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="modal-footer">
@@ -1182,6 +1210,59 @@ export default function AboutPage() {
         .modal-description p {
           color: #555;
           line-height: 1.8;
+        }
+
+        .modal-specializations {
+          margin-top: 20px;
+        }
+
+        .modal-specializations strong,
+        .modal-achievements strong {
+          display: block;
+          color: #7157A0;
+          margin-bottom: 12px;
+          font-size: 15px;
+        }
+
+        .spec-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+
+        .spec-tag {
+          background: #f8f6fc;
+          color: #7157A0;
+          padding: 6px 14px;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 500;
+        }
+
+        .modal-achievements {
+          margin-top: 20px;
+        }
+
+        .modal-achievements ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .modal-achievements li {
+          color: #555;
+          font-size: 14px;
+          padding: 8px 0;
+          padding-left: 24px;
+          position: relative;
+        }
+
+        .modal-achievements li::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: #22c55e;
+          font-weight: bold;
         }
 
         .modal-footer {
