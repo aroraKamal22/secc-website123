@@ -115,8 +115,8 @@ export default function VideoGallery() {
 
       <style jsx>{`
         .video-section {
-          padding: 40px 20px 60px;
-          background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
+          padding: 20px 20px 50px;
+          background: linear-gradient(180deg, #f8f6fc 0%, #fff 100%);
           position: relative;
           overflow: hidden;
         }
@@ -160,7 +160,7 @@ export default function VideoGallery() {
 
         .section-header {
           text-align: center;
-          margin-bottom: 40px;
+          margin-bottom: 30px;
         }
 
         .section-tag {
@@ -407,7 +407,7 @@ export default function VideoGallery() {
         /* View All Button */
         .view-all-wrap {
           text-align: center;
-          margin-top: 40px;
+          margin-top: 30px;
         }
 
         .view-all-btn {
@@ -478,7 +478,7 @@ export default function VideoGallery() {
 
         @media (max-width: 640px) {
           .video-section {
-            padding: 30px 15px 40px;
+            padding: 15px 15px 30px;
           }
 
           .section-header {

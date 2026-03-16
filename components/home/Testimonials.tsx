@@ -85,7 +85,18 @@ export default function Testimonials() {
         <div className="section-header">
           <span className="section-tag">Testimonials</span>
           <h2>What Our <span>Patients</span> Say</h2>
-          <p>Real stories from real patients who trusted us with their vision</p>
+          <p>With over 15+ years of excellence in eye care and more than 5000 surgeries performed annually, Saraswati Eye Hospital stands as a trusted name in advanced ophthalmic treatments. Our experienced specialists ensure expert care and consistently high-quality outcomes.
+
+</p>
+          <a
+            href="https://g.page/r/CcGjKywuRqrPEAE/review"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="write-review-btn"
+          >
+            <i className="fas fa-pen"></i>
+            Write a Review
+          </a>
         </div>
 
         {/* Cards Container */}
@@ -169,8 +180,8 @@ export default function Testimonials() {
 
       <style jsx>{`
         .testimonials-section {
-          padding: 60px 20px 0;
-          background: #fff;
+          padding: 30px 20px 40px;
+          background: linear-gradient(180deg, #f8f6fc 0%, #fff 100%);
           position: relative;
           overflow: hidden;
         }
@@ -215,6 +226,32 @@ export default function Testimonials() {
           margin: 0;
           max-width: 600px;
           margin: 0 auto;
+        }
+
+        .section-header :global(.write-review-btn) {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          color: white;
+          padding: 12px 28px;
+          border-radius: 50px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          text-decoration: none;
+          margin-top: 20px;
+          transition: all 0.3s ease;
+          box-shadow: 0 6px 20px rgba(113, 87, 160, 0.3);
+        }
+
+        .section-header :global(.write-review-btn:hover) {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.4);
+          background: linear-gradient(135deg, #8B6BC4, #7157A0);
+        }
+
+        .section-header :global(.write-review-btn i) {
+          font-size: 0.85rem;
         }
 
         .cards-wrapper {
@@ -376,7 +413,7 @@ export default function Testimonials() {
           justify-content: center;
           gap: 10px;
           margin-top: 20px;
-          padding-bottom: 30px;
+          padding-bottom: 10px;
         }
 
         .dot {
@@ -400,7 +437,12 @@ export default function Testimonials() {
 
         @media (max-width: 768px) {
           .testimonials-section {
-            padding: 60px 15px;
+            padding: 30px 15px;
+          }
+
+          .section-header :global(.write-review-btn) {
+            padding: 10px 22px;
+            font-size: 0.85rem;
           }
 
           .section-header h2 {

@@ -6,7 +6,8 @@ const stats = [
   { number: 15, suffix: '+', label: 'Years Experience', icon: 'fa-calendar-check' },
   { number: 50000, suffix: '+', label: 'Happy Patients', icon: 'fa-users' },
   { number: 4, suffix: '', label: 'Expert Doctors', icon: 'fa-user-md' },
-  { number: 5000, suffix: '+', label: 'Surgeries Done', icon: 'fa-procedures' },
+  { number: 
+    25000, suffix: '+', label: 'Surgeries Done', icon: 'fa-procedures' },
 ];
 
 function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) {

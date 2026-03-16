@@ -10,7 +10,6 @@ export default function HeroSlider() {
         <div className="gradient-orb orb-1"></div>
         <div className="gradient-orb orb-2"></div>
         <div className="gradient-orb orb-3"></div>
-        <div className="grid-pattern"></div>
       </div>
 
       <div className="hero-container">
@@ -19,7 +18,7 @@ export default function HeroSlider() {
           <div className="badge-wrapper">
             <div className="badge">
               <span className="badge-dot"></span>
-              <span>Highest Google Rated Eye Hospital in Jind</span>
+              <span>NABH Certified Eye Hospital in Jind</span>
             </div>
           </div>
 
@@ -90,24 +89,25 @@ export default function HeroSlider() {
             </div>
             <div className="stat-divider"></div>
             <div className="stat">
-              <span className="stat-value">5K+</span>
+              <span className="stat-value">25K+</span>
               <span className="stat-label">Surgeries</span>
             </div>
           </div>
         </div>
 
-        {/* Right Visual */}
+        {/* Right Visual - Hospital Image */}
         <div className="hero-visual">
           <div className="visual-wrapper">
-            {/* Main Image */}
+            {/* Main Image - Hospital Building */}
             <div className="main-image">
               <Image
-                src="/images/sarswati_rajesh.png"
-                alt="Dr. Rajesh Garg"
+                src="/images/Front.JPG"
+                alt="Saraswati Eye Care Centre"
                 fill
-                className="doctor-img"
+                className="hospital-img"
                 priority
               />
+              <div className="image-overlay"></div>
             </div>
 
             {/* Floating Elements */}
@@ -116,7 +116,7 @@ export default function HeroSlider() {
                 <i className="fas fa-eye"></i>
               </div>
               <div className="card-content">
-                <span className="card-number">5000+</span>
+                <span className="card-number">25000+</span>
                 <span className="card-label">Successful Surgeries</span>
               </div>
             </div>
@@ -131,8 +131,17 @@ export default function HeroSlider() {
               </div>
             </div>
 
-            {/* Decorative Ring */}
-            <div className="deco-ring"></div>
+            {/* NABH Badge */}
+            <div className="nabh-badge">
+              <Image
+                src="/images/nabhLOGO.png"
+                alt="NABH Certified"
+                width={50}
+                height={50}
+                style={{ objectFit: 'contain' }}
+              />
+              <span>NABH</span>
+            </div>
           </div>
         </div>
       </div>
@@ -143,7 +152,7 @@ export default function HeroSlider() {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          background: #0f0a1f;
+          background: linear-gradient(135deg, #7157A0 0%, #5a4080 50%, #8B6BC4 100%);
           overflow: hidden;
           padding: 120px 20px 80px;
         }
@@ -158,32 +167,32 @@ export default function HeroSlider() {
         .gradient-orb {
           position: absolute;
           border-radius: 50%;
-          filter: blur(100px);
-          opacity: 0.6;
+          filter: blur(120px);
+          opacity: 0.4;
         }
 
         .orb-1 {
-          width: 600px;
-          height: 600px;
-          background: linear-gradient(135deg, #7157A0, #9b7bc7);
-          top: -200px;
-          left: -200px;
+          width: 500px;
+          height: 500px;
+          background: rgba(255, 255, 255, 0.2);
+          top: -150px;
+          left: -150px;
           animation: float1 15s ease-in-out infinite;
         }
 
         .orb-2 {
-          width: 500px;
-          height: 500px;
+          width: 400px;
+          height: 400px;
           background: linear-gradient(135deg, #FFD600, #FFA500);
-          bottom: -150px;
-          right: -150px;
+          bottom: -100px;
+          right: -100px;
           animation: float2 12s ease-in-out infinite;
         }
 
         .orb-3 {
           width: 300px;
           height: 300px;
-          background: linear-gradient(135deg, #7157A0, #4a3680);
+          background: rgba(255, 255, 255, 0.15);
           top: 50%;
           left: 50%;
           animation: float3 10s ease-in-out infinite;
@@ -202,15 +211,6 @@ export default function HeroSlider() {
         @keyframes float3 {
           0%, 100% { transform: translate(-50%, -50%) scale(1); }
           50% { transform: translate(-50%, -50%) scale(1.2); }
-        }
-
-        .grid-pattern {
-          position: absolute;
-          inset: 0;
-          background-image:
-            linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-          background-size: 50px 50px;
         }
 
         /* Container */
@@ -238,14 +238,14 @@ export default function HeroSlider() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.15);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           padding: 10px 20px;
           border-radius: 50px;
           font-size: 14px;
           color: #FFD600;
-          font-weight: 500;
+          font-weight: 600;
         }
 
         .badge-dot {
@@ -282,7 +282,7 @@ export default function HeroSlider() {
 
         .hero-subtitle {
           font-size: 1.5rem;
-          color: #a78bfa;
+          color: rgba(255, 255, 255, 0.9);
           margin: 0 0 20px;
           font-weight: 500;
           letter-spacing: 2px;
@@ -290,7 +290,7 @@ export default function HeroSlider() {
 
         .hero-description {
           font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(255, 255, 255, 0.8);
           line-height: 1.8;
           margin: 0 0 30px;
           max-width: 500px;
@@ -308,8 +308,8 @@ export default function HeroSlider() {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: rgba(113, 87, 160, 0.3);
-          border: 1px solid rgba(113, 87, 160, 0.5);
+          background: rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.2);
           padding: 10px 18px;
           border-radius: 50px;
           font-size: 0.9rem;
@@ -318,7 +318,7 @@ export default function HeroSlider() {
         }
 
         .pill:hover {
-          background: rgba(113, 87, 160, 0.5);
+          background: rgba(255, 255, 255, 0.25);
           transform: translateY(-2px);
         }
 
@@ -347,12 +347,12 @@ export default function HeroSlider() {
           border: none;
           cursor: pointer;
           transition: all 0.3s;
-          box-shadow: 0 10px 40px rgba(255, 214, 0, 0.3);
+          box-shadow: 0 10px 40px rgba(255, 214, 0, 0.35);
         }
 
         .btn-primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 50px rgba(255, 214, 0, 0.4);
+          box-shadow: 0 15px 50px rgba(255, 214, 0, 0.45);
         }
 
         .btn-primary i {
@@ -367,22 +367,21 @@ export default function HeroSlider() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(255, 255, 255, 0.05);
-          color: white;
+          background: white;
+          color: #7157A0;
           padding: 18px 30px;
           border-radius: 60px;
-          font-weight: 600;
+          font-weight: 700;
           font-size: 1rem;
           text-decoration: none;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: none;
           transition: all 0.3s;
-          backdrop-filter: blur(10px);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .btn-secondary:hover {
-          background: rgba(255, 255, 255, 0.1);
-          border-color: rgba(255, 255, 255, 0.4);
           transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         /* Trust Stats */
@@ -391,10 +390,10 @@ export default function HeroSlider() {
           align-items: center;
           gap: 25px;
           padding: 25px 30px;
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(20px);
           border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .stat {
@@ -423,13 +422,13 @@ export default function HeroSlider() {
 
         .stat-label {
           font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.6);
+          color: rgba(255, 255, 255, 0.8);
         }
 
         .stat-divider {
           width: 1px;
           height: 40px;
-          background: rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.2);
         }
 
         /* Visual Side */
@@ -443,61 +442,51 @@ export default function HeroSlider() {
         .visual-wrapper {
           position: relative;
           width: 100%;
-          max-width: 500px;
+          max-width: 550px;
         }
 
         .main-image {
           position: relative;
           width: 100%;
-          height: 550px;
-          border-radius: 30px;
+          height: 450px;
+          border-radius: 24px;
           overflow: hidden;
-          background: linear-gradient(180deg, rgba(113, 87, 160, 0.3) 0%, rgba(113, 87, 160, 0.1) 100%);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .main-image :global(.doctor-img) {
-          object-fit: contain;
-          object-position: center bottom;
+        .main-image :global(.hospital-img) {
+          object-fit: cover;
+          object-position: center;
         }
 
-        .deco-ring {
+        .image-overlay {
           position: absolute;
-          width: 120%;
-          height: 120%;
-          top: -10%;
-          left: -10%;
-          border: 2px dashed rgba(255, 214, 0, 0.2);
-          border-radius: 50%;
-          animation: spin 30s linear infinite;
-        }
-
-        @keyframes spin {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
+          inset: 0;
+          background: linear-gradient(180deg, transparent 50%, rgba(113, 87, 160, 0.3) 100%);
         }
 
         /* Floating Cards */
         .float-card {
           position: absolute;
-          background: rgba(255, 255, 255, 0.95);
+          background: rgba(255, 255, 255, 0.98);
           padding: 15px 20px;
           border-radius: 16px;
           display: flex;
           align-items: center;
           gap: 12px;
-          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
           animation: float-card 4s ease-in-out infinite;
           z-index: 20;
         }
 
         .card-1 {
-          bottom: 100px;
-          left: -30px;
+          bottom: 80px;
+          left: -20px;
           animation-delay: 0s;
         }
 
         .card-2 {
-          top: 80px;
+          top: 60px;
           right: -20px;
           animation-delay: 1s;
         }
@@ -545,6 +534,27 @@ export default function HeroSlider() {
           color: #666;
         }
 
+        /* NABH Badge */
+        .nabh-badge {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          background: white;
+          padding: 12px 18px;
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+          z-index: 20;
+        }
+
+        .nabh-badge span {
+          font-size: 1rem;
+          font-weight: 800;
+          color: #7157A0;
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
           .title-line {
@@ -556,7 +566,7 @@ export default function HeroSlider() {
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
-            gap: 50px;
+            gap: 40px;
           }
 
           .hero-content {
@@ -584,21 +594,26 @@ export default function HeroSlider() {
           }
 
           .main-image {
-            height: 450px;
+            height: 350px;
+            max-width: 450px;
+            margin: 0 auto;
           }
 
           .float-card {
             display: none;
           }
 
-          .deco-ring {
-            display: none;
+          .nabh-badge {
+            bottom: 15px;
+            right: 15px;
+            padding: 10px 15px;
           }
         }
 
         @media (max-width: 768px) {
           .hero-section {
             padding: 100px 15px 60px;
+            min-height: auto;
           }
 
           .title-line {
@@ -611,33 +626,50 @@ export default function HeroSlider() {
 
           .trust-stats {
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
             padding: 20px;
           }
 
           .stat-divider {
-            width: 100%;
+            width: 80%;
             height: 1px;
           }
 
           .main-image {
-            height: 380px;
+            height: 280px;
+            max-width: 100%;
+          }
+
+          .nabh-badge {
+            padding: 8px 12px;
+          }
+
+          .nabh-badge span {
+            font-size: 0.85rem;
           }
         }
 
         @media (max-width: 480px) {
+          .hero-section {
+            padding: 90px 15px 50px;
+          }
+
           .title-line {
             font-size: 2rem;
           }
 
           .badge {
-            font-size: 12px;
-            padding: 8px 15px;
+            font-size: 11px;
+            padding: 8px 14px;
           }
 
           .feature-pills {
-            flex-direction: column;
-            align-items: center;
+            gap: 8px;
+          }
+
+          .pill {
+            padding: 8px 14px;
+            font-size: 0.8rem;
           }
 
           .hero-cta {
@@ -648,6 +680,24 @@ export default function HeroSlider() {
           .btn-primary, .btn-secondary {
             width: 100%;
             justify-content: center;
+            padding: 15px 25px;
+          }
+
+          .main-image {
+            height: 220px;
+            border-radius: 16px;
+          }
+
+          .trust-stats {
+            padding: 15px;
+          }
+
+          .stat-value {
+            font-size: 1.6rem;
+          }
+
+          .stat-label {
+            font-size: 0.75rem;
           }
         }
       `}</style>

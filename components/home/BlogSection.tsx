@@ -94,8 +94,8 @@ export default function BlogSection() {
 
       <style jsx>{`
         .blog-section {
-          padding: 80px 20px;
-          background: linear-gradient(135deg, #f8f6fc 0%, #ede9f7 100%);
+          padding: 60px 20px 20px;
+          background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
         }
 
         .blog-container {
@@ -105,7 +105,7 @@ export default function BlogSection() {
 
         .section-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
@@ -253,7 +253,7 @@ export default function BlogSection() {
 
         .view-all-wrap {
           text-align: center;
-          margin-top: 50px;
+          margin-top: 40px;
         }
 
         .view-all-btn {
@@ -284,7 +284,7 @@ export default function BlogSection() {
 
         @media (max-width: 640px) {
           .blog-section {
-            padding: 60px 15px;
+            padding: 40px 15px 15px;
           }
 
           .blog-grid {

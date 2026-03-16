@@ -111,7 +111,7 @@ export default function GoogleReviews() {
 
       <style jsx>{`
         .reviews-section {
-          padding: 80px 20px;
+          padding: 60px 20px 30px;
           background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
           position: relative;
           overflow: hidden;
@@ -396,7 +396,7 @@ export default function GoogleReviews() {
 
         @media (max-width: 550px) {
           .reviews-section {
-            padding: 60px 15px;
+            padding: 40px 15px 20px;
           }
           .stats-grid {
             grid-template-columns: 1fr;

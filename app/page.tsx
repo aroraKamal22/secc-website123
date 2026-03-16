@@ -28,8 +28,8 @@ export default function Home() {
       <MediaGallery />
       <GoogleReviews />
       <Testimonials />
-      <VideoGallery />
       <BlogSection />
+      <VideoGallery />
       <CTASection />
     </>
   );
