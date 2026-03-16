@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function MobileBottomNav() {
   return (
     <nav className="mobile-bottom-nav">
-      <Link href="/about#doctors" className="nav-item">
+      <Link href="/#doctors" className="nav-item">
         <div className="nav-icon">
           <i className="fas fa-user-md"></i>
         </div>

@@ -8,7 +8,7 @@ const doctors = [
   {
     name: 'Dr. Rajesh Garg',
     designation: 'Founder & Chairman',
-    specialty: 'Cataract, Glaucoma & Refractive Surgery',
+    specialty: 'Cataract, Glaucoma & Refractive Surgeon',
     image: '/images/sarswati_rajesh.png',
     qualifications: 'MBBS, MS Ophthalmology, Fellowship Glaucoma',
     experience: '17+ Years',
@@ -51,7 +51,7 @@ export default function DoctorCards() {
   const [selectedDoctor, setSelectedDoctor] = useState<typeof doctors[0] | null>(null);
 
   return (
-    <section className="doctors-section">
+    <section id="doctors" className="doctors-section">
       <div className="doctors-container">
         {/* Section Header */}
         <div className="section-header">
