@@ -149,7 +149,7 @@ export default function GoogleReviews() {
 
         .reviews-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
@@ -193,7 +193,7 @@ export default function GoogleReviews() {
           display: grid;
           grid-template-columns: 320px 1fr;
           gap: 30px;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         /* Rating Card */

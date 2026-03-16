@@ -220,7 +220,7 @@ export default function ServicesGrid() {
 
       <style jsx>{`
         .services-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: linear-gradient(180deg, #f8f6fc 0%, #fff 100%);
           position: relative;
           overflow: hidden;
@@ -233,7 +233,7 @@ export default function ServicesGrid() {
 
         .section-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
@@ -621,7 +621,7 @@ export default function ServicesGrid() {
 
         @media (max-width: 640px) {
           .services-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
           .services-grid {
             grid-template-columns: 1fr;

@@ -94,7 +94,7 @@ export default function CTASection() {
 
       <style jsx>{`
         .cta-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
           text-align: center;
           position: relative;
@@ -368,7 +368,7 @@ export default function CTASection() {
 
         @media (max-width: 700px) {
           .cta-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
           .commit-content {
             flex-direction: column;

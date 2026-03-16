@@ -156,7 +156,7 @@ export default function WhyChooseUs() {
 
       <style jsx>{`
         .why-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
           position: relative;
           overflow: hidden;
@@ -167,7 +167,7 @@ export default function WhyChooseUs() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 80px;
+          gap: 50px;
           align-items: center;
         }
 
@@ -479,7 +479,7 @@ export default function WhyChooseUs() {
 
         @media (max-width: 700px) {
           .why-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
           .why-content h2 { font-size: 2rem; }
           .features-grid { grid-template-columns: 1fr; }

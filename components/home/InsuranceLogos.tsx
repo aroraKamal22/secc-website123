@@ -56,14 +56,14 @@ export default function InsuranceLogos() {
 
       <style jsx>{`
         .insurance-section {
-          padding: 100px 20px;
+          padding: 60px 20px;
           background: linear-gradient(180deg, #1a1230 0%, #0f0a1f 100%);
           overflow: hidden;
         }
 
         .section-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
@@ -204,7 +204,7 @@ export default function InsuranceLogos() {
 
         @media (max-width: 768px) {
           .insurance-section {
-            padding: 70px 15px;
+            padding: 50px 15px;
           }
 
           .section-title {

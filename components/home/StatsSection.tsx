@@ -187,7 +187,7 @@ export default function StatsSection() {
 
         @media (max-width: 600px) {
           .stats-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
 
           .stats-container {

@@ -117,7 +117,7 @@ export default function MediaGallery() {
 
       <style jsx>{`
         .gallery-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: #fff;
         }
 
@@ -378,7 +378,7 @@ export default function MediaGallery() {
 
         @media (max-width: 600px) {
           .gallery-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
           .gallery-grid {
             grid-template-columns: 1fr;

@@ -224,7 +224,7 @@ export default function DoctorCards() {
 
       <style jsx>{`
         .doctors-section {
-          padding: 80px 20px;
+          padding: 60px 20px;
           background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
           position: relative;
           overflow: hidden;
@@ -261,7 +261,7 @@ export default function DoctorCards() {
 
         .section-header {
           text-align: center;
-          margin-bottom: 50px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
@@ -696,7 +696,7 @@ export default function DoctorCards() {
 
         @media (max-width: 600px) {
           .doctors-section {
-            padding: 60px 15px;
+            padding: 50px 15px;
           }
           .doctors-grid {
             grid-template-columns: 1fr;

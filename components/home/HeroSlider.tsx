@@ -452,6 +452,7 @@ export default function HeroSlider() {
           border-radius: 24px;
           overflow: hidden;
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+          background: linear-gradient(135deg, #5a4080 0%, #7157A0 100%);
         }
 
         .main-image :global(.hospital-img) {

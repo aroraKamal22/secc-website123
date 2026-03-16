@@ -113,7 +113,7 @@ export default function AboutSection() {
 
       <style jsx>{`
         .about-section {
-          padding: 100px 20px;
+          padding: 60px 20px;
           background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
           position: relative;
           overflow: hidden;
@@ -124,7 +124,7 @@ export default function AboutSection() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 100px;
+          gap: 60px;
           align-items: center;
         }
 
@@ -385,7 +385,7 @@ export default function AboutSection() {
 
         @media (max-width: 768px) {
           .about-section {
-            padding: 80px 15px;
+            padding: 50px 15px;
           }
 
           .about-title {
