@@ -85,10 +85,10 @@ export default function Testimonials() {
         <div className="section-header">
           <div className="section-tag">
             <i className="fas fa-quote-left"></i>
-            Testimonials
+            Patient Testimonials
           </div>
-          <h2>What Patients <span>Say</span></h2>
-          <p>Trusted by 50,000+ patients with over 15 years of excellence in eye care</p>
+          <h2>Real Stories from <span>Our Patients</span></h2>
+          <p>Read what our patients have to say about their experience at Saraswati Eye Care Centre</p>
         </div>
 
         {/* Cards Container */}

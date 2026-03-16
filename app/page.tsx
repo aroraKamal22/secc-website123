@@ -20,13 +20,12 @@ export default function Home() {
     <>
       <HeroSlider />
       <StatsSection />
-      {/* <HospitalShowcase /> */}
       <AboutSection />
       <DoctorCards />
       <ServicesGrid />
       <InsuranceLogos />
-      <MediaGallery />
       <WhyChooseUs />
+      <MediaGallery />
       <GoogleReviews />
       <Testimonials />
       <VideoGallery />
