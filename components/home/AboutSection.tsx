@@ -5,38 +5,22 @@ import Image from 'next/image';
 
 const features = [
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
+    icon: 'fa-certificate',
     title: 'NABH Certified',
     desc: 'First certified eye hospital in Jind district'
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    icon: 'fa-user-md',
     title: 'Expert Specialists',
     desc: '4 highly qualified eye specialists'
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    icon: 'fa-microchip',
     title: 'Advanced Technology',
     desc: 'Latest diagnostic & surgical equipment'
   },
   {
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    icon: 'fa-heart',
     title: 'Compassionate Care',
     desc: 'Patient-first approach always'
   },
@@ -44,57 +28,11 @@ const features = [
 
 export default function AboutSection() {
   return (
-    <section className="home-about-section">
+    <section className="about-section">
       <div className="about-container">
-        {/* Left Content */}
-        <div className="about-content">
-          <div className="section-label">
-            <span className="label-line"></span>
-            <span>About Us</span>
-          </div>
-
-          <h2 className="about-title">
-            Excellence in <span className="highlight">Eye Care</span> Since 2010
-          </h2>
-
-          <p className="about-desc">
-            <strong>Saraswati Eye Care Centre</strong> is the most trusted and highest-rated
-            eye hospital in Jind, Haryana. We take pride in being the <span className="text-gold">first NABH-certified</span> eye care hospital in District Jind, offering comprehensive, ethical, and technology-driven eye care services under one roof.
-          </p>
-
-          <p className="about-desc">
-            Founded by <span className="text-gold">Dr. Rajesh Garg</span>, a renowned anterior segment surgeon and expert in customized cataract surgery, the hospital has grown from a small clinic into a state-of-the-art super-speciality eye centre.
-          </p>
-
-          {/* Features Grid */}
-          <div className="features-grid">
-            {features.map((feature, index) => (
-              <div key={index} className="feature-item">
-                <div className="feature-icon">{feature.icon}</div>
-                <div className="feature-text">
-                  <h4>{feature.title}</h4>
-                  <p>{feature.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="about-buttons">
-            <Link href="/about" className="btn-primary">
-              Learn More
-              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-            <Link href="/appointment" className="btn-secondary">
-              Book Appointment
-            </Link>
-          </div>
-        </div>
-
-        {/* Right Side - Image & Stats */}
+        {/* Left Visual */}
         <div className="about-visual">
-          <div className="image-wrapper">
+          <div className="image-stack">
             <div className="image-main">
               <Image
                 src="/images/Front.JPG"
@@ -104,36 +42,77 @@ export default function AboutSection() {
                 style={{ objectFit: 'cover' }}
               />
             </div>
-            <div className="image-accent"></div>
+            <div className="image-secondary">
+              <Image
+                src="/images/sarswati_rajesh.png"
+                alt="Dr. Rajesh Garg"
+                fill
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
           </div>
 
-          {/* Floating Stats Card */}
-          <div className="floating-card">
-            <div className="card-icon">🎯</div>
-            <h3>Our Vision</h3>
-            <p>To provide world-class, affordable eye care and become a leading name in super-speciality ophthalmology.</p>
+          {/* Experience Badge */}
+          <div className="experience-badge">
+            <span className="exp-number">15+</span>
+            <span className="exp-text">Years of Excellence</span>
           </div>
 
-          {/* Stats Row */}
-          <div className="stats-row">
-            <div className="stat-box">
-              <span className="stat-num">50K+</span>
-              <span className="stat-label">Happy Patients</span>
-            </div>
-            <div className="stat-box">
-              <span className="stat-num">15+</span>
-              <span className="stat-label">Years Trust</span>
-            </div>
-            <div className="stat-box">
-              <span className="stat-num">4.9★</span>
-              <span className="stat-label">Google Rating</span>
-            </div>
+          {/* Decorative Elements */}
+          <div className="deco-dots"></div>
+          <div className="deco-circle"></div>
+        </div>
+
+        {/* Right Content */}
+        <div className="about-content">
+          <div className="section-tag">
+            <span className="tag-dot"></span>
+            About Us
+          </div>
+
+          <h2 className="about-title">
+            Excellence in <span className="gradient-text">Eye Care</span>
+            <br />Since 2010
+          </h2>
+
+          <p className="about-desc">
+            <strong>Saraswati Eye Care Centre</strong> is the most trusted and highest-rated
+            eye hospital in Jind, Haryana. We take pride in being the <span className="highlight">first NABH-certified</span> eye care hospital in District Jind.
+          </p>
+
+          <p className="about-desc">
+            Founded by <span className="highlight">Dr. Rajesh Garg</span>, a renowned anterior segment surgeon and expert in customized cataract surgery, the hospital has grown into a state-of-the-art super-speciality eye centre.
+          </p>
+
+          {/* Features Grid */}
+          <div className="features-grid">
+            {features.map((feature, index) => (
+              <div key={index} className="feature-card">
+                <div className="feature-icon">
+                  <i className={`fas ${feature.icon}`}></i>
+                </div>
+                <div className="feature-info">
+                  <h4>{feature.title}</h4>
+                  <p>{feature.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="about-cta">
+            <Link href="/about" className="btn-primary">
+              Learn More About Us
+              <i className="fas fa-arrow-right"></i>
+            </Link>
+            <Link href="/appointment" className="btn-outline">
+              Book Appointment
+            </Link>
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .home-about-section {
+        .about-section {
           padding: 100px 20px;
           background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
           position: relative;
@@ -145,119 +124,198 @@ export default function AboutSection() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 80px;
+          gap: 100px;
           align-items: center;
         }
 
-        .section-label {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          margin-bottom: 20px;
-          color: #7157A0;
-          font-weight: 600;
-          font-size: 0.95rem;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .label-line {
-          width: 40px;
-          height: 3px;
-          background: linear-gradient(90deg, #7157A0, #FFD600);
-          border-radius: 2px;
-        }
-
-        .about-title {
-          font-size: 3rem;
-          font-weight: 800;
-          color: #1a1a2e;
-          margin: 0 0 25px;
-          line-height: 1.2;
-        }
-
-        .highlight {
-          color: #7157A0;
+        /* Visual Side */
+        .about-visual {
           position: relative;
         }
 
-        .highlight::after {
-          content: '';
+        .image-stack {
+          position: relative;
+        }
+
+        .image-main {
+          position: relative;
+          height: 500px;
+          border-radius: 30px;
+          overflow: hidden;
+          box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-secondary {
           position: absolute;
-          bottom: 5px;
-          left: 0;
-          right: 0;
-          height: 12px;
-          background: rgba(255, 214, 0, 0.3);
+          width: 200px;
+          height: 250px;
+          bottom: -40px;
+          right: -40px;
+          border-radius: 24px;
+          overflow: hidden;
+          background: linear-gradient(135deg, #7157A0, #9b7bc7);
+          padding: 10px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .experience-badge {
+          position: absolute;
+          top: 30px;
+          left: -30px;
+          background: linear-gradient(135deg, #FFD600, #FFA500);
+          padding: 25px 30px;
+          border-radius: 20px;
+          text-align: center;
+          box-shadow: 0 20px 50px rgba(255, 214, 0, 0.3);
+          z-index: 10;
+        }
+
+        .exp-number {
+          display: block;
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: #1a1a1a;
+          line-height: 1;
+        }
+
+        .exp-text {
+          display: block;
+          font-size: 0.9rem;
+          color: #333;
+          font-weight: 600;
+          margin-top: 5px;
+        }
+
+        .deco-dots {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          bottom: 60px;
+          left: 40px;
+          background-image: radial-gradient(#7157A0 2px, transparent 2px);
+          background-size: 15px 15px;
+          opacity: 0.5;
+        }
+
+        .deco-circle {
+          position: absolute;
+          width: 300px;
+          height: 300px;
+          top: -50px;
+          right: -50px;
+          border: 2px dashed rgba(113, 87, 160, 0.3);
+          border-radius: 50%;
           z-index: -1;
+        }
+
+        /* Content Side */
+        .about-content {
+          color: #333;
+        }
+
+        .section-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          padding: 10px 24px;
+          border-radius: 50px;
+          font-size: 0.9rem;
+          color: white;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 25px;
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.3);
+        }
+
+        .tag-dot {
+          width: 8px;
+          height: 8px;
+          background: #FFD600;
+          border-radius: 50%;
+        }
+
+        .about-title {
+          font-size: 3.2rem;
+          font-weight: 800;
+          line-height: 1.2;
+          margin: 0 0 30px;
+          color: #1a1a2e;
+        }
+
+        .gradient-text {
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .about-desc {
           font-size: 1.1rem;
           color: #555;
-          line-height: 1.8;
+          line-height: 1.9;
           margin: 0 0 20px;
         }
 
-        .text-gold {
-          color: #d4a00a;
+        .highlight {
+          color: #7157A0;
           font-weight: 600;
         }
 
+        /* Features Grid */
         .features-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 20px;
-          margin: 35px 0;
+          margin: 40px 0;
         }
 
-        .feature-item {
+        .feature-card {
           display: flex;
           gap: 15px;
           padding: 20px;
           background: white;
+          border: 1px solid rgba(113, 87, 160, 0.1);
           border-radius: 16px;
-          box-shadow: 0 4px 20px rgba(113, 87, 160, 0.08);
           transition: all 0.3s;
-          border: 1px solid rgba(113, 87, 160, 0.08);
+          box-shadow: 0 4px 15px rgba(113, 87, 160, 0.08);
         }
 
-        .feature-item:hover {
+        .feature-card:hover {
+          border-color: rgba(113, 87, 160, 0.3);
           transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.15);
+          box-shadow: 0 12px 30px rgba(113, 87, 160, 0.15);
         }
 
         .feature-icon {
           width: 50px;
           height: 50px;
           background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          border-radius: 12px;
+          border-radius: 14px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
           color: white;
+          font-size: 1.2rem;
         }
 
-        .feature-icon :global(svg) {
-          width: 24px;
-          height: 24px;
-        }
-
-        .feature-text h4 {
-          margin: 0 0 4px;
+        .feature-info h4 {
+          margin: 0 0 5px;
           font-size: 1rem;
           color: #1a1a2e;
           font-weight: 700;
         }
 
-        .feature-text p {
+        .feature-info p {
           margin: 0;
           font-size: 0.85rem;
-          color: #777;
+          color: #666;
         }
 
-        .about-buttons {
+        /* CTA Buttons */
+        .about-cta {
           display: flex;
           gap: 15px;
           flex-wrap: wrap;
@@ -271,144 +329,98 @@ export default function AboutSection() {
           color: white;
           padding: 16px 32px;
           border-radius: 50px;
-          font-weight: 700;
+          font-weight: 600;
           text-decoration: none;
           transition: all 0.3s;
-          box-shadow: 0 4px 20px rgba(113, 87, 160, 0.3);
+          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.3);
         }
 
         .btn-primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 30px rgba(113, 87, 160, 0.4);
+          box-shadow: 0 15px 40px rgba(113, 87, 160, 0.4);
         }
 
-        .btn-secondary {
+        .btn-outline {
           display: inline-flex;
           align-items: center;
-          background: white;
+          gap: 10px;
+          background: transparent;
           color: #7157A0;
           padding: 16px 32px;
           border-radius: 50px;
-          font-weight: 700;
+          font-weight: 600;
           text-decoration: none;
+          border: 2px solid rgba(113, 87, 160, 0.3);
           transition: all 0.3s;
-          border: 2px solid #7157A0;
         }
 
-        .btn-secondary:hover {
-          background: #7157A0;
-          color: white;
+        .btn-outline:hover {
+          background: rgba(113, 87, 160, 0.1);
+          border-color: #7157A0;
         }
 
-        /* Visual Side */
-        .about-visual {
-          position: relative;
-        }
-
-        .image-wrapper {
-          position: relative;
-        }
-
-        .image-main {
-          position: relative;
-          height: 450px;
-          border-radius: 24px;
-          overflow: hidden;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .image-accent {
-          position: absolute;
-          top: -20px;
-          right: -20px;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          border-radius: 24px;
-          z-index: -1;
-        }
-
-        .floating-card {
-          position: absolute;
-          bottom: -30px;
-          left: -30px;
-          background: white;
-          padding: 25px;
-          border-radius: 20px;
-          box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-          max-width: 280px;
-          z-index: 10;
-        }
-
-        .card-icon {
-          font-size: 2.5rem;
-          margin-bottom: 10px;
-        }
-
-        .floating-card h3 {
-          color: #7157A0;
-          margin: 0 0 8px;
-          font-size: 1.3rem;
-        }
-
-        .floating-card p {
-          color: #666;
-          margin: 0;
-          font-size: 0.9rem;
-          line-height: 1.6;
-        }
-
-        .stats-row {
-          display: flex;
-          gap: 15px;
-          margin-top: 25px;
-        }
-
-        .stat-box {
-          flex: 1;
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          padding: 20px 15px;
-          border-radius: 16px;
-          text-align: center;
-          color: white;
-        }
-
-        .stat-num {
-          display: block;
-          font-size: 1.6rem;
-          font-weight: 800;
-          color: #FFD600;
-        }
-
-        .stat-label {
-          font-size: 0.75rem;
-          opacity: 0.9;
-        }
-
+        /* Responsive */
         @media (max-width: 1100px) {
           .about-container {
             grid-template-columns: 1fr;
-            gap: 50px;
+            gap: 60px;
           }
+
           .about-visual {
-            max-width: 550px;
+            max-width: 500px;
             margin: 0 auto;
+          }
+
+          .image-secondary {
+            width: 160px;
+            height: 200px;
+            right: -20px;
+            bottom: -20px;
+          }
+
+          .experience-badge {
+            left: -10px;
           }
         }
 
-        @media (max-width: 700px) {
-          .about-title { font-size: 2.2rem; }
-          .features-grid { grid-template-columns: 1fr; }
-          .floating-card {
-            position: relative;
-            left: 0;
-            bottom: 0;
-            margin-top: 20px;
-            max-width: 100%;
+        @media (max-width: 768px) {
+          .about-section {
+            padding: 80px 15px;
           }
-          .image-accent { display: none; }
-          .image-main { height: 300px; }
-          .btn-primary, .btn-secondary {
+
+          .about-title {
+            font-size: 2.2rem;
+          }
+
+          .features-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .image-main {
+            height: 350px;
+          }
+
+          .image-secondary {
+            display: none;
+          }
+
+          .deco-dots, .deco-circle {
+            display: none;
+          }
+
+          .experience-badge {
+            top: auto;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px 25px;
+          }
+
+          .about-cta {
+            flex-direction: column;
+          }
+
+          .btn-primary, .btn-outline {
             width: 100%;
             justify-content: center;
           }

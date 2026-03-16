@@ -15,7 +15,7 @@ const doctors = [
   {
     name: 'Dr. Rajesh Garg',
     role: 'Director & Senior Consultant',
-    specialty: 'Anterior Segment, Cataract & Refractive Surgery',
+    specialty: 'Anterior Segment, Cataract & Refractive Surgeon',
     image: '/images/doctor1.jpg',
     experience: '17+ Years',
     qualifications: 'MBBS, MS (Ophthalmology)',

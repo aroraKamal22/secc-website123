@@ -5,12 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const galleryItems = [
-  { src: '/images/Front.JPG', title: 'Hospital Building' },
-  { src: '/images/front11.JPG', title: 'Front View' },
-  { src: '/images/fronteView1.jpg', title: 'Main Entrance' },
-  { src: '/images/Reception.png', title: 'Reception Area' },
-  { src: '/images/AdvancedMachine.jpg', title: 'Advanced Equipment' },
-  { src: '/images/media4.png', title: 'Treatment Room' },
+  { src: '/images/Front.JPG', title: 'Hospital Building', icon: 'fa-hospital' },
+  { src: '/images/front11.JPG', title: 'Front View', icon: 'fa-building' },
+  { src: '/images/fronteView1.jpg', title: 'Main Entrance', icon: 'fa-door-open' },
+  { src: '/images/Reception.png', title: 'Reception Area', icon: 'fa-concierge-bell' },
+  { src: '/images/AdvancedMachine.jpg', title: 'Advanced Equipment', icon: 'fa-microscope' },
+  { src: '/images/media4.png', title: 'Treatment Room', icon: 'fa-procedures' },
 ];
 
 export default function MediaGallery() {
@@ -22,15 +22,16 @@ export default function MediaGallery() {
         {/* Header */}
         <div className="gallery-header">
           <div className="header-left">
-            <span className="section-tag">Gallery</span>
-            <h2>Our State-of-the-Art <span>Facility</span></h2>
-            <p>Take a look at our modern eye care centre equipped with the latest technology</p>
+            <div className="section-tag">
+              <i className="fas fa-images"></i>
+              Gallery
+            </div>
+            <h2>Our <span>Facility</span></h2>
+            <p>Modern eye care centre with state-of-the-art technology</p>
           </div>
           <Link href="/gallery" className="view-all-btn">
             View All
-            <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
 
@@ -39,7 +40,7 @@ export default function MediaGallery() {
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className="gallery-item"
+              className={`gallery-item ${index === 0 ? 'large' : ''}`}
               onClick={() => setSelectedImage(item)}
             >
               <Image
@@ -51,12 +52,15 @@ export default function MediaGallery() {
                 style={{ objectFit: 'cover' }}
               />
               <div className="item-overlay">
-                <span className="item-title">{item.title}</span>
-                <span className="zoom-icon">
-                  <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                  </svg>
-                </span>
+                <div className="overlay-content">
+                  <div className="zoom-icon">
+                    <i className="fas fa-search-plus"></i>
+                  </div>
+                  <span className="item-title">
+                    <i className={`fas ${item.icon}`}></i>
+                    {item.title}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
@@ -67,9 +71,7 @@ export default function MediaGallery() {
       {selectedImage && (
         <div className="lightbox" onClick={() => setSelectedImage(null)}>
           <button className="close-btn" onClick={() => setSelectedImage(null)}>
-            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <i className="fas fa-times"></i>
           </button>
 
           <div className="lightbox-image" onClick={(e) => e.stopPropagation()}>
@@ -83,6 +85,7 @@ export default function MediaGallery() {
           </div>
 
           <div className="lightbox-caption">
+            <i className={`fas ${selectedImage.icon}`}></i>
             <h3>{selectedImage.title}</h3>
           </div>
 
@@ -96,9 +99,7 @@ export default function MediaGallery() {
               setSelectedImage(galleryItems[prevIndex]);
             }}
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
+            <i className="fas fa-chevron-left"></i>
           </button>
           <button
             className="nav-btn next"
@@ -109,9 +110,7 @@ export default function MediaGallery() {
               setSelectedImage(galleryItems[nextIndex]);
             }}
           >
-            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            <i className="fas fa-chevron-right"></i>
           </button>
         </div>
       )}
@@ -137,52 +136,57 @@ export default function MediaGallery() {
         }
 
         .section-tag {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
           background: linear-gradient(135deg, #7157A0, #8B6BC4);
           color: white;
-          padding: 6px 16px;
-          border-radius: 20px;
-          font-size: 0.8rem;
+          padding: 8px 20px;
+          border-radius: 50px;
+          font-size: 0.85rem;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1px;
-          margin-bottom: 12px;
+          margin-bottom: 15px;
         }
 
         .gallery-header h2 {
-          font-size: 2.5rem;
+          font-size: 2.8rem;
           font-weight: 800;
           color: #1a1a2e;
-          margin: 0 0 8px;
+          margin: 0 0 10px;
         }
 
         .gallery-header h2 span {
-          color: #7157A0;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .gallery-header p {
           color: #666;
           margin: 0;
-          font-size: 1rem;
-          max-width: 500px;
+          font-size: 1.05rem;
         }
 
         .view-all-btn {
           display: inline-flex;
           align-items: center;
-          gap: 8px;
-          background: #7157A0;
+          gap: 10px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
           color: white;
-          padding: 14px 28px;
+          padding: 14px 32px;
           border-radius: 50px;
           font-weight: 600;
           text-decoration: none;
           transition: all 0.3s;
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.25);
         }
 
         .view-all-btn:hover {
-          background: #5a4a80;
-          transform: translateY(-2px);
+          transform: translateY(-3px);
+          box-shadow: 0 12px 35px rgba(113, 87, 160, 0.35);
         }
 
         .gallery-grid {
@@ -194,12 +198,13 @@ export default function MediaGallery() {
         .gallery-item {
           position: relative;
           height: 280px;
-          border-radius: 16px;
+          border-radius: 20px;
           overflow: hidden;
           cursor: pointer;
+          box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .gallery-item:first-child {
+        .gallery-item.large {
           grid-column: span 2;
           grid-row: span 2;
           height: 580px;
@@ -208,13 +213,13 @@ export default function MediaGallery() {
         .item-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(to top, rgba(113, 87, 160, 0.9) 0%, transparent 50%);
+          background: linear-gradient(to top, rgba(113, 87, 160, 0.95) 0%, rgba(113, 87, 160, 0.4) 40%, transparent 70%);
           opacity: 0;
           transition: all 0.4s ease;
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          align-items: flex-start;
+          align-items: center;
           padding: 25px;
         }
 
@@ -230,30 +235,36 @@ export default function MediaGallery() {
           transition: transform 0.5s ease;
         }
 
-        .item-title {
-          color: white;
-          font-size: 1.2rem;
-          font-weight: 600;
+        .overlay-content {
+          text-align: center;
         }
 
         .zoom-icon {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%) scale(0);
           width: 60px;
           height: 60px;
-          background: rgba(255,255,255,0.95);
+          background: linear-gradient(135deg, #FFD600, #FFA500);
           border-radius: 50%;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #7157A0;
+          color: #1a1a2e;
+          font-size: 1.3rem;
+          margin: 0 auto 15px;
+          transform: scale(0);
           transition: transform 0.3s ease;
         }
 
         .gallery-item:hover .zoom-icon {
-          transform: translate(-50%, -50%) scale(1);
+          transform: scale(1);
+        }
+
+        .item-title {
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 10px;
         }
 
         /* Lightbox */
@@ -270,24 +281,26 @@ export default function MediaGallery() {
 
         .close-btn {
           position: absolute;
-          top: 20px;
-          right: 20px;
+          top: 25px;
+          right: 25px;
           width: 50px;
           height: 50px;
           border-radius: 50%;
           background: rgba(255,255,255,0.1);
-          border: none;
+          border: 2px solid rgba(255,255,255,0.3);
           color: white;
           cursor: pointer;
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 1.3rem;
           transition: all 0.3s;
           z-index: 10;
         }
 
         .close-btn:hover {
-          background: rgba(255,255,255,0.2);
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          border-color: transparent;
         }
 
         .lightbox-image {
@@ -299,19 +312,27 @@ export default function MediaGallery() {
 
         .lightbox-caption {
           position: absolute;
-          bottom: 20px;
+          bottom: 25px;
           left: 50%;
           transform: translateX(-50%);
           text-align: center;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          padding: 14px 35px;
+          border-radius: 50px;
+          color: white;
+        }
+
+        .lightbox-caption i {
+          font-size: 1.1rem;
         }
 
         .lightbox-caption h3 {
-          color: white;
-          font-size: 1.3rem;
+          font-size: 1.1rem;
           margin: 0;
-          background: rgba(113, 87, 160, 0.8);
-          padding: 12px 30px;
-          border-radius: 50px;
+          font-weight: 600;
         }
 
         .nav-btn {
@@ -328,21 +349,23 @@ export default function MediaGallery() {
           display: flex;
           align-items: center;
           justify-content: center;
+          font-size: 1.2rem;
           transition: all 0.3s;
         }
 
         .nav-btn:hover {
-          background: rgba(255,255,255,0.2);
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          border-color: transparent;
         }
 
-        .nav-btn.prev { left: 20px; }
-        .nav-btn.next { right: 20px; }
+        .nav-btn.prev { left: 25px; }
+        .nav-btn.next { right: 25px; }
 
         @media (max-width: 900px) {
           .gallery-grid {
             grid-template-columns: repeat(2, 1fr);
           }
-          .gallery-item:first-child {
+          .gallery-item.large {
             grid-column: span 2;
             grid-row: span 1;
             height: 300px;
@@ -354,10 +377,13 @@ export default function MediaGallery() {
         }
 
         @media (max-width: 600px) {
+          .gallery-section {
+            padding: 60px 15px;
+          }
           .gallery-grid {
             grid-template-columns: 1fr;
           }
-          .gallery-item:first-child {
+          .gallery-item.large {
             grid-column: span 1;
             height: 250px;
           }

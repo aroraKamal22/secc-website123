@@ -17,23 +17,29 @@ const insurancePartners = [
 export default function InsuranceLogos() {
   return (
     <section className="insurance-section">
-      <h2 className="section-title">Insurance & Empanelment Partners</h2>
-      <p className="section-subtitle">Cashless treatment available with leading insurance providers</p>
+      <div className="section-header">
+        <div className="section-tag">
+          <span className="tag-dot"></span>
+          Empanelments
+        </div>
+        <h2 className="section-title">Insurance & Government Partners</h2>
+        <p className="section-desc">Cashless treatment available with 11+ leading insurance providers</p>
+      </div>
 
       <div className="logos-container">
         <div className="logos-track">
           {[...insurancePartners, ...insurancePartners].map((partner, index) => (
-            <div key={index} className="logo-item">
-              <div className="logo-box">
-                <i className="fas fa-hospital-alt logo-placeholder"></i>
-                <span>{partner.name}</span>
+            <div key={index} className="logo-card">
+              <div className="logo-icon">
+                <i className="fas fa-hospital-alt"></i>
               </div>
+              <span className="logo-name">{partner.name}</span>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="empanelment-badges">
+      <div className="badges-row">
         <div className="badge">
           <i className="fas fa-check-circle"></i>
           <span>NABH Certified</span>
@@ -44,35 +50,71 @@ export default function InsuranceLogos() {
         </div>
         <div className="badge">
           <i className="fas fa-check-circle"></i>
-          <span>Cashless Treatment</span>
+          <span>100% Cashless Treatment</span>
         </div>
       </div>
 
       <style jsx>{`
         .insurance-section {
-          padding: 4rem 1rem;
-          background: #f8f6fc;
-          text-align: center;
+          padding: 100px 20px;
+          background: linear-gradient(180deg, #1a1230 0%, #0f0a1f 100%);
+          overflow: hidden;
         }
 
-        .section-subtitle {
-          color: #666;
+        .section-header {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+
+        .section-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(113, 87, 160, 0.2);
+          border: 1px solid rgba(113, 87, 160, 0.3);
+          padding: 10px 20px;
+          border-radius: 50px;
+          font-size: 0.9rem;
+          color: #a78bfa;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+        }
+
+        .tag-dot {
+          width: 8px;
+          height: 8px;
+          background: #FFD600;
+          border-radius: 50%;
+        }
+
+        .section-title {
+          font-size: 2.8rem;
+          font-weight: 800;
+          color: white;
+          margin: 0 0 15px;
+        }
+
+        .section-desc {
           font-size: 1.1rem;
-          margin-top: -2rem;
-          margin-bottom: 2.5rem;
+          color: rgba(255, 255, 255, 0.6);
+          margin: 0;
         }
 
         .logos-container {
           max-width: 100%;
           overflow: hidden;
-          margin: 0 auto 2rem;
-          padding: 1rem 0;
+          margin: 0 auto 50px;
+          padding: 20px 0;
+          mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+          -webkit-mask-image: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
         }
 
         .logos-track {
           display: flex;
-          gap: 2rem;
-          animation: scroll 30s linear infinite;
+          gap: 25px;
+          animation: scroll 40s linear infinite;
           width: max-content;
         }
 
@@ -89,96 +131,101 @@ export default function InsuranceLogos() {
           }
         }
 
-        .logo-item {
+        .logo-card {
           flex-shrink: 0;
-        }
-
-        .logo-box {
-          background: white;
-          padding: 1.5rem 2rem;
-          border-radius: 12px;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          padding: 25px 35px;
+          border-radius: 16px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 0.5rem;
-          min-width: 150px;
-          transition: all 0.3s ease;
+          gap: 12px;
+          min-width: 180px;
+          transition: all 0.3s;
+          backdrop-filter: blur(10px);
         }
 
-        .logo-box:hover {
+        .logo-card:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(113, 87, 160, 0.5);
           transform: translateY(-5px);
-          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.15);
         }
 
-        .logo-placeholder {
-          font-size: 2.5rem;
-          color: #7157A0;
+        .logo-icon {
+          width: 60px;
+          height: 60px;
+          background: linear-gradient(135deg, #7157A0, #9b7bc7);
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          color: white;
         }
 
-        .logo-box span {
-          font-size: 0.85rem;
-          color: #444;
-          font-weight: 500;
+        .logo-name {
+          font-size: 0.9rem;
+          color: white;
+          font-weight: 600;
+          text-align: center;
         }
 
-        .empanelment-badges {
+        .badges-row {
           display: flex;
           justify-content: center;
-          gap: 1.5rem;
+          gap: 20px;
           flex-wrap: wrap;
-          margin-top: 1rem;
         }
 
         .badge {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
-          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
+          gap: 10px;
+          background: linear-gradient(135deg, rgba(113, 87, 160, 0.3), rgba(113, 87, 160, 0.1));
+          border: 1px solid rgba(113, 87, 160, 0.3);
           color: white;
-          padding: 0.75rem 1.5rem;
+          padding: 15px 25px;
           border-radius: 50px;
-          font-weight: 500;
-          font-size: 0.9rem;
+          font-weight: 600;
+          font-size: 0.95rem;
+          transition: all 0.3s;
+        }
+
+        .badge:hover {
+          background: linear-gradient(135deg, #7157A0, #9b7bc7);
+          transform: translateY(-3px);
         }
 
         .badge i {
           color: #FFD600;
+          font-size: 1.1rem;
         }
 
         @media (max-width: 768px) {
-          .section-subtitle {
-            font-size: 0.95rem;
-            margin-top: -1.5rem;
+          .insurance-section {
+            padding: 70px 15px;
           }
 
-          .logo-box {
-            padding: 1rem 1.5rem;
-            min-width: 120px;
-          }
-
-          .logo-placeholder {
+          .section-title {
             font-size: 2rem;
           }
 
-          .empanelment-badges {
-            gap: 0.75rem;
+          .logo-card {
+            padding: 20px 25px;
+            min-width: 150px;
+          }
+
+          .badges-row {
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
           }
 
           .badge {
-            padding: 0.6rem 1rem;
-            font-size: 0.8rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .insurance-section {
-            padding: 3rem 0.5rem;
-          }
-
-          .badge {
-            font-size: 0.75rem;
-            padding: 0.5rem 0.8rem;
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
           }
         }
       `}</style>

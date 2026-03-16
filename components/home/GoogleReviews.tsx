@@ -5,11 +5,18 @@ import Link from 'next/link';
 export default function GoogleReviews() {
   return (
     <section className="reviews-section">
+      {/* Background Elements */}
+      <div className="bg-glow glow-1"></div>
+      <div className="bg-glow glow-2"></div>
+
       <div className="reviews-container">
         {/* Header */}
         <div className="reviews-header">
-          <span className="section-tag">Patient Reviews</span>
-          <h2>Trusted by <span>Thousands</span></h2>
+          <div className="section-tag">
+            <span className="tag-dot"></span>
+            Patient Reviews
+          </div>
+          <h2>Trusted by <span className="gradient-text">Thousands</span></h2>
           <p>See what our patients say about their experience</p>
         </div>
 
@@ -17,8 +24,9 @@ export default function GoogleReviews() {
         <div className="reviews-grid">
           {/* Google Rating Card */}
           <div className="rating-card">
+            <div className="rating-glow"></div>
             <div className="google-logo">
-              <svg width="80" height="80" viewBox="0 0 24 24">
+              <svg width="70" height="70" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
                 <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
@@ -27,7 +35,13 @@ export default function GoogleReviews() {
             </div>
             <div className="rating-score">
               <span className="score">4.9</span>
-              <div className="stars">★★★★★</div>
+              <div className="stars">
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+                <i className="fas fa-star"></i>
+              </div>
             </div>
             <p className="review-count">Based on <strong>1000+</strong> reviews</p>
             <a
@@ -36,6 +50,7 @@ export default function GoogleReviews() {
               rel="noopener noreferrer"
               className="review-btn"
             >
+              <i className="fas fa-edit"></i>
               Write a Review
             </a>
           </div>
@@ -44,9 +59,7 @@ export default function GoogleReviews() {
           <div className="stats-grid">
             <div className="stat-card">
               <div className="stat-icon green">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <i className="fas fa-check-circle"></i>
               </div>
               <div className="stat-content">
                 <span className="stat-number">50,000+</span>
@@ -56,9 +69,7 @@ export default function GoogleReviews() {
 
             <div className="stat-card">
               <div className="stat-icon purple">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <i className="fas fa-clock"></i>
               </div>
               <div className="stat-content">
                 <span className="stat-number">15+</span>
@@ -68,9 +79,7 @@ export default function GoogleReviews() {
 
             <div className="stat-card">
               <div className="stat-icon blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                <i className="fas fa-user-md"></i>
               </div>
               <div className="stat-content">
                 <span className="stat-number">4</span>
@@ -80,9 +89,7 @@ export default function GoogleReviews() {
 
             <div className="stat-card">
               <div className="stat-icon yellow">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                </svg>
+                <i className="fas fa-certificate"></i>
               </div>
               <div className="stat-content">
                 <span className="stat-number">NABH</span>
@@ -95,10 +102,12 @@ export default function GoogleReviews() {
         {/* CTA */}
         <div className="cta-row">
           <Link href="/appointment" className="cta-primary">
+            <i className="fas fa-calendar-check"></i>
             Book Appointment
           </Link>
           <Link href="/about" className="cta-secondary">
             Learn More About Us
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
       </div>
@@ -106,16 +115,32 @@ export default function GoogleReviews() {
       <style jsx>{`
         .reviews-section {
           padding: 80px 20px;
-          background: linear-gradient(135deg, #7157A0 0%, #9b7ed4 100%);
+          background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
           position: relative;
+          overflow: hidden;
         }
 
-        .reviews-section::before {
-          content: '';
+        .bg-glow {
           position: absolute;
-          inset: 0;
-          background: radial-gradient(circle at 20% 80%, rgba(255,214,0,0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%);
+          border-radius: 50%;
+          filter: blur(100px);
+          opacity: 0.3;
+        }
+
+        .glow-1 {
+          width: 400px;
+          height: 400px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          top: -150px;
+          right: -100px;
+        }
+
+        .glow-2 {
+          width: 300px;
+          height: 300px;
+          background: linear-gradient(135deg, #FFD600, #FFA500);
+          bottom: -100px;
+          left: -50px;
         }
 
         .reviews-container {
@@ -127,97 +152,140 @@ export default function GoogleReviews() {
 
         .reviews-header {
           text-align: center;
-          color: white;
           margin-bottom: 50px;
         }
 
         .section-tag {
-          display: inline-block;
-          background: rgba(255, 214, 0, 0.2);
-          border: 1px solid rgba(255, 214, 0, 0.4);
-          color: #FFD600;
-          padding: 8px 20px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          padding: 10px 24px;
           border-radius: 50px;
-          font-size: 0.85rem;
+          font-size: 0.9rem;
+          color: white;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1px;
-          margin-bottom: 15px;
+          margin-bottom: 20px;
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.3);
+        }
+
+        .tag-dot {
+          width: 8px;
+          height: 8px;
+          background: #FFD600;
+          border-radius: 50%;
         }
 
         .reviews-header h2 {
-          font-size: 2.8rem;
+          font-size: 3rem;
           font-weight: 800;
-          margin: 0 0 10px;
+          color: #1a1a2e;
+          margin: 0 0 15px;
         }
 
-        .reviews-header h2 span {
-          color: #FFD600;
+        .gradient-text {
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
         .reviews-header p {
           font-size: 1.1rem;
-          opacity: 0.9;
+          color: #666;
           margin: 0;
         }
 
         .reviews-grid {
           display: grid;
-          grid-template-columns: 350px 1fr;
+          grid-template-columns: 320px 1fr;
           gap: 30px;
-          margin-bottom: 40px;
+          margin-bottom: 50px;
         }
 
         /* Rating Card */
         .rating-card {
+          position: relative;
           background: white;
+          border: 1px solid rgba(113, 87, 160, 0.1);
           border-radius: 24px;
           padding: 40px 30px;
           text-align: center;
-          box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+          overflow: hidden;
+          box-shadow: 0 10px 40px rgba(113, 87, 160, 0.1);
+        }
+
+        .rating-glow {
+          position: absolute;
+          top: -100px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 200px;
+          height: 200px;
+          background: radial-gradient(circle, rgba(113, 87, 160, 0.1) 0%, transparent 70%);
         }
 
         .google-logo {
           margin-bottom: 20px;
+          position: relative;
+          z-index: 2;
         }
 
         .rating-score {
           margin-bottom: 15px;
+          position: relative;
+          z-index: 2;
         }
 
         .score {
           font-size: 4rem;
           font-weight: 800;
-          color: #1a1a2e;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
           line-height: 1;
         }
 
         .stars {
           color: #FFD600;
-          font-size: 1.8rem;
-          letter-spacing: 2px;
-          margin-top: 5px;
+          font-size: 1.5rem;
+          letter-spacing: 4px;
+          margin-top: 8px;
         }
 
         .review-count {
           color: #666;
           margin: 0 0 25px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .review-count strong {
+          color: #1a1a2e;
         }
 
         .review-btn {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
           background: linear-gradient(135deg, #7157A0, #8B6BC4);
           color: white;
-          padding: 14px 35px;
+          padding: 14px 30px;
           border-radius: 50px;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s;
+          position: relative;
+          z-index: 2;
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.3);
         }
 
         .review-btn:hover {
           transform: translateY(-3px);
-          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.4);
+          box-shadow: 0 12px 35px rgba(113, 87, 160, 0.4);
         }
 
         /* Stats Grid */
@@ -228,20 +296,21 @@ export default function GoogleReviews() {
         }
 
         .stat-card {
-          background: rgba(255,255,255,0.1);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255,255,255,0.15);
+          background: white;
+          border: 1px solid rgba(113, 87, 160, 0.1);
           border-radius: 20px;
           padding: 25px;
           display: flex;
           align-items: center;
           gap: 18px;
           transition: all 0.3s;
+          box-shadow: 0 4px 20px rgba(113, 87, 160, 0.08);
         }
 
         .stat-card:hover {
-          background: rgba(255,255,255,0.15);
+          border-color: rgba(113, 87, 160, 0.2);
           transform: translateY(-5px);
+          box-shadow: 0 12px 35px rgba(113, 87, 160, 0.15);
         }
 
         .stat-icon {
@@ -252,29 +321,25 @@ export default function GoogleReviews() {
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
+          font-size: 1.5rem;
         }
 
-        .stat-icon :global(svg) {
-          width: 30px;
-          height: 30px;
-        }
-
-        .stat-icon.green { background: rgba(16, 185, 129, 0.2); color: #10B981; }
-        .stat-icon.purple { background: rgba(139, 92, 246, 0.2); color: #A78BFA; }
-        .stat-icon.blue { background: rgba(59, 130, 246, 0.2); color: #60A5FA; }
-        .stat-icon.yellow { background: rgba(255, 214, 0, 0.2); color: #FFD600; }
+        .stat-icon.green { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+        .stat-icon.purple { background: rgba(113, 87, 160, 0.15); color: #7157A0; }
+        .stat-icon.blue { background: rgba(59, 130, 246, 0.15); color: #3B82F6; }
+        .stat-icon.yellow { background: rgba(255, 214, 0, 0.2); color: #D4A800; }
 
         .stat-number {
           display: block;
           font-size: 1.8rem;
           font-weight: 800;
-          color: white;
+          color: #1a1a2e;
           line-height: 1;
         }
 
         .stat-label {
           font-size: 0.85rem;
-          color: rgba(255,255,255,0.8);
+          color: #666;
           margin-top: 4px;
           display: block;
         }
@@ -286,38 +351,41 @@ export default function GoogleReviews() {
         }
 
         .cta-primary {
-          display: inline-block;
-          background: #FFD600;
-          color: #5a4a7a;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #FFD600, #FFA500);
+          color: #1a1a2e;
           padding: 16px 35px;
           border-radius: 50px;
           font-weight: 700;
           text-decoration: none;
           transition: all 0.3s;
-          box-shadow: 0 4px 20px rgba(255, 214, 0, 0.3);
+          box-shadow: 0 10px 30px rgba(255, 214, 0, 0.3);
         }
 
         .cta-primary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 30px rgba(255, 214, 0, 0.4);
+          box-shadow: 0 15px 40px rgba(255, 214, 0, 0.4);
         }
 
         .cta-secondary {
-          display: inline-block;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
           background: transparent;
-          color: white;
+          color: #7157A0;
           padding: 16px 35px;
           border-radius: 50px;
           font-weight: 700;
           text-decoration: none;
-          border: 2px solid rgba(255,255,255,0.5);
+          border: 2px solid rgba(113, 87, 160, 0.3);
           transition: all 0.3s;
         }
 
         .cta-secondary:hover {
-          background: white;
-          color: #7157A0;
-          border-color: white;
+          background: rgba(113, 87, 160, 0.1);
+          border-color: #7157A0;
         }
 
         @media (max-width: 900px) {
@@ -325,7 +393,7 @@ export default function GoogleReviews() {
             grid-template-columns: 1fr;
           }
           .rating-card {
-            max-width: 350px;
+            max-width: 320px;
             margin: 0 auto;
           }
           .stats-grid {
@@ -336,6 +404,9 @@ export default function GoogleReviews() {
         }
 
         @media (max-width: 550px) {
+          .reviews-section {
+            padding: 60px 15px;
+          }
           .stats-grid {
             grid-template-columns: 1fr;
           }
@@ -346,7 +417,7 @@ export default function GoogleReviews() {
           .cta-primary, .cta-secondary {
             width: 100%;
             max-width: 300px;
-            text-align: center;
+            justify-content: center;
           }
         }
       `}</style>

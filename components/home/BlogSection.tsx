@@ -7,37 +7,49 @@ const blogs = [
   {
     image: '/images/blog1.png',
     title: 'How to Manage Dry Eyes in Air-Conditioned Environments',
-    excerpt: 'Learn effective strategies to prevent and manage dry eyes in air-conditioned spaces during summer season.',
+    excerpt: 'Learn effective strategies to prevent and manage dry eyes in air-conditioned spaces.',
     category: 'Eye Care',
+    color: '#10B981',
+    icon: 'fa-eye-dropper',
   },
   {
     image: '/images/blog2.png',
     title: 'Myopia in Children: Causes, Signs & Prevention',
-    excerpt: 'Understanding childhood myopia, its causes, early warning signs, and effective prevention methods.',
+    excerpt: 'Understanding childhood myopia, its causes, and effective prevention methods.',
     category: 'Pediatric',
+    color: '#F59E0B',
+    icon: 'fa-child',
   },
   {
     image: '/images/Blog4.png',
     title: 'Premium IOLs: Are They Right for You?',
-    excerpt: 'Explore the advantages of premium intraocular lenses and make an informed decision for cataract surgery.',
+    excerpt: 'Explore the advantages of premium intraocular lenses for cataract surgery.',
     category: 'Cataract',
+    color: '#8B5CF6',
+    icon: 'fa-gem',
   },
   {
     image: '/images/Blog5.png',
     title: 'Anaesthesia in Cataract Surgery: What is Safer?',
-    excerpt: 'Comparing topical vs injection anesthesia methods in cataract surgery and their safety profiles.',
+    excerpt: 'Comparing topical vs injection anesthesia methods in cataract surgery.',
     category: 'Cataract',
+    color: '#3B82F6',
+    icon: 'fa-syringe',
   },
 ];
 
 export default function BlogSection() {
   return (
     <section className="blog-section">
-      <div className="container">
+      <div className="blog-container">
         {/* Header */}
-        <div className="header">
-          <h2>DOCTOR&apos;S <span>BLOG</span></h2>
-          <p>Expert insights and tips from our eye care specialists</p>
+        <div className="section-header">
+          <div className="section-tag">
+            <i className="fas fa-newspaper"></i>
+            Doctor&apos;s Blog
+          </div>
+          <h2>Expert <span>Insights</span></h2>
+          <p>Stay informed with tips and advice from our eye care specialists</p>
         </div>
 
         {/* Blog Grid */}
@@ -52,29 +64,30 @@ export default function BlogSection() {
                   sizes="(max-width: 768px) 100vw, 25vw"
                   style={{ objectFit: 'cover' }}
                 />
-                <span className="category">{blog.category}</span>
+                <div className="image-overlay"></div>
+                <span className="category" style={{ background: blog.color }}>
+                  <i className={`fas ${blog.icon}`}></i>
+                  {blog.category}
+                </span>
               </div>
+
               <div className="card-body">
                 <h3>{blog.title}</h3>
                 <p>{blog.excerpt}</p>
                 <span className="read-more">
-                  Read More
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                  </svg>
+                  Read Article
+                  <i className="fas fa-arrow-right"></i>
                 </span>
               </div>
             </Link>
           ))}
         </div>
 
-        {/* View All */}
-        <div className="view-all">
-          <Link href="/blog" className="btn">
+        {/* View All Button */}
+        <div className="view-all-wrap">
+          <Link href="/blog" className="view-all-btn">
             View All Articles
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
+            <i className="fas fa-arrow-right"></i>
           </Link>
         </div>
       </div>
@@ -82,33 +95,51 @@ export default function BlogSection() {
       <style jsx>{`
         .blog-section {
           padding: 80px 20px;
-          background: #f8f6fc;
+          background: linear-gradient(135deg, #f8f6fc 0%, #ede9f7 100%);
         }
 
-        .container {
-          max-width: 1200px;
+        .blog-container {
+          max-width: 1300px;
           margin: 0 auto;
         }
 
-        .header {
+        .section-header {
           text-align: center;
           margin-bottom: 50px;
         }
 
-        .header h2 {
-          font-size: 2.2rem;
-          font-weight: 700;
+        .section-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          color: white;
+          padding: 8px 20px;
+          border-radius: 50px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+          font-size: 2.8rem;
+          font-weight: 800;
           color: #1a1a2e;
-          margin: 0 0 12px;
+          margin: 0 0 15px;
         }
 
-        .header h2 span {
-          color: #7157A0;
+        .section-header h2 span {
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
         }
 
-        .header p {
+        .section-header p {
           color: #666;
-          font-size: 1.05rem;
+          font-size: 1.1rem;
           margin: 0;
         }
 
@@ -120,16 +151,17 @@ export default function BlogSection() {
 
         .blog-card {
           background: white;
-          border-radius: 16px;
+          border-radius: 20px;
           overflow: hidden;
           text-decoration: none;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-          transition: all 0.3s ease;
+          box-shadow: 0 10px 40px rgba(113, 87, 160, 0.08);
+          border: 1px solid rgba(113, 87, 160, 0.05);
+          transition: all 0.4s ease;
         }
 
         .blog-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 12px 35px rgba(113, 87, 160, 0.15);
+          transform: translateY(-10px);
+          box-shadow: 0 20px 50px rgba(113, 87, 160, 0.15);
         }
 
         .card-image {
@@ -138,29 +170,48 @@ export default function BlogSection() {
           overflow: hidden;
         }
 
-        .blog-card:hover .card-image img {
-          transform: scale(1.05);
+        .image-overlay {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.3) 100%);
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        .blog-card:hover .image-overlay {
+          opacity: 1;
+        }
+
+        .blog-card:hover .card-image :global(img) {
+          transform: scale(1.1);
         }
 
         .category {
           position: absolute;
           top: 12px;
           left: 12px;
-          background: #7157A0;
           color: white;
-          padding: 5px 14px;
+          padding: 6px 14px;
           border-radius: 20px;
           font-size: 0.75rem;
           font-weight: 600;
+          z-index: 2;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+        }
+
+        .category i {
+          font-size: 0.7rem;
         }
 
         .card-body {
-          padding: 20px;
+          padding: 22px 20px;
         }
 
         .card-body h3 {
           font-size: 1rem;
-          font-weight: 600;
+          font-weight: 700;
           color: #1a1a2e;
           margin: 0 0 10px;
           line-height: 1.4;
@@ -181,7 +232,7 @@ export default function BlogSection() {
           line-height: 1.6;
           margin: 0 0 15px;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
         }
@@ -189,39 +240,40 @@ export default function BlogSection() {
         .read-more {
           display: inline-flex;
           align-items: center;
-          gap: 6px;
+          gap: 8px;
           color: #7157A0;
           font-weight: 600;
           font-size: 0.9rem;
-          transition: gap 0.3s;
-        }
-
-        .blog-card:hover .read-more {
-          gap: 10px;
-        }
-
-        .view-all {
-          text-align: center;
-          margin-top: 45px;
-        }
-
-        .btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          background: #7157A0;
-          color: white;
-          padding: 14px 35px;
-          border-radius: 50px;
-          font-weight: 600;
-          text-decoration: none;
           transition: all 0.3s;
         }
 
-        .btn:hover {
-          background: #5d4787;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.3);
+        .blog-card:hover .read-more {
+          gap: 12px;
+        }
+
+        .view-all-wrap {
+          text-align: center;
+          margin-top: 50px;
+        }
+
+        .view-all-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          color: white;
+          padding: 16px 40px;
+          border-radius: 50px;
+          font-weight: 700;
+          font-size: 1.05rem;
+          text-decoration: none;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.3);
+        }
+
+        .view-all-btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(113, 87, 160, 0.4);
         }
 
         @media (max-width: 1024px) {
@@ -230,18 +282,17 @@ export default function BlogSection() {
           }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
           .blog-section {
-            padding: 50px 15px;
-          }
-
-          .header h2 {
-            font-size: 1.8rem;
+            padding: 60px 15px;
           }
 
           .blog-grid {
             grid-template-columns: 1fr;
-            gap: 20px;
+          }
+
+          .section-header h2 {
+            font-size: 2rem;
           }
 
           .card-image {
@@ -252,7 +303,7 @@ export default function BlogSection() {
 
       <style jsx global>{`
         .blog-card .card-image img {
-          transition: transform 0.4s ease;
+          transition: transform 0.5s ease;
         }
       `}</style>
     </section>

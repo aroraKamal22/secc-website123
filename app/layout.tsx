@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+import MobileBottomNav from "@/components/layout/MobileBottomNav";
+import BackToTop from "@/components/layout/BackToTop";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,6 +52,8 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <BackToTop />
+        <MobileBottomNav />
       </body>
     </html>
   );

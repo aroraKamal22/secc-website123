@@ -61,34 +61,45 @@ function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) 
 export default function StatsSection() {
   return (
     <section className="stats-section">
+      <div className="stats-bg">
+        <div className="gradient-blur"></div>
+      </div>
       <div className="stats-container">
         {stats.map((stat, index) => (
-          <div key={index} className="stat-item">
+          <div key={index} className="stat-card">
             <div className="stat-icon">
               <i className={`fas ${stat.icon}`}></i>
             </div>
             <AnimatedNumber target={stat.number} suffix={stat.suffix} />
             <div className="stat-label">{stat.label}</div>
+            <div className="stat-line"></div>
           </div>
         ))}
       </div>
 
       <style jsx>{`
         .stats-section {
-          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
-          padding: 3rem 1rem;
           position: relative;
+          padding: 60px 20px;
+          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
           overflow: hidden;
         }
 
-        .stats-section::before {
-          content: '';
+        .stats-bg {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          inset: 0;
+        }
+
+        .gradient-blur {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.05) 0%,
+            rgba(255, 214, 0, 0.1) 50%,
+            rgba(255, 255, 255, 0.05) 100%
+          );
+          filter: blur(60px);
         }
 
         .stats-container {
@@ -96,78 +107,109 @@ export default function StatsSection() {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 2rem;
+          gap: 25px;
           position: relative;
           z-index: 1;
         }
 
-        .stat-item {
+        .stat-card {
           text-align: center;
-          color: white;
+          padding: 35px 20px;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
+          position: relative;
+          overflow: hidden;
+          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .stat-card:hover {
+          transform: translateY(-8px);
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .stat-card::before {
+          display: none;
         }
 
         .stat-icon {
-          width: 70px;
-          height: 70px;
-          background: rgba(255, 255, 255, 0.15);
-          border-radius: 50%;
+          width: 65px;
+          height: 65px;
+          background: rgba(255, 255, 255, 0.2);
+          border: none;
+          border-radius: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
-          margin: 0 auto 1rem;
-          font-size: 1.8rem;
+          margin: 0 auto 18px;
+          font-size: 1.6rem;
           color: #FFD600;
-          border: 2px solid rgba(255, 255, 255, 0.2);
+          transition: all 0.3s;
         }
 
-        .stat-item :global(.stat-number) {
+        .stat-card:hover .stat-icon {
+          background: white;
+          color: #7157A0;
+          transform: scale(1.1);
+        }
+
+        .stat-card :global(.stat-number) {
           font-size: 2.8rem;
-          font-weight: 700;
-          color: #FFD600;
+          font-weight: 800;
+          color: white;
           line-height: 1;
-          margin-bottom: 0.5rem;
+          margin-bottom: 8px;
         }
 
         .stat-label {
-          font-size: 1rem;
-          opacity: 0.9;
+          font-size: 0.95rem;
+          color: rgba(255, 255, 255, 0.9);
           font-weight: 500;
+          letter-spacing: 0.5px;
         }
 
-        @media (max-width: 768px) {
+        .stat-line {
+          width: 40px;
+          height: 3px;
+          background: linear-gradient(90deg, #FFD600, transparent);
+          margin: 12px auto 0;
+          border-radius: 2px;
+        }
+
+        @media (max-width: 1024px) {
           .stats-container {
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .stats-section {
+            padding: 60px 15px;
+          }
+
+          .stats-container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+          }
+
+          .stat-card {
+            padding: 30px 15px;
           }
 
           .stat-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 1.5rem;
+            width: 55px;
+            height: 55px;
+            font-size: 1.4rem;
           }
 
-          .stat-item :global(.stat-number) {
+          .stat-card :global(.stat-number) {
             font-size: 2rem;
           }
 
           .stat-label {
             font-size: 0.85rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .stats-section {
-            padding: 2rem 1rem;
-          }
-
-          .stat-icon {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-          }
-
-          .stat-item :global(.stat-number) {
-            font-size: 1.6rem;
           }
         }
       `}</style>

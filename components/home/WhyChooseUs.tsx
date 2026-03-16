@@ -1,89 +1,58 @@
 'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 const features = [
   {
     id: 1,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
+    icon: 'fa-certificate',
     title: 'NABH Certified',
     desc: 'First NABH certified eye hospital in Jind district',
     color: '#10B981',
-    link: '#'
   },
   {
     id: 2,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-      </svg>
-    ),
+    icon: 'fa-user-md',
     title: 'Expert Specialists',
     desc: '4 super-specialist doctors with advanced training',
     color: '#8B5CF6',
-    link: '/about#doctors'
   },
   {
     id: 3,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
+    icon: 'fa-microchip',
     title: 'Advanced Technology',
     desc: 'Latest diagnostic & surgical equipment from global brands',
     color: '#3B82F6',
-    link: '/equipment'
   },
   {
     id: 4,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-      </svg>
-    ),
+    icon: 'fa-hand-holding-medical',
     title: 'Cashless Treatment',
     desc: 'Empaneled with Ayushman, Haryana Govt, ECHS & major TPAs',
     color: '#F59E0B',
-    link: '/empanelment'
   },
   {
     id: 5,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
+    icon: 'fa-heart',
     title: 'Ethical Practice',
     desc: 'Honest advice & transparent treatment plans',
     color: '#EF4444',
-    link: '#'
   },
   {
     id: 6,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-      </svg>
-    ),
-    title: '4.9★ Google Rating',
+    icon: 'fa-star',
+    title: '4.9 Google Rating',
     desc: 'Trusted by 50,000+ happy patients',
     color: '#06B6D4',
-    link: '#'
   },
 ];
 
 const stats = [
-  { number: '15+', label: 'Years Experience' },
-  { number: '50K+', label: 'Happy Patients' },
-  { number: '4', label: 'Specialists' },
-  { number: '4.9', label: 'Google Rating' },
+  { number: '15+', label: 'Years' },
+  { number: '50K+', label: 'Patients' },
+  { number: '4', label: 'Doctors' },
+  { number: '4.9', label: 'Rating' },
 ];
 
 export default function WhyChooseUs() {
@@ -92,8 +61,11 @@ export default function WhyChooseUs() {
       <div className="why-container">
         {/* Left Side - Content */}
         <div className="why-content">
-          <span className="section-tag">Why Choose Us</span>
-          <h2>The Most Trusted <span>Eye Hospital</span> in Jind</h2>
+          <div className="section-tag">
+            <span className="tag-dot"></span>
+            Why Choose Us
+          </div>
+          <h2>The Most Trusted <span className="gradient-text">Eye Hospital</span> in Jind</h2>
           <p className="section-desc">
             With over 15 years of excellence, we combine advanced technology with compassionate care to deliver the best outcomes for your eyes.
           </p>
@@ -101,16 +73,28 @@ export default function WhyChooseUs() {
           {/* Features Grid */}
           <div className="features-grid">
             {features.map((feature) => (
-              <Link key={feature.id} href={feature.link} className="feature-card">
-                <div className="feature-icon" style={{ background: `${feature.color}15`, color: feature.color }}>
-                  {feature.icon}
+              <div key={feature.id} className="feature-card">
+                <div className="feature-icon" style={{ background: `${feature.color}20`, color: feature.color }}>
+                  <i className={`fas ${feature.icon}`}></i>
                 </div>
                 <div className="feature-text">
                   <h4>{feature.title}</h4>
                   <p>{feature.desc}</p>
                 </div>
-              </Link>
+              </div>
             ))}
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="cta-buttons">
+            <Link href="/about" className="btn-primary">
+              Learn More About Us
+              <i className="fas fa-arrow-right"></i>
+            </Link>
+            <Link href="/appointment" className="btn-secondary">
+              <i className="fas fa-calendar-check"></i>
+              Book Appointment
+            </Link>
           </div>
         </div>
 
@@ -126,19 +110,23 @@ export default function WhyChooseUs() {
                 quality={90}
                 style={{ objectFit: 'cover' }}
               />
+              <div className="image-overlay"></div>
             </div>
 
-            {/* Floating Badge */}
+            {/* NABH Badge */}
             <div className="nabh-badge">
               <Image
                 src="/images/nabhLOGO.png"
                 alt="NABH Certified"
-                width={70}
-                height={70}
+                width={60}
+                height={60}
                 quality={100}
                 style={{ objectFit: 'contain' }}
               />
-              <span>NABH<br/>Certified</span>
+              <div className="nabh-text">
+                <span className="nabh-title">NABH</span>
+                <span className="nabh-subtitle">Certified</span>
+              </div>
             </div>
 
             {/* Stats Card */}
@@ -156,16 +144,21 @@ export default function WhyChooseUs() {
             {/* Experience Badge */}
             <div className="experience-badge">
               <span className="exp-number">15+</span>
-              <span className="exp-text">Years of<br/>Excellence</span>
+              <span className="exp-text">Years of Excellence</span>
             </div>
+
+            {/* Decorative Elements */}
+            <div className="deco-ring"></div>
+            <div className="deco-dots"></div>
           </div>
         </div>
       </div>
 
       <style jsx>{`
         .why-section {
-          padding: 100px 20px;
-          background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
+          padding: 80px 20px;
+          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 100%);
+          position: relative;
           overflow: hidden;
         }
 
@@ -179,33 +172,43 @@ export default function WhyChooseUs() {
         }
 
         .section-tag {
-          display: inline-block;
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
-          color: white;
-          padding: 8px 20px;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          padding: 10px 24px;
           border-radius: 50px;
-          font-size: 0.85rem;
+          font-size: 0.9rem;
+          color: white;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 1px;
           margin-bottom: 20px;
         }
 
+        .tag-dot {
+          width: 8px;
+          height: 8px;
+          background: #FFD600;
+          border-radius: 50%;
+        }
+
         .why-content h2 {
           font-size: 2.8rem;
           font-weight: 800;
-          color: #1a1a2e;
+          color: white;
           margin: 0 0 20px;
           line-height: 1.2;
         }
 
-        .why-content h2 span {
-          color: #7157A0;
+        .gradient-text {
+          color: #FFD600;
         }
 
         .section-desc {
           font-size: 1.1rem;
-          color: #666;
+          color: rgba(255, 255, 255, 0.9);
           line-height: 1.8;
           margin: 0 0 35px;
         }
@@ -214,52 +217,95 @@ export default function WhyChooseUs() {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 16px;
+          margin-bottom: 35px;
         }
 
         .feature-card {
           display: flex;
           gap: 15px;
-          padding: 20px;
-          background: white;
+          padding: 18px;
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(10px);
+          border: 1px solid rgba(255, 255, 255, 0.15);
           border-radius: 16px;
-          text-decoration: none;
           transition: all 0.3s ease;
-          border: 1px solid #f0f0f0;
         }
 
         .feature-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 15px 40px rgba(113, 87, 160, 0.12);
-          border-color: transparent;
+          background: rgba(255, 255, 255, 0.2);
+          border-color: rgba(255, 255, 255, 0.3);
+          transform: translateY(-3px);
         }
 
         .feature-icon {
-          width: 50px;
-          height: 50px;
+          width: 48px;
+          height: 48px;
           border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-shrink: 0;
-        }
-
-        .feature-icon :global(svg) {
-          width: 26px;
-          height: 26px;
+          font-size: 1.2rem;
+          background: rgba(255, 255, 255, 0.2) !important;
+          color: white !important;
         }
 
         .feature-text h4 {
           margin: 0 0 4px;
           font-size: 0.95rem;
-          color: #1a1a2e;
+          color: white;
           font-weight: 700;
         }
 
         .feature-text p {
           margin: 0;
           font-size: 0.8rem;
-          color: #888;
+          color: rgba(255, 255, 255, 0.8);
           line-height: 1.4;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+
+        .btn-primary {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: white;
+          color: #7157A0;
+          padding: 14px 28px;
+          border-radius: 50px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-primary:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          background: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          color: white;
+          padding: 12px 28px;
+          border-radius: 50px;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: white;
         }
 
         /* Visual Side */
@@ -274,57 +320,69 @@ export default function WhyChooseUs() {
 
         .main-image {
           position: absolute;
-          top: 0;
+          top: 30px;
           right: 0;
           width: 90%;
-          height: 480px;
+          height: 450px;
           border-radius: 24px;
           overflow: hidden;
-          box-shadow: 0 30px 60px rgba(113, 87, 160, 0.25);
+          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
         }
 
-        .main-image::after {
-          content: '';
+        .image-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(135deg, rgba(113, 87, 160, 0.1), transparent);
+          background: linear-gradient(135deg, rgba(113, 87, 160, 0.2), transparent);
         }
 
         .nabh-badge {
           position: absolute;
-          top: 30px;
+          top: 0;
           left: 0;
-          background: white;
+          background: rgba(255, 255, 255, 0.95);
           padding: 15px 20px;
           border-radius: 16px;
           display: flex;
           align-items: center;
           gap: 12px;
-          box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
           z-index: 10;
         }
 
-        .nabh-badge span {
-          font-size: 0.85rem;
-          font-weight: 700;
+        .nabh-text {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .nabh-title {
+          font-size: 1rem;
+          font-weight: 800;
           color: #7157A0;
-          line-height: 1.2;
+          line-height: 1;
+        }
+
+        .nabh-subtitle {
+          font-size: 0.75rem;
+          color: #666;
+          font-weight: 600;
         }
 
         .stats-card {
           position: absolute;
-          bottom: 0;
+          bottom: 40px;
           left: 0;
-          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          background: linear-gradient(135deg, rgba(113, 87, 160, 0.9), rgba(139, 107, 196, 0.9));
+          backdrop-filter: blur(20px);
           padding: 25px;
           border-radius: 20px;
-          box-shadow: 0 20px 50px rgba(113, 87, 160, 0.35);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
           z-index: 10;
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .stats-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(4, 1fr);
           gap: 20px;
         }
 
@@ -334,41 +392,68 @@ export default function WhyChooseUs() {
 
         .stat-number {
           display: block;
-          font-size: 1.8rem;
+          font-size: 1.6rem;
           font-weight: 800;
           color: #FFD600;
         }
 
         .stat-label {
-          font-size: 0.75rem;
-          color: rgba(255,255,255,0.85);
+          font-size: 0.7rem;
+          color: rgba(255, 255, 255, 0.8);
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         .experience-badge {
           position: absolute;
-          bottom: 120px;
+          bottom: 160px;
           right: 0;
-          background: #FFD600;
-          padding: 20px 25px;
+          background: linear-gradient(135deg, #FFD600, #FFA500);
+          padding: 18px 22px;
           border-radius: 16px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          box-shadow: 0 15px 40px rgba(255, 214, 0, 0.35);
+          text-align: center;
+          box-shadow: 0 15px 40px rgba(255, 214, 0, 0.3);
           z-index: 10;
         }
 
         .exp-number {
-          font-size: 2.2rem;
+          display: block;
+          font-size: 2rem;
           font-weight: 800;
-          color: #7157A0;
+          color: #1a1a2e;
+          line-height: 1;
         }
 
         .exp-text {
-          font-size: 0.8rem;
-          font-weight: 600;
+          font-size: 0.7rem;
           color: #5a4a7a;
-          line-height: 1.2;
+          font-weight: 600;
+        }
+
+        .deco-ring {
+          position: absolute;
+          top: 50px;
+          right: 20px;
+          width: 300px;
+          height: 300px;
+          border: 2px dashed rgba(113, 87, 160, 0.2);
+          border-radius: 50%;
+          animation: spin 30s linear infinite;
+        }
+
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .deco-dots {
+          position: absolute;
+          bottom: 250px;
+          left: 50px;
+          width: 80px;
+          height: 80px;
+          background-image: radial-gradient(rgba(113, 87, 160, 0.4) 2px, transparent 2px);
+          background-size: 12px 12px;
         }
 
         @media (max-width: 1100px) {
@@ -385,37 +470,54 @@ export default function WhyChooseUs() {
           }
           .main-image {
             width: 100%;
-            height: 380px;
+            height: 350px;
+          }
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
 
         @media (max-width: 700px) {
+          .why-section {
+            padding: 60px 15px;
+          }
           .why-content h2 { font-size: 2rem; }
           .features-grid { grid-template-columns: 1fr; }
-          .visual-wrapper { height: auto; min-height: 500px; display: flex; flex-direction: column; gap: 20px; }
-          .main-image { position: relative; height: 280px; width: 100%; }
+          .visual-wrapper {
+            height: auto;
+            min-height: 450px;
+          }
+          .main-image {
+            position: relative;
+            height: 280px;
+            width: 100%;
+            top: 0;
+          }
           .nabh-badge {
-            position: absolute;
-            top: 15px;
+            top: -15px;
             left: 50%;
             transform: translateX(-50%);
           }
           .experience-badge {
-            position: relative;
-            right: auto;
+            position: absolute;
             bottom: auto;
-            padding: 15px 20px;
-            align-self: flex-end;
-            margin-top: -40px;
-            margin-right: 15px;
+            top: 260px;
+            right: 15px;
+            padding: 12px 16px;
           }
-          .exp-number { font-size: 1.6rem; }
+          .exp-number { font-size: 1.5rem; }
           .stats-card {
             position: relative;
-            left: auto;
-            transform: none;
+            margin-top: 30px;
             width: 100%;
-            margin-top: 10px;
+          }
+          .deco-ring, .deco-dots { display: none; }
+          .cta-buttons {
+            flex-direction: column;
+          }
+          .btn-primary, .btn-secondary {
+            width: 100%;
+            justify-content: center;
           }
         }
       `}</style>
