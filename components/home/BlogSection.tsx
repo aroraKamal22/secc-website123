@@ -94,7 +94,7 @@ export default function BlogSection() {
 
       <style jsx>{`
         .blog-section {
-          padding: 60px 20px 20px;
+          padding: 60px 20px 10px;
           background: linear-gradient(180deg, #fff 0%, #f8f6fc 100%);
         }
 
@@ -253,7 +253,7 @@ export default function BlogSection() {
 
         .view-all-wrap {
           text-align: center;
-          margin-top: 40px;
+          margin-top: 30px;
         }
 
         .view-all-btn {
@@ -284,7 +284,7 @@ export default function BlogSection() {
 
         @media (max-width: 640px) {
           .blog-section {
-            padding: 40px 15px 15px;
+            padding: 40px 15px 10px;
           }
 
           .blog-grid {

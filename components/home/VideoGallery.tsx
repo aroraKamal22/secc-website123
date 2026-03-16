@@ -115,7 +115,7 @@ export default function VideoGallery() {
 
       <style jsx>{`
         .video-section {
-          padding: 20px 20px 50px;
+          padding: 10px 20px 50px;
           background: linear-gradient(180deg, #f8f6fc 0%, #fff 100%);
           position: relative;
           overflow: hidden;
@@ -478,7 +478,7 @@ export default function VideoGallery() {
 
         @media (max-width: 640px) {
           .video-section {
-            padding: 15px 15px 30px;
+            padding: 10px 15px 30px;
           }
 
           .section-header {
