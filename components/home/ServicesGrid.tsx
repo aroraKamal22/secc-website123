@@ -619,26 +619,191 @@ export default function ServicesGrid() {
           }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .services-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
           }
-          .services-grid {
-            grid-template-columns: 1fr;
+
+          .section-header {
+            margin-bottom: 30px;
           }
+
           .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
           }
+
+          .section-header p {
+            font-size: 0.95rem;
+          }
+
+          .section-tag {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+          }
+
+          .services-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 10px 5px 20px;
+            margin: 0 -15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+
+          .services-grid::-webkit-scrollbar {
+            display: none;
+          }
+
+          .service-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            padding: 22px;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff 0%, #fcfbfe 100%);
+            border: 1px solid rgba(113, 87, 160, 0.1);
+            box-shadow: 0 8px 32px rgba(113, 87, 160, 0.1);
+            transition: all 0.3s ease;
+          }
+
+          .service-card:active {
+            transform: scale(0.98);
+          }
+
+          .service-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+          }
+
+          .service-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+          }
+
+          .service-desc {
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+          }
+
+          .service-highlight {
+            padding: 6px 10px;
+            margin-bottom: 12px;
+          }
+
+          .service-highlight span {
+            font-size: 0.75rem;
+          }
+
+          .learn-more {
+            font-size: 0.85rem;
+          }
+
+          .view-all-wrap {
+            margin-top: 30px;
+          }
+
+          .view-all-btn {
+            padding: 14px 32px;
+            font-size: 0.95rem;
+          }
+
+          /* Modal Mobile */
+          .modal-overlay {
+            padding: 15px;
+            align-items: flex-end;
+          }
+
+          .modal-content {
+            border-radius: 20px 20px 0 0;
+            max-height: 85vh;
+          }
+
           .modal-header {
             flex-direction: column;
             text-align: center;
+            padding: 25px 20px;
+            gap: 15px;
           }
+
+          .modal-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+          }
+
+          .modal-title h2 {
+            font-size: 1.3rem;
+          }
+
+          .modal-body {
+            padding: 20px;
+          }
+
+          .highlight-badge {
+            padding: 10px 14px;
+            border-radius: 10px;
+          }
+
+          .highlight-badge span {
+            font-size: 0.8rem;
+          }
+
+          .modal-desc {
+            font-size: 0.9rem;
+            line-height: 1.7;
+          }
+
+          .features-box {
+            padding: 16px;
+            border-radius: 14px;
+          }
+
+          .features-box h4 {
+            font-size: 0.9rem;
+          }
+
+          .features-box li {
+            font-size: 0.85rem;
+            padding: 6px 0;
+          }
+
           .modal-actions {
             flex-direction: column;
+            gap: 10px;
           }
+
           .btn-primary, .btn-secondary {
             width: 100%;
             justify-content: center;
+            padding: 14px 24px;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .services-section {
+            padding: 35px 12px;
+          }
+
+          .section-header h2 {
+            font-size: 1.5rem;
+          }
+
+          .service-card {
+            flex: 0 0 260px;
+            padding: 18px;
+          }
+
+          .service-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
           }
         }
       `}</style>

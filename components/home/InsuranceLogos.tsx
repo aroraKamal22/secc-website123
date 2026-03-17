@@ -204,28 +204,115 @@ export default function InsuranceLogos() {
 
         @media (max-width: 768px) {
           .insurance-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
+            overflow-x: hidden;
+          }
+
+          .section-header {
+            margin-bottom: 25px;
+          }
+
+          .section-tag {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
           }
 
           .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
+            line-height: 1.3;
+          }
+
+          .section-desc {
+            font-size: 0.9rem;
+            padding: 0 10px;
+          }
+
+          .logos-container {
+            margin-bottom: 30px;
+            padding: 15px 0;
+            overflow: hidden;
+          }
+
+          .logos-track {
+            gap: 12px;
+            animation-duration: 25s;
           }
 
           .logo-card {
-            padding: 20px 25px;
-            min-width: 150px;
+            padding: 14px 16px;
+            min-width: 120px;
+            border-radius: 12px;
+            gap: 8px;
+          }
+
+          .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+          }
+
+          .logo-name {
+            font-size: 0.75rem;
           }
 
           .badges-row {
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            padding: 0;
+            margin: 0;
           }
 
           .badge {
-            width: 100%;
-            max-width: 300px;
-            justify-content: center;
+            padding: 10px 14px;
+            font-size: 0.75rem;
+            border-radius: 12px;
+            white-space: nowrap;
+          }
+
+          .badge i {
+            font-size: 0.85rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .insurance-section {
+            padding: 30px 12px;
+          }
+
+          .section-title {
+            font-size: 1.3rem;
+          }
+
+          .section-desc {
+            font-size: 0.85rem;
+          }
+
+          .logo-card {
+            padding: 12px 14px;
+            min-width: 110px;
+          }
+
+          .logo-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 1rem;
+          }
+
+          .logo-name {
+            font-size: 0.7rem;
+          }
+
+          .badges-row {
+            gap: 6px;
+          }
+
+          .badge {
+            padding: 8px 12px;
+            font-size: 0.7rem;
           }
         }
       `}</style>

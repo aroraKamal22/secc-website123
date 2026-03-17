@@ -694,19 +694,220 @@ export default function DoctorCards() {
           }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
           .doctors-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
           }
+
+          .section-header {
+            margin-bottom: 30px;
+          }
+
+          .section-header h2 {
+            font-size: 1.8rem;
+          }
+
+          .section-header p {
+            font-size: 0.95rem;
+          }
+
+          .section-tag {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+          }
+
           .doctors-grid {
-            grid-template-columns: 1fr;
-            max-width: 350px;
-            margin: 0 auto;
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 15px;
+            padding: 10px 5px 20px;
+            margin: 0 -15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
           }
-          .section-header h2 { font-size: 2rem; }
-          .modal-header { flex-direction: column; text-align: center; }
-          .modal-info-row { grid-template-columns: 1fr; }
-          .info-value { font-size: 0.8rem; }
+
+          .doctors-grid::-webkit-scrollbar {
+            display: none;
+          }
+
+          .doctor-card {
+            flex: 0 0 280px;
+            scroll-snap-align: start;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #ffffff 0%, #faf9fc 100%);
+            border: 1px solid rgba(113, 87, 160, 0.1);
+            box-shadow: 0 8px 32px rgba(113, 87, 160, 0.12);
+            transition: all 0.3s ease;
+          }
+
+          .doctor-card:active {
+            transform: scale(0.98);
+          }
+
+          .card-image-section {
+            height: 170px;
+            padding-top: 15px;
+            background: linear-gradient(180deg, rgba(113, 87, 160, 0.08) 0%, rgba(139, 107, 196, 0.04) 100%);
+            border-radius: 20px 20px 0 0;
+          }
+
+          .doctor-image {
+            width: 110px;
+            height: 110px;
+          }
+
+          .image-ring {
+            width: 120px;
+            height: 120px;
+          }
+
+          .card-content {
+            padding: 16px;
+          }
+
+          .card-content h3 {
+            font-size: 1.05rem;
+          }
+
+          .designation {
+            font-size: 0.8rem;
+          }
+
+          .specialty {
+            font-size: 0.75rem;
+            margin-bottom: 12px;
+          }
+
+          .specializations {
+            gap: 5px;
+            margin-bottom: 12px;
+          }
+
+          .spec-tag {
+            padding: 3px 8px;
+            font-size: 0.65rem;
+          }
+
+          .view-profile-btn {
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            border-radius: 20px;
+          }
+
+          .experience-badge {
+            padding: 5px 12px;
+            font-size: 0.7rem;
+          }
+
+          .view-all-wrap {
+            margin-top: 30px;
+          }
+
+          .view-all-link {
+            padding: 12px 28px;
+            font-size: 0.9rem;
+          }
+
+          /* Modal Mobile */
+          .modal-overlay {
+            padding: 15px;
+            align-items: flex-end;
+          }
+
+          .modal-content {
+            border-radius: 20px 20px 0 0;
+            max-height: 85vh;
+          }
+
+          .modal-header {
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 20px;
+            gap: 15px;
+          }
+
+          .modal-image {
+            width: 80px;
+            height: 80px;
+          }
+
+          .modal-title h2 {
+            font-size: 1.3rem;
+          }
+
+          .modal-body {
+            padding: 20px;
+          }
+
+          .modal-info-row {
+            grid-template-columns: 1fr;
+            gap: 10px;
+          }
+
+          .info-item {
+            padding: 12px;
+          }
+
+          .info-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 0.9rem;
+          }
+
+          .info-value {
+            font-size: 0.8rem;
+          }
+
+          .modal-description {
+            font-size: 0.9rem;
+            line-height: 1.6;
+          }
+
+          .specs-list {
+            gap: 6px;
+          }
+
+          .spec-badge {
+            padding: 6px 12px;
+            font-size: 0.75rem;
+          }
+
+          .modal-footer {
+            padding: 0 20px 20px;
+          }
+
+          .book-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .doctors-section {
+            padding: 35px 12px;
+          }
+
+          .section-header h2 {
+            font-size: 1.5rem;
+          }
+
+          .doctor-card {
+            flex: 0 0 260px;
+          }
+
+          .card-image-section {
+            height: 150px;
+          }
+
+          .doctor-image {
+            width: 95px;
+            height: 95px;
+          }
         }
       `}</style>
     </section>

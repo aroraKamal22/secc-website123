@@ -437,16 +437,31 @@ export default function Testimonials() {
 
         @media (max-width: 768px) {
           .testimonials-section {
-            padding: 30px 15px;
+            padding: 35px 15px;
           }
 
-          .section-header :global(.write-review-btn) {
-            padding: 10px 22px;
+          .section-header {
+            margin-bottom: 25px;
+          }
+
+          .section-tag {
             font-size: 0.85rem;
+            letter-spacing: 1.5px;
           }
 
           .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
+          }
+
+          .section-header p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+          }
+
+          .section-header :global(.write-review-btn) {
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            border-radius: 12px;
           }
 
           .cards-wrapper {
@@ -454,27 +469,107 @@ export default function Testimonials() {
           }
 
           .nav-btn {
-            width: 42px;
-            height: 42px;
-          }
-
-          .card-inner {
-            padding: 25px 20px;
-            min-height: 300px;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .nav-btn {
+            width: 40px;
+            height: 40px;
             display: none;
           }
 
+          .card-inner {
+            padding: 20px 18px;
+            min-height: 280px;
+            border-radius: 18px;
+            background: linear-gradient(145deg, #ffffff 0%, #faf9fc 100%);
+            border: 1px solid rgba(113, 87, 160, 0.12);
+          }
+
+          .quote-icon {
+            width: 38px;
+            height: 38px;
+            top: 16px;
+            right: 18px;
+            font-size: 0.85rem;
+          }
+
+          .stars {
+            margin-bottom: 14px;
+          }
+
+          .stars i {
+            font-size: 0.9rem;
+          }
+
+          .testimonial-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+          }
+
+          .profile-section {
+            padding-top: 14px;
+            gap: 10px;
+          }
+
+          .profile-avatar {
+            width: 42px;
+            height: 42px;
+            font-size: 1rem;
+          }
+
+          .profile-info h4 {
+            font-size: 0.9rem;
+          }
+
+          .profile-info p {
+            font-size: 0.75rem;
+          }
+
+          .google-badge {
+            width: 32px;
+            height: 32px;
+          }
+
+          .google-badge svg {
+            width: 16px;
+            height: 16px;
+          }
+
           .testimonial-card {
-            padding: 0 5px;
+            padding: 0 8px;
+          }
+
+          .dots-container {
+            margin-top: 20px;
+            gap: 8px;
+          }
+
+          .dot {
+            width: 8px;
+            height: 8px;
+          }
+
+          .dot.active {
+            width: 24px;
+            border-radius: 10px;
+            transform: scale(1);
+          }
+        }
+
+        @media (max-width: 480px) {
+          .testimonials-section {
+            padding: 30px 12px;
           }
 
           .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+          }
+
+          .card-inner {
+            padding: 18px 15px;
+            min-height: 260px;
+          }
+
+          .testimonial-text {
+            font-size: 0.85rem;
           }
         }
       `}</style>

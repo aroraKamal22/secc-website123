@@ -79,11 +79,14 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background: var(--white);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 -4px 30px rgba(113, 87, 160, 0.15);
   z-index: 1000;
-  padding: 8px 0;
-  padding-bottom: calc(8px + env(safe-area-inset-bottom));
+  padding: 10px 8px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(113, 87, 160, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -96,7 +99,11 @@ a {
     display: none !important;
   }
   body {
-    padding-bottom: 70px;
+    padding-bottom: 75px;
+    overflow-x: hidden;
+  }
+  html {
+    overflow-x: hidden;
   }
 }
 
@@ -107,49 +114,317 @@ a {
   justify-content: center;
   text-decoration: none;
   color: var(--text-gray);
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 4px 12px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 4px 8px;
   transition: all 0.3s ease;
   gap: 4px;
+  border-radius: 12px;
+}
+
+.mobile-bottom-nav .nav-item:active {
+  transform: scale(0.95);
 }
 
 .mobile-bottom-nav .nav-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  background: var(--bg-purple);
+  font-size: 1.15rem;
+  background: linear-gradient(135deg, rgba(113, 87, 160, 0.1), rgba(139, 107, 196, 0.15));
   color: var(--primary);
   position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(113, 87, 160, 0.1);
+}
+
+.mobile-bottom-nav .nav-item:hover .nav-icon {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(113, 87, 160, 0.2);
 }
 
 .mobile-bottom-nav .nav-item.whatsapp .nav-icon {
-  background: #25d366;
+  background: linear-gradient(135deg, #25d366, #128C7E);
   color: white;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .mobile-bottom-nav .nav-item.call .nav-icon {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: white;
+  box-shadow: 0 4px 15px rgba(113, 87, 160, 0.3);
 }
 
 .mobile-bottom-nav .badge-24-7 {
   position: absolute;
-  top: -6px;
-  right: -6px;
-  background: var(--accent);
-  color: var(--primary);
+  top: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, var(--accent), #FFA500);
+  color: #1a1a2e;
   font-size: 0.5rem;
-  font-weight: 700;
-  padding: 2px 4px;
-  border-radius: 6px;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 8px;
   line-height: 1;
+  box-shadow: 0 2px 6px rgba(255, 214, 0, 0.4);
 }
 
 .mobile-bottom-nav .nav-item span:last-child {
   color: var(--text-dark);
+  letter-spacing: 0.3px;
+}
+
+/* ===== Modern Mobile Enhancements ===== */
+@media (max-width: 768px) {
+  /* Smooth scroll for all scrollable elements */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Modern card shadows */
+  .modern-card {
+    box-shadow: 0 4px 20px rgba(113, 87, 160, 0.08);
+    border: 1px solid rgba(113, 87, 160, 0.06);
+  }
+
+  /* Glassmorphism helper class */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Gradient border effect */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(113, 87, 160, 0.3), rgba(255, 214, 0, 0.3));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Active state for touch */
+  button:active,
+  a:active {
+    transform: scale(0.98);
+  }
+
+  /* Section spacing consistency */
+  section {
+    scroll-margin-top: 80px;
+  }
+
+  /* Hide scrollbars but allow scroll */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Pulse animation for CTAs */
+  @keyframes gentle-pulse {
+    0%, 100% {
+      box-shadow: 0 4px 20px rgba(113, 87, 160, 0.3);
+    }
+    50% {
+      box-shadow: 0 4px 30px rgba(113, 87, 160, 0.5);
+    }
+  }
+
+  /* Floating animation */
+  @keyframes float-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  /* Shimmer loading effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+/* ===== Enhanced Touch Feedback ===== */
+@media (max-width: 768px) {
+  /* Ripple effect for buttons */
+  .touch-ripple {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .touch-ripple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .touch-ripple:active::after {
+    opacity: 1;
+  }
+}
+
+/* ===== Safe Area Support ===== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  @media (max-width: 768px) {
+    body {
+      padding-bottom: calc(75px + env(safe-area-inset-bottom));
+    }
+
+    .mobile-bottom-nav {
+      padding-bottom: calc(10px + env(safe-area-inset-bottom));
+    }
+  }
+}
+
+/* ===== Smooth Page Transitions ===== */
+@media (max-width: 768px) {
+  main {
+    animation: fadeInUp 0.3s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ===== Scroll Indicator for Horizontal Sections ===== */
+@media (max-width: 768px) {
+  .scroll-hint {
+    position: relative;
+  }
+
+  .scroll-hint::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background: linear-gradient(90deg, transparent, rgba(248, 246, 252, 0.9));
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  /* Animated scroll indicator dots */
+  .scroll-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 15px;
+  }
+
+  .scroll-dots span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(113, 87, 160, 0.3);
+  }
+
+  .scroll-dots span.active {
+    width: 20px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7157A0, #8B6BC4);
+  }
+}
+
+/* ===== Modern Card Hover Effects ===== */
+@media (max-width: 768px) {
+  .card-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card-lift:active {
+    transform: scale(0.98) translateY(2px);
+    box-shadow: 0 2px 10px rgba(113, 87, 160, 0.1);
+  }
+}
+
+/* ===== Gradient Text Animation ===== */
+.animated-gradient-text {
+  background: linear-gradient(90deg, #7157A0, #8B6BC4, #FFD600, #7157A0);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-text-shift 4s ease infinite;
+}
+
+@keyframes gradient-text-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ===== Floating Badge Animation ===== */
+@media (max-width: 768px) {
+  .float-badge {
+    animation: float-badge 3s ease-in-out infinite;
+  }
+
+  @keyframes float-badge {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(1deg); }
+    75% { transform: translateY(-3px) rotate(-1deg); }
+  }
+}
+
+/* ===== Improved Focus States for Accessibility ===== */
+@media (max-width: 768px) {
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #7157A0;
+    outline-offset: 2px;
+  }
+}
+
+/* ===== Skeleton Loading Animation ===== */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }

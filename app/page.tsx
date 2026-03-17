@@ -11,7 +11,7 @@ import {
   VideoGallery,
   BlogSection,
   CTASection,
-  StatsSection,
+  // StatsSection,
   InsuranceLogos,
 } from '@/components/home';
 
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <HeroSlider />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <AboutSection />
       <DoctorCards />
       <ServicesGrid />

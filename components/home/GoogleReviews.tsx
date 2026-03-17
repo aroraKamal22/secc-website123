@@ -382,33 +382,162 @@ export default function GoogleReviews() {
         @media (max-width: 900px) {
           .reviews-grid {
             grid-template-columns: 1fr;
+            gap: 20px;
           }
           .rating-card {
-            max-width: 320px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 30px 25px;
           }
           .stats-grid {
-            max-width: 500px;
+            max-width: 100%;
             margin: 0 auto;
           }
-          .reviews-header h2 { font-size: 2.2rem; }
+          .reviews-header h2 {
+            font-size: 2rem;
+          }
         }
 
-        @media (max-width: 550px) {
+        @media (max-width: 768px) {
           .reviews-section {
-            padding: 40px 15px 20px;
+            padding: 40px 15px 25px;
           }
+
+          .reviews-header {
+            margin-bottom: 30px;
+          }
+
+          .reviews-header h2 {
+            font-size: 1.8rem;
+          }
+
+          .reviews-header p {
+            font-size: 0.95rem;
+          }
+
+          .section-tag {
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+          }
+
+          .reviews-grid {
+            gap: 15px;
+            margin-bottom: 30px;
+          }
+
+          .rating-card {
+            padding: 25px 20px;
+            border-radius: 20px;
+          }
+
+          .google-logo svg {
+            width: 55px;
+            height: 55px;
+          }
+
+          .score {
+            font-size: 3rem;
+          }
+
+          .stars {
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+          }
+
+          .review-count {
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+          }
+
+          .review-btn {
+            padding: 12px 24px;
+            font-size: 0.9rem;
+            border-radius: 12px;
+          }
+
           .stats-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
           }
+
+          .stat-card {
+            padding: 18px 15px;
+            border-radius: 16px;
+            gap: 12px;
+          }
+
+          .stat-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+          }
+
+          .stat-number {
+            font-size: 1.5rem;
+          }
+
+          .stat-label {
+            font-size: 0.75rem;
+          }
+
           .cta-row {
             flex-direction: column;
-            align-items: center;
+            gap: 10px;
           }
+
           .cta-primary, .cta-secondary {
             width: 100%;
-            max-width: 300px;
             justify-content: center;
+            padding: 14px 28px;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .reviews-section {
+            padding: 35px 12px 20px;
+          }
+
+          .reviews-header h2 {
+            font-size: 1.5rem;
+          }
+
+          .rating-card {
+            padding: 20px 16px;
+          }
+
+          .google-logo svg {
+            width: 45px;
+            height: 45px;
+          }
+
+          .score {
+            font-size: 2.5rem;
+          }
+
+          .stars {
+            font-size: 1rem;
+          }
+
+          .stat-card {
+            padding: 14px 12px;
+            flex-direction: column;
+            text-align: center;
+            gap: 8px;
+          }
+
+          .stat-icon {
+            width: 44px;
+            height: 44px;
+          }
+
+          .stat-number {
+            font-size: 1.3rem;
+          }
+
+          .stat-label {
+            font-size: 0.7rem;
           }
         }
       `}</style>

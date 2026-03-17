@@ -459,7 +459,7 @@ export default function WhyChooseUs() {
         @media (max-width: 1100px) {
           .why-container {
             grid-template-columns: 1fr;
-            gap: 60px;
+            gap: 50px;
           }
           .why-visual {
             max-width: 550px;
@@ -477,47 +477,226 @@ export default function WhyChooseUs() {
           }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 768px) {
           .why-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
+            overflow-x: hidden;
           }
-          .why-content h2 { font-size: 2rem; }
-          .features-grid { grid-template-columns: 1fr; }
+
+          .why-container {
+            gap: 35px;
+          }
+
+          .section-tag {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+          }
+
+          .why-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+          }
+
+          .section-desc {
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+          }
+
+          .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+          }
+
+          .feature-card {
+            padding: 12px;
+            border-radius: 12px;
+            flex-direction: column;
+            text-align: center;
+            gap: 8px;
+          }
+
+          .feature-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            margin: 0 auto;
+          }
+
+          .feature-text h4 {
+            font-size: 0.8rem;
+          }
+
+          .feature-text p {
+            font-size: 0.7rem;
+            line-height: 1.3;
+          }
+
+          .why-visual {
+            order: -1;
+          }
+
           .visual-wrapper {
             height: auto;
-            min-height: 450px;
+            min-height: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
           }
+
           .main-image {
             position: relative;
-            height: 280px;
+            height: 200px;
             width: 100%;
             top: 0;
+            border-radius: 16px;
+            overflow: hidden;
           }
+
           .nabh-badge {
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-          }
-          .experience-badge {
-            position: absolute;
-            bottom: auto;
-            top: 260px;
-            right: 15px;
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
             padding: 12px 16px;
+            border-radius: 12px;
+            gap: 10px;
+            align-self: flex-start;
+            display: inline-flex;
           }
-          .exp-number { font-size: 1.5rem; }
+
+          .nabh-badge :global(img) {
+            width: 35px !important;
+            height: 35px !important;
+          }
+
+          .nabh-title {
+            font-size: 0.9rem;
+          }
+
+          .nabh-subtitle {
+            font-size: 0.7rem;
+          }
+
+          .experience-badge {
+            display: none;
+          }
+
           .stats-card {
             position: relative;
-            margin-top: 30px;
+            margin-top: 0;
             width: 100%;
+            padding: 16px;
+            border-radius: 14px;
           }
-          .deco-ring, .deco-dots { display: none; }
+
+          .stats-grid {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+          }
+
+          .stat-number {
+            font-size: 1.2rem;
+          }
+
+          .stat-label {
+            font-size: 0.55rem;
+          }
+
+          .deco-ring, .deco-dots {
+            display: none;
+          }
+
           .cta-buttons {
             flex-direction: column;
+            gap: 10px;
           }
+
           .btn-primary, .btn-secondary {
             width: 100%;
             justify-content: center;
+            padding: 14px 24px;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .why-section {
+            padding: 30px 12px;
+          }
+
+          .why-container {
+            gap: 25px;
+          }
+
+          .why-content h2 {
+            font-size: 1.4rem;
+          }
+
+          .section-desc {
+            font-size: 0.85rem;
+          }
+
+          .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+          }
+
+          .feature-card {
+            padding: 10px;
+          }
+
+          .feature-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 0.85rem;
+          }
+
+          .feature-text h4 {
+            font-size: 0.75rem;
+          }
+
+          .feature-text p {
+            font-size: 0.65rem;
+          }
+
+          .main-image {
+            height: 160px;
+          }
+
+          .nabh-badge {
+            padding: 10px 14px;
+          }
+
+          .nabh-badge :global(img) {
+            width: 30px !important;
+            height: 30px !important;
+          }
+
+          .stats-card {
+            padding: 14px;
+          }
+
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+          }
+
+          .stat-item {
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+          }
+
+          .stat-number {
+            font-size: 1rem;
+          }
+
+          .stat-label {
+            font-size: 0.5rem;
           }
         }
       `}</style>

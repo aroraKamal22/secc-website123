@@ -385,19 +385,60 @@ export default function AboutSection() {
 
         @media (max-width: 768px) {
           .about-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
+          }
+
+          .about-container {
+            gap: 40px;
           }
 
           .about-title {
-            font-size: 2.2rem;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+          }
+
+          .about-desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 15px;
+          }
+
+          .section-tag {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
           }
 
           .features-grid {
             grid-template-columns: 1fr;
+            gap: 12px;
+            margin: 25px 0;
+          }
+
+          .feature-card {
+            padding: 16px;
+            border-radius: 14px;
+            gap: 12px;
+          }
+
+          .feature-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            font-size: 1rem;
+          }
+
+          .feature-info h4 {
+            font-size: 0.9rem;
+          }
+
+          .feature-info p {
+            font-size: 0.8rem;
           }
 
           .image-main {
-            height: 350px;
+            height: 280px;
+            border-radius: 20px;
           }
 
           .image-secondary {
@@ -410,19 +451,65 @@ export default function AboutSection() {
 
           .experience-badge {
             top: auto;
-            bottom: -30px;
+            bottom: -25px;
             left: 50%;
             transform: translateX(-50%);
-            padding: 20px 25px;
+            padding: 15px 20px;
+            border-radius: 14px;
+          }
+
+          .exp-number {
+            font-size: 2rem;
+          }
+
+          .exp-text {
+            font-size: 0.8rem;
           }
 
           .about-cta {
             flex-direction: column;
+            gap: 10px;
           }
 
           .btn-primary, .btn-outline {
             width: 100%;
             justify-content: center;
+            padding: 14px 24px;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .about-section {
+            padding: 35px 12px;
+          }
+
+          .about-title {
+            font-size: 1.5rem;
+          }
+
+          .about-desc {
+            font-size: 0.9rem;
+          }
+
+          .image-main {
+            height: 220px;
+          }
+
+          .features-grid {
+            gap: 10px;
+          }
+
+          .feature-card {
+            padding: 14px;
+          }
+
+          .experience-badge {
+            padding: 12px 16px;
+          }
+
+          .exp-number {
+            font-size: 1.7rem;
           }
         }
       `}</style>

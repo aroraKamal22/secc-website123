@@ -575,31 +575,99 @@ export default function HeroSlider() {
 
         @media (max-width: 768px) {
           .hero-section {
-            padding: 100px 15px 60px;
+            padding: 100px 15px 40px;
             min-height: auto;
           }
 
+          .hero-container {
+            gap: 25px;
+          }
+
           .title-line {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+          }
+
+          /* Make gradient text visible on mobile - white with golden underline */
+          .gradient-text {
+            background: none !important;
+            -webkit-background-clip: unset !important;
+            -webkit-text-fill-color: #ffffff !important;
+            background-clip: unset !important;
+            color: #ffffff !important;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 4px;
+            border-bottom: 3px solid #FFD600;
           }
 
           .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+          }
+
+          .hero-description {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
           }
 
           .trust-stats {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: 16px;
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+          }
+
+          .stat {
+            flex: 1;
+            min-width: 80px;
             flex-direction: column;
-            gap: 15px;
-            padding: 20px;
+            text-align: center;
+            gap: 4px;
+            padding: 8px 4px;
+            position: relative;
+          }
+
+          /* Subtle divider between stats */
+          .stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: rgba(255, 255, 255, 0.2);
           }
 
           .stat-divider {
-            width: 80%;
-            height: 1px;
+            display: none;
+          }
+
+          .stat-value {
+            font-size: 1.5rem;
+          }
+
+          .stat-info {
+            align-items: center;
+          }
+
+          .stars {
+            font-size: 0.6rem;
+          }
+
+          .stat-label {
+            font-size: 0.65rem;
+            text-align: center;
           }
 
           .main-image {
-            height: 280px;
+            height: 200px;
             max-width: 100%;
           }
 
@@ -610,57 +678,149 @@ export default function HeroSlider() {
           .nabh-badge span {
             font-size: 0.85rem;
           }
+
+          .badge-wrapper {
+            margin-bottom: 15px;
+          }
+
+          .badge {
+            animation: float-subtle 3s ease-in-out infinite;
+          }
+
+          @keyframes float-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+          }
+
+          .feature-pills {
+            margin-bottom: 20px;
+          }
+
+          .hero-cta {
+            margin-bottom: 25px;
+          }
+
+          /* Enhanced button styles for mobile */
+          .btn-primary {
+            position: relative;
+            overflow: hidden;
+          }
+
+          .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: btn-shine 2s infinite;
+          }
+
+          @keyframes btn-shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+          }
         }
 
         @media (max-width: 480px) {
           .hero-section {
-            padding: 90px 15px 50px;
+            padding: 90px 12px 35px;
+          }
+
+          .hero-container {
+            gap: 20px;
           }
 
           .title-line {
-            font-size: 2rem;
+            font-size: 1.75rem;
           }
 
           .badge {
-            font-size: 11px;
-            padding: 8px 14px;
+            font-size: 10px;
+            padding: 8px 12px;
+            gap: 6px;
+          }
+
+          .badge-dot {
+            width: 6px;
+            height: 6px;
           }
 
           .feature-pills {
-            gap: 8px;
+            gap: 6px;
+            justify-content: center;
           }
 
           .pill {
-            padding: 8px 14px;
-            font-size: 0.8rem;
+            padding: 6px 12px;
+            font-size: 0.75rem;
+            border-radius: 30px;
+          }
+
+          .pill i {
+            font-size: 0.7rem;
           }
 
           .hero-cta {
             flex-direction: column;
             width: 100%;
+            gap: 10px;
           }
 
           .btn-primary, .btn-secondary {
             width: 100%;
             justify-content: center;
-            padding: 15px 25px;
+            padding: 14px 20px;
+            font-size: 0.9rem;
+            border-radius: 14px;
           }
 
           .main-image {
-            height: 220px;
+            height: 180px;
             border-radius: 16px;
           }
 
           .trust-stats {
-            padding: 15px;
+            padding: 12px 8px;
+            border-radius: 14px;
+          }
+
+          .stat {
+            padding: 6px 2px;
           }
 
           .stat-value {
-            font-size: 1.6rem;
+            font-size: 1.3rem;
           }
 
           .stat-label {
-            font-size: 0.75rem;
+            font-size: 0.6rem;
+          }
+
+          .hero-subtitle {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+          }
+
+          .hero-description {
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .title-line {
+            font-size: 1.5rem;
+          }
+
+          .pill {
+            padding: 5px 10px;
+            font-size: 0.7rem;
+          }
+
+          .stat-value {
+            font-size: 1.1rem;
           }
         }
       `}</style>

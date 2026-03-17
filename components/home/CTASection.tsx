@@ -366,28 +366,126 @@ export default function CTASection() {
           }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 768px) {
           .cta-section {
-            padding: 50px 15px;
+            padding: 40px 15px;
           }
-          .commit-content {
-            flex-direction: column;
-            text-align: center;
+
+          .section-tag {
+            padding: 8px 18px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
           }
-          .commit-text {
-            text-align: center;
+
+          .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
           }
-          .commit-text h2 {
-            font-size: 1.5rem;
+
+          .cta-section p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            line-height: 1.7;
           }
+
           .cta-buttons {
             flex-direction: column;
             align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
           }
+
           .btn-primary, .btn-secondary {
             width: 100%;
-            max-width: 300px;
+            max-width: 320px;
             justify-content: center;
+            padding: 14px 28px;
+            font-size: 1rem;
+            border-radius: 14px;
+          }
+
+          .contact-cards {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+            gap: 12px;
+          }
+
+          .contact-card {
+            padding: 18px 20px;
+            border-radius: 16px;
+            gap: 14px;
+          }
+
+          .contact-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+          }
+
+          .contact-label {
+            font-size: 0.75rem;
+          }
+
+          .contact-value {
+            font-size: 0.95rem;
+          }
+
+          /* Commitment Banner Mobile */
+          .commit-banner {
+            padding: 35px 15px;
+          }
+
+          .commit-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+          }
+
+          .commit-text {
+            text-align: center;
+          }
+
+          .commit-text h2 {
+            font-size: 1.3rem;
+            line-height: 1.4;
+          }
+
+          .commit-text p {
+            font-size: 0.9rem;
+          }
+
+          .commit-btn {
+            width: 100%;
+            padding: 14px 30px;
+            font-size: 0.9rem;
+            border-radius: 14px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cta-section {
+            padding: 35px 12px;
+          }
+
+          .cta-section h2 {
+            font-size: 1.5rem;
+          }
+
+          .cta-section p {
+            font-size: 0.9rem;
+          }
+
+          .contact-card {
+            padding: 14px 16px;
+          }
+
+          .contact-icon {
+            width: 44px;
+            height: 44px;
+          }
+
+          .commit-text h2 {
+            font-size: 1.15rem;
           }
         }
       `}</style>
