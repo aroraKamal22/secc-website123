@@ -13,8 +13,9 @@ const categories = [
 ];
 
 const galleryImages = [
+  { src: '/frontimage.png', title: 'Hospital Exterior', description: 'Saraswati Eye Care Centre Building', category: 'facility' },
   { src: '/images/front11.JPG', title: 'Saraswati Eye Care Centre', description: 'Our Modern Healthcare Facility', category: 'facility' },
-  { src: '/images/fronteView1.jpg', title: 'Hospital Exterior', description: 'State-of-the-art Infrastructure', category: 'facility' },
+  { src: '/frontimage.png', title: 'Main Entrance', description: 'State-of-the-art Infrastructure', category: 'facility' },
   { src: '/images/AdvancedMachine.jpg', title: 'Advanced Diagnostic Equipment', description: 'Latest Medical Technology', category: 'equipment' },
   { src: '/images/media4.png', title: 'Operation Theatre', description: 'Modern Surgical Suite', category: 'facility' },
   { src: '/images/media5.png', title: 'Diagnostic Center', description: 'Comprehensive Eye Testing', category: 'equipment' },

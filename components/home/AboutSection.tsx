@@ -35,11 +35,11 @@ export default function AboutSection() {
           <div className="image-stack">
             <div className="image-main">
               <Image
-                src="/images/Front.JPG"
+                src="/frontimage.png"
                 alt="Saraswati Eye Care Centre Building"
                 fill
                 quality={90}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'contain' }}
               />
             </div>
             <div className="image-secondary">

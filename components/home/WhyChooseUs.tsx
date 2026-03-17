@@ -104,11 +104,11 @@ export default function WhyChooseUs() {
             {/* Main Image */}
             <div className="main-image">
               <Image
-                src="/images/Front.JPG"
+                src="/frontimage.png"
                 alt="Saraswati Eye Care Centre"
                 fill
                 quality={90}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'contain' }}
               />
               <div className="image-overlay"></div>
             </div>

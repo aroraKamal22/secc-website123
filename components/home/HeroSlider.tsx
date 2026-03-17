@@ -101,47 +101,14 @@ export default function HeroSlider() {
             {/* Main Image - Hospital Building */}
             <div className="main-image">
               <Image
-                src="/images/Front.JPG"
+                src="/frontimage.png"
                 alt="Saraswati Eye Care Centre"
                 fill
                 className="hospital-img"
                 priority
               />
-              <div className="image-overlay"></div>
             </div>
 
-            {/* Floating Elements */}
-            <div className="float-card card-1">
-              <div className="card-icon">
-                <i className="fas fa-eye"></i>
-              </div>
-              <div className="card-content">
-                <span className="card-number">25000+</span>
-                <span className="card-label">Successful Surgeries</span>
-              </div>
-            </div>
-
-            <div className="float-card card-2">
-              <div className="card-icon green">
-                <i className="fas fa-check-circle"></i>
-              </div>
-              <div className="card-content">
-                <span className="card-title">Expert Care</span>
-                <span className="card-label">Latest Technology</span>
-              </div>
-            </div>
-
-            {/* NABH Badge */}
-            <div className="nabh-badge">
-              <Image
-                src="/images/nabhLOGO.png"
-                alt="NABH Certified"
-                width={50}
-                height={50}
-                style={{ objectFit: 'contain' }}
-              />
-              <span>NABH</span>
-            </div>
           </div>
         </div>
       </div>
@@ -448,23 +415,18 @@ export default function HeroSlider() {
         .main-image {
           position: relative;
           width: 100%;
-          height: 450px;
-          border-radius: 24px;
-          overflow: hidden;
-          box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
-          background: linear-gradient(135deg, #5a4080 0%, #7157A0 100%);
+          height: 500px;
+          border-radius: 0;
+          overflow: visible;
+          box-shadow: none;
+          background: transparent;
         }
 
         .main-image :global(.hospital-img) {
-          object-fit: cover;
+          object-fit: contain;
           object-position: center;
         }
 
-        .image-overlay {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(180deg, transparent 50%, rgba(113, 87, 160, 0.3) 100%);
-        }
 
         /* Floating Cards */
         .float-card {

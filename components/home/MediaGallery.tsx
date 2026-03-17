@@ -5,9 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const galleryItems = [
-  { src: '/images/Front.JPG', title: 'Hospital Building', icon: 'fa-hospital' },
-  { src: '/images/front11.JPG', title: 'Front View', icon: 'fa-building' },
-  { src: '/images/fronteView1.jpg', title: 'Main Entrance', icon: 'fa-door-open' },
+  { src: '/frontimage.png', title: 'Hospital Exterior', icon: 'fa-hospital' },
+  { src: '/frontimage.png', title: 'Main Entrance', icon: 'fa-door-open' },
   { src: '/images/Reception.png', title: 'Reception Area', icon: 'fa-concierge-bell' },
   { src: '/images/AdvancedMachine.jpg', title: 'Advanced Equipment', icon: 'fa-microscope' },
   { src: '/images/media4.png', title: 'Treatment Room', icon: 'fa-procedures' },
