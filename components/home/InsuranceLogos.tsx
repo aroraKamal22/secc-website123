@@ -42,7 +42,7 @@ export default function InsuranceLogos() {
       <div className="badges-row">
         <div className="badge">
           <i className="fas fa-check-circle"></i>
-          <span>NABH Certified</span>
+          <span>NABH Accredited</span>
         </div>
         <div className="badge">
           <i className="fas fa-check-circle"></i>

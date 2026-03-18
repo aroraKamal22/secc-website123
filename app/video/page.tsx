@@ -50,6 +50,18 @@ const videos = [
     description: 'Take a virtual tour of our state-of-the-art facility and meet our expert team',
     videoId: 'e80ZY4bwvQE',
   },
+  {
+    id: 8,
+    title: 'Myopia – Is Your Vision At Risk?',
+    doctor: 'Dr. Khushboo Gupta',
+    videoId: 'cAtNadhm0Uc',
+  },
+  {
+    id: 9,
+    title: 'जब LASIK Surgery संभव न हो, तो घबराने की आवश्यकता नहीं',
+    doctor: 'Dr. Rajesh Garg',
+    videoId: '0XILC7RSc0g',
+  },
 ];
 
 export default function VideoPage() {

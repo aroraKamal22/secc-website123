@@ -7,9 +7,9 @@ import Link from 'next/link';
 const galleryItems = [
   { src: '/frontimage.png', title: 'Hospital Exterior', icon: 'fa-hospital' },
   { src: '/frontimage.png', title: 'Main Entrance', icon: 'fa-door-open' },
-  { src: '/images/Reception.png', title: 'Reception Area', icon: 'fa-concierge-bell' },
-  { src: '/images/AdvancedMachine.jpg', title: 'Advanced Equipment', icon: 'fa-microscope' },
-  { src: '/images/media4.png', title: 'Treatment Room', icon: 'fa-procedures' },
+  { src: '/images/Reception.png', title: 'Nursing Station', icon: 'fa-concierge-bell' },
+  { src: '/images/AdvancedMachine.jpg', title: 'AI-Based Optical Biometer', icon: 'fa-microscope' },
+  { src: '/images/media4.png', title: 'Refraction Room', icon: 'fa-procedures' },
 ];
 
 export default function MediaGallery() {

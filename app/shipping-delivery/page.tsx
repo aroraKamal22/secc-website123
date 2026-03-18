@@ -72,7 +72,7 @@ export default function ShippingDeliveryPage() {
         <div className="hospital-card">
           <div className="hospital-icon">🏥</div>
           <h2>Saraswati Eye Care Centre, Jind</h2>
-          <p>NABH Certified Hospital | Trusted Delivery of Optical Products & Medications</p>
+          <p>NABH Accredited Hospital | Trusted Delivery of Optical Products & Medications</p>
         </div>
 
         {/* Delivery Overview */}

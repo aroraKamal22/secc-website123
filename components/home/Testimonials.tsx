@@ -89,13 +89,13 @@ export default function Testimonials() {
 
 </p>
           <a
-            href="https://g.page/r/CcGjKywuRqrPEAE/review"
+            href="https://www.google.com/maps/place/Saraswati+Eye+Care+Centre/@29.3139692,76.3253288,17z/data=!4m8!3m7!1s0x391204530f997803:0xcfaa462e2c2ba3c1!8m2!3d29.3139692!4d76.3253288!9m1!1b1!16s%2Fg%2F11d_cxyqmx?entry=ttu"
             target="_blank"
             rel="noopener noreferrer"
             className="write-review-btn"
           >
-            <i className="fas fa-pen"></i>
-            Write a Review
+            <i className="fas fa-star"></i>
+            Read Reviews
           </a>
         </div>
 

@@ -9,7 +9,14 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
-  { href: '/gallery', label: 'Gallery' },
+  {
+    href: '#',
+    label: 'Gallery',
+    dropdown: [
+      { href: '/gallery', label: 'Photo Gallery' },
+      { href: '/video', label: 'Video Gallery' },
+    ]
+  },
   { href: '/blog', label: 'Blog' },
   { href: '/equipment', label: 'Equipments' },
   { href: '/empanelment', label: 'Empanelment' },
@@ -142,11 +149,34 @@ export default function Header() {
           {/* Desktop Nav */}
           <nav className="desktop-nav" style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} style={{
-                color: '#444', fontWeight: 500, fontSize: '0.95rem',
-                padding: '10px 14px', borderRadius: '8px', textDecoration: 'none',
-                transition: 'all 0.3s'
-              }} className="nav-link">{link.label}</Link>
+              link.dropdown ? (
+                <div key={link.label} className="nav-dropdown">
+                  <span className="nav-link dropdown-trigger" style={{
+                    color: '#444', fontWeight: 500, fontSize: '0.95rem',
+                    padding: '10px 14px', borderRadius: '8px',
+                    transition: 'all 0.3s', cursor: 'pointer',
+                    display: 'flex', alignItems: 'center', gap: '4px'
+                  }}>
+                    {link.label}
+                    <svg width="12" height="12" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  <div className="dropdown-menu">
+                    {link.dropdown.map((subLink) => (
+                      <Link key={subLink.href} href={subLink.href} className="dropdown-item">
+                        {subLink.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link key={link.href} href={link.href} style={{
+                  color: '#444', fontWeight: 500, fontSize: '0.95rem',
+                  padding: '10px 14px', borderRadius: '8px', textDecoration: 'none',
+                  transition: 'all 0.3s'
+                }} className="nav-link">{link.label}</Link>
+              )
             ))}
           </nav>
 
@@ -198,6 +228,46 @@ export default function Header() {
           transition: all 0.3s ease;
         }
         .nav-link:hover { color: #7157A0 !important; background: rgba(113, 87, 160, 0.08) !important; }
+        .nav-dropdown {
+          position: relative;
+        }
+        .dropdown-trigger {
+          display: flex;
+          align-items: center;
+        }
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background: white;
+          border-radius: 12px;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+          min-width: 160px;
+          padding: 8px 0;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(10px);
+          transition: all 0.3s ease;
+          z-index: 100;
+        }
+        .nav-dropdown:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .dropdown-item {
+          display: block;
+          padding: 10px 20px;
+          color: #444;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: 500;
+          transition: all 0.2s;
+        }
+        .dropdown-item:hover {
+          background: rgba(113, 87, 160, 0.1);
+          color: #7157A0;
+        }
         .email-short { display: none; }
         .email-full { display: inline; }
         @media (max-width: 1024px) {

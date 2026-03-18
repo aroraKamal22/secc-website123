@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Saraswati Eye Care Centre | Best Eye Hospital in Jind, Haryana",
   description: "Saraswati Eye Care Centre is a NABH-certified super-speciality eye hospital in Jind, Haryana. We offer advanced cataract surgery, retina services, glaucoma treatment, pediatric ophthalmology, and more.",
-  keywords: "eye hospital, eye care, cataract surgery, retina specialist, glaucoma treatment, pediatric ophthalmology, NABH certified, Jind, Haryana",
+  keywords: "eye hospital, eye care, cataract surgery, retina specialist, glaucoma treatment, pediatric ophthalmology, NABH accredited, Jind, Haryana",
   authors: [{ name: "Saraswati Eye Care Centre" }],
   openGraph: {
     title: "Saraswati Eye Care Centre",

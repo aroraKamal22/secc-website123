@@ -115,7 +115,7 @@ const services = [
       'Blue-light filtering and Aspheric IOLs',
     ],
     features: [
-      'R-Evolution Phacoemulsification Machine (Italian technology)',
+      'R-Evolution Phacoemulsification Vision System (Italian technology)',
       'Anterion Optical Biometry for accurate IOL calculation',
       'NABH-certified Modular Operation Theatres',
       'Full-time anaesthesiologist for safety',
@@ -273,7 +273,6 @@ const services = [
     ],
     treatments: [
       'Atropine Eye Drops Therapy',
-      'Orthokeratology (Ortho-K) - overnight contact lenses',
       'Multifocal Contact Lenses',
       'Specialized Myopia Control Glasses',
       'Regular Vision Monitoring',
@@ -419,8 +418,8 @@ export default function ServicesPage() {
                 <div className="why-feature">
                   <div className="feature-icon">🏆</div>
                   <div className="feature-content">
-                    <strong>NABH Certified</strong>
-                    <span>First certified eye hospital in Jind district</span>
+                    <strong>NABH Accredited</strong>
+                    <span>First NABH Accredited eye hospital in Jind district</span>
                   </div>
                 </div>
                 <div className="why-feature">

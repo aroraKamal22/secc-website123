@@ -3,9 +3,15 @@
 import Link from 'next/link';
 import { useEffect } from 'react';
 
+interface DropdownLink {
+  href: string;
+  label: string;
+}
+
 interface NavLink {
   href: string;
   label: string;
+  dropdown?: DropdownLink[];
 }
 
 interface MobileMenuProps {
@@ -60,19 +66,37 @@ export default function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProp
       {/* Navigation Links */}
       <nav className="flex flex-col items-center gap-4 w-full max-w-[400px] px-6">
         {navLinks.map((link, index) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            onClick={onClose}
-            className="w-full max-w-[300px] text-white text-xl font-semibold py-4 px-8 rounded-full bg-white/10 border border-white/20 text-center hover:bg-white/20 hover:-translate-y-1 hover:shadow-lg transition-all"
-            style={{
-              animation: `fadeInUp 0.5s ease-out forwards`,
-              animationDelay: `${index * 0.1}s`,
-              opacity: 0,
-            }}
-          >
-            {link.label}
-          </Link>
+          link.dropdown ? (
+            link.dropdown.map((subLink, subIndex) => (
+              <Link
+                key={subLink.href}
+                href={subLink.href}
+                onClick={onClose}
+                className="w-full max-w-[300px] text-white text-xl font-semibold py-4 px-8 rounded-full bg-white/10 border border-white/20 text-center hover:bg-white/20 hover:-translate-y-1 hover:shadow-lg transition-all"
+                style={{
+                  animation: `fadeInUp 0.5s ease-out forwards`,
+                  animationDelay: `${(index + subIndex) * 0.1}s`,
+                  opacity: 0,
+                }}
+              >
+                {subLink.label}
+              </Link>
+            ))
+          ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={onClose}
+              className="w-full max-w-[300px] text-white text-xl font-semibold py-4 px-8 rounded-full bg-white/10 border border-white/20 text-center hover:bg-white/20 hover:-translate-y-1 hover:shadow-lg transition-all"
+              style={{
+                animation: `fadeInUp 0.5s ease-out forwards`,
+                animationDelay: `${index * 0.1}s`,
+                opacity: 0,
+              }}
+            >
+              {link.label}
+            </Link>
+          )
         ))}
       </nav>
 

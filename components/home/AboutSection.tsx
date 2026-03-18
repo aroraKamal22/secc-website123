@@ -6,7 +6,7 @@ import Image from 'next/image';
 const features = [
   {
     icon: 'fa-certificate',
-    title: 'NABH Certified',
+    title: 'NABH Accredited',
     desc: 'First certified eye hospital in Jind district'
   },
   {
@@ -35,19 +35,11 @@ export default function AboutSection() {
           <div className="image-stack">
             <div className="image-main">
               <Image
-                src="/frontimage.png"
-                alt="Saraswati Eye Care Centre Building"
+                src="/images/front11.JPG"
+                alt="Saraswati Eye Care Centre - Our Modern Healthcare Facility"
                 fill
                 quality={90}
-                style={{ objectFit: 'contain' }}
-              />
-            </div>
-            <div className="image-secondary">
-              <Image
-                src="/images/sarswati_rajesh.png"
-                alt="Dr. Rajesh Garg"
-                fill
-                style={{ objectFit: 'contain' }}
+                style={{ objectFit: 'cover' }}
               />
             </div>
           </div>
@@ -145,22 +137,10 @@ export default function AboutSection() {
           box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
         }
 
-        .image-secondary {
-          position: absolute;
-          width: 200px;
-          height: 250px;
-          bottom: -40px;
-          right: -40px;
-          border-radius: 24px;
-          overflow: hidden;
-          background: linear-gradient(135deg, #7157A0, #9b7bc7);
-          padding: 10px;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
 
         .experience-badge {
           position: absolute;
-          top: 30px;
+          top: -40px;
           left: -30px;
           background: linear-gradient(135deg, #FFD600, #FFA500);
           padding: 25px 30px;
@@ -371,12 +351,6 @@ export default function AboutSection() {
             margin: 0 auto;
           }
 
-          .image-secondary {
-            width: 160px;
-            height: 200px;
-            right: -20px;
-            bottom: -20px;
-          }
 
           .experience-badge {
             left: -10px;
@@ -441,9 +415,6 @@ export default function AboutSection() {
             border-radius: 20px;
           }
 
-          .image-secondary {
-            display: none;
-          }
 
           .deco-dots, .deco-circle {
             display: none;

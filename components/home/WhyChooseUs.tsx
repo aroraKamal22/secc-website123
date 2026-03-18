@@ -7,8 +7,8 @@ const features = [
   {
     id: 1,
     icon: 'fa-certificate',
-    title: 'NABH Certified',
-    desc: 'First NABH certified eye hospital in Jind district',
+    title: 'NABH Accredited',
+    desc: 'First NABH Accredited eye hospital in Jind district',
     color: '#10B981',
   },
   {
@@ -43,7 +43,7 @@ const features = [
     id: 6,
     icon: 'fa-star',
     title: '4.9 Google Rating',
-    desc: 'Trusted by 50,000+ happy patients',
+    desc: 'Highest Google Reviewed Eye Hospital in Jind',
     color: '#06B6D4',
   },
 ];
@@ -117,7 +117,7 @@ export default function WhyChooseUs() {
             <div className="nabh-badge">
               <Image
                 src="/images/nabhLOGO.png"
-                alt="NABH Certified"
+                alt="NABH Accredited"
                 width={60}
                 height={60}
                 quality={100}
@@ -125,7 +125,7 @@ export default function WhyChooseUs() {
               />
               <div className="nabh-text">
                 <span className="nabh-title">NABH</span>
-                <span className="nabh-subtitle">Certified</span>
+                <span className="nabh-subtitle">Accredited</span>
               </div>
             </div>
 
@@ -177,11 +177,11 @@ export default function WhyChooseUs() {
           gap: 10px;
           background: rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(10px);
-          padding: 10px 24px;
+          padding: 12px 28px;
           border-radius: 50px;
-          font-size: 0.9rem;
+          font-size: 1.6rem;
           color: white;
-          font-weight: 600;
+          font-weight: 700;
           text-transform: uppercase;
           letter-spacing: 1px;
           margin-bottom: 20px;
@@ -195,8 +195,8 @@ export default function WhyChooseUs() {
         }
 
         .why-content h2 {
-          font-size: 2.8rem;
-          font-weight: 800;
+          font-size: 2.2rem;
+          font-weight: 700;
           color: white;
           margin: 0 0 20px;
           line-height: 1.2;

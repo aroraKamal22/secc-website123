@@ -76,7 +76,7 @@ const benefits = [
 ];
 
 const whyJoinUs = [
-  { number: '01', title: 'NABH Certified', desc: 'Work at a nationally accredited healthcare facility' },
+  { number: '01', title: 'NABH Accredited', desc: 'Work at a nationally accredited healthcare facility' },
   { number: '02', title: 'Modern Equipment', desc: 'Access to state-of-the-art medical technology' },
   { number: '03', title: 'Expert Team', desc: 'Learn from experienced specialists' },
   { number: '04', title: 'Patient Impact', desc: 'Make a real difference in people\'s lives' },

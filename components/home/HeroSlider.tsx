@@ -5,11 +5,13 @@ import Image from 'next/image';
 export default function HeroSlider() {
   return (
     <section className="hero-section">
-      {/* Animated Background */}
+      {/* Animated Sky Background with Clouds */}
       <div className="hero-bg">
-        <div className="gradient-orb orb-1"></div>
-        <div className="gradient-orb orb-2"></div>
-        <div className="gradient-orb orb-3"></div>
+        <div className="cloud cloud-1"></div>
+        <div className="cloud cloud-2"></div>
+        <div className="cloud cloud-3"></div>
+        <div className="cloud cloud-4"></div>
+        <div className="cloud cloud-5"></div>
       </div>
 
       <div className="hero-container">
@@ -18,7 +20,7 @@ export default function HeroSlider() {
           <div className="badge-wrapper">
             <div className="badge">
               <span className="badge-dot"></span>
-              <span>NABH Certified Eye Hospital in Jind</span>
+              <span>First NABH Accredited Eye Hospital in Jind</span>
             </div>
           </div>
 
@@ -39,7 +41,7 @@ export default function HeroSlider() {
           <div className="feature-pills">
             <div className="pill">
               <i className="fas fa-certificate"></i>
-              NABH Certified
+              NABH Accredited
             </div>
             <div className="pill">
               <i className="fas fa-hand-holding-medical"></i>
@@ -119,65 +121,149 @@ export default function HeroSlider() {
           min-height: 100vh;
           display: flex;
           align-items: center;
-          background: linear-gradient(135deg, #7157A0 0%, #5a4080 50%, #8B6BC4 100%);
+          background: linear-gradient(180deg, #87CEEB 0%, #B0E0E6 30%, #E0F4FF 60%, #F0F9FF 100%);
           overflow: hidden;
           padding: 120px 20px 80px;
         }
 
-        /* Animated Background */
+        /* Sky Background with Clouds */
         .hero-bg {
           position: absolute;
           inset: 0;
           overflow: hidden;
         }
 
-        .gradient-orb {
+        .cloud {
           position: absolute;
+          background: white;
+          border-radius: 100px;
+          opacity: 0.9;
+          box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
+        }
+
+        .cloud::before,
+        .cloud::after {
+          content: '';
+          position: absolute;
+          background: white;
           border-radius: 50%;
-          filter: blur(120px);
-          opacity: 0.4;
         }
 
-        .orb-1 {
-          width: 500px;
-          height: 500px;
-          background: rgba(255, 255, 255, 0.2);
-          top: -150px;
-          left: -150px;
-          animation: float1 15s ease-in-out infinite;
+        .cloud-1 {
+          width: 200px;
+          height: 60px;
+          top: 10%;
+          left: -200px;
+          animation: cloud-move 25s linear infinite;
+        }
+        .cloud-1::before {
+          width: 80px;
+          height: 80px;
+          top: -40px;
+          left: 30px;
+        }
+        .cloud-1::after {
+          width: 100px;
+          height: 100px;
+          top: -50px;
+          left: 80px;
         }
 
-        .orb-2 {
-          width: 400px;
-          height: 400px;
-          background: linear-gradient(135deg, #FFD600, #FFA500);
-          bottom: -100px;
-          right: -100px;
-          animation: float2 12s ease-in-out infinite;
+        .cloud-2 {
+          width: 160px;
+          height: 50px;
+          top: 20%;
+          left: -160px;
+          animation: cloud-move 30s linear infinite;
+          animation-delay: 5s;
+          opacity: 0.8;
+        }
+        .cloud-2::before {
+          width: 60px;
+          height: 60px;
+          top: -30px;
+          left: 20px;
+        }
+        .cloud-2::after {
+          width: 80px;
+          height: 80px;
+          top: -40px;
+          left: 60px;
         }
 
-        .orb-3 {
-          width: 300px;
-          height: 300px;
-          background: rgba(255, 255, 255, 0.15);
-          top: 50%;
-          left: 50%;
-          animation: float3 10s ease-in-out infinite;
+        .cloud-3 {
+          width: 180px;
+          height: 55px;
+          top: 35%;
+          left: -180px;
+          animation: cloud-move 35s linear infinite;
+          animation-delay: 10s;
+          opacity: 0.7;
+        }
+        .cloud-3::before {
+          width: 70px;
+          height: 70px;
+          top: -35px;
+          left: 25px;
+        }
+        .cloud-3::after {
+          width: 90px;
+          height: 90px;
+          top: -45px;
+          left: 70px;
         }
 
-        @keyframes float1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(50px, 50px) scale(1.1); }
+        .cloud-4 {
+          width: 140px;
+          height: 45px;
+          top: 5%;
+          right: 20%;
+          animation: cloud-float 8s ease-in-out infinite;
+          opacity: 0.85;
+        }
+        .cloud-4::before {
+          width: 50px;
+          height: 50px;
+          top: -25px;
+          left: 15px;
+        }
+        .cloud-4::after {
+          width: 70px;
+          height: 70px;
+          top: -35px;
+          left: 50px;
         }
 
-        @keyframes float2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-30px, -30px) scale(1.05); }
+        .cloud-5 {
+          width: 120px;
+          height: 40px;
+          top: 25%;
+          right: 10%;
+          animation: cloud-float 10s ease-in-out infinite;
+          animation-delay: 2s;
+          opacity: 0.75;
+        }
+        .cloud-5::before {
+          width: 45px;
+          height: 45px;
+          top: -22px;
+          left: 12px;
+        }
+        .cloud-5::after {
+          width: 60px;
+          height: 60px;
+          top: -30px;
+          left: 45px;
         }
 
-        @keyframes float3 {
-          0%, 100% { transform: translate(-50%, -50%) scale(1); }
-          50% { transform: translate(-50%, -50%) scale(1.2); }
+        @keyframes cloud-move {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(100vw + 300px)); }
+        }
+
+        @keyframes cloud-float {
+          0%, 100% { transform: translateY(0) translateX(0); }
+          50% { transform: translateY(-15px) translateX(10px); }
         }
 
         /* Container */
@@ -194,7 +280,7 @@ export default function HeroSlider() {
 
         /* Content */
         .hero-content {
-          color: white;
+          color: #1a365d;
         }
 
         .badge-wrapper {
@@ -205,14 +291,15 @@ export default function HeroSlider() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(255, 255, 255, 0.15);
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          border: none;
           padding: 10px 20px;
           border-radius: 50px;
           font-size: 14px;
           color: #FFD600;
           font-weight: 600;
+          box-shadow: 0 4px 15px rgba(113, 87, 160, 0.3);
         }
 
         .badge-dot {
@@ -238,10 +325,12 @@ export default function HeroSlider() {
           font-weight: 800;
           line-height: 1.1;
           letter-spacing: -1px;
+          color: #1a365d;
+          text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
         }
 
         .gradient-text {
-          background: linear-gradient(135deg, #FFD600 0%, #FFA500 50%, #FFD600 100%);
+          background: linear-gradient(135deg, #7157A0 0%, #8B6BC4 50%, #7157A0 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -249,15 +338,15 @@ export default function HeroSlider() {
 
         .hero-subtitle {
           font-size: 1.5rem;
-          color: rgba(255, 255, 255, 0.9);
+          color: #7157A0;
           margin: 0 0 20px;
-          font-weight: 500;
+          font-weight: 600;
           letter-spacing: 2px;
         }
 
         .hero-description {
           font-size: 1.1rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: #2d4a6f;
           line-height: 1.8;
           margin: 0 0 30px;
           max-width: 500px;
@@ -275,21 +364,28 @@ export default function HeroSlider() {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: rgba(255, 255, 255, 0.15);
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: white;
+          border: 2px solid #7157A0;
           padding: 10px 18px;
           border-radius: 50px;
           font-size: 0.9rem;
-          color: white;
+          color: #7157A0;
           transition: all 0.3s;
+          box-shadow: 0 4px 15px rgba(113, 87, 160, 0.15);
         }
 
         .pill:hover {
-          background: rgba(255, 255, 255, 0.25);
+          background: #7157A0;
+          color: white;
           transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(113, 87, 160, 0.3);
         }
 
         .pill i {
+          color: #FFD600;
+        }
+
+        .pill:hover i {
           color: #FFD600;
         }
 
@@ -334,8 +430,8 @@ export default function HeroSlider() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: white;
-          color: #7157A0;
+          background: #7157A0;
+          color: white;
           padding: 18px 30px;
           border-radius: 60px;
           font-weight: 700;
@@ -343,12 +439,13 @@ export default function HeroSlider() {
           text-decoration: none;
           border: none;
           transition: all 0.3s;
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.3);
         }
 
         .btn-secondary:hover {
           transform: translateY(-3px);
-          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+          background: #5a4080;
+          box-shadow: 0 15px 40px rgba(113, 87, 160, 0.4);
         }
 
         /* Trust Stats */
@@ -357,10 +454,11 @@ export default function HeroSlider() {
           align-items: center;
           gap: 25px;
           padding: 25px 30px;
-          background: rgba(255, 255, 255, 0.1);
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
           backdrop-filter: blur(20px);
           border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.15);
+          border: none;
+          box-shadow: 0 10px 40px rgba(113, 87, 160, 0.3);
         }
 
         .stat {
@@ -389,13 +487,13 @@ export default function HeroSlider() {
 
         .stat-label {
           font-size: 0.85rem;
-          color: rgba(255, 255, 255, 0.8);
+          color: rgba(255, 255, 255, 0.9);
         }
 
         .stat-divider {
           width: 1px;
           height: 40px;
-          background: rgba(255, 255, 255, 0.2);
+          background: rgba(255, 255, 255, 0.3);
         }
 
         /* Visual Side */
@@ -588,13 +686,13 @@ export default function HeroSlider() {
             letter-spacing: -0.5px;
           }
 
-          /* Make gradient text visible on mobile - white with golden underline */
+          /* Make gradient text visible on mobile */
           .gradient-text {
             background: none !important;
             -webkit-background-clip: unset !important;
-            -webkit-text-fill-color: #ffffff !important;
+            -webkit-text-fill-color: #7157A0 !important;
             background-clip: unset !important;
-            color: #ffffff !important;
+            color: #7157A0 !important;
             position: relative;
             display: inline-block;
             padding-bottom: 4px;
@@ -618,10 +716,11 @@ export default function HeroSlider() {
             gap: 0;
             padding: 16px;
             border-radius: 18px;
-            background: rgba(255, 255, 255, 0.12);
+            background: linear-gradient(135deg, #7157A0, #8B6BC4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: none;
+            box-shadow: 0 8px 30px rgba(113, 87, 160, 0.3);
           }
 
           .stat {

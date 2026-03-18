@@ -14,7 +14,7 @@ const doctors = [
     experience: '17+ Years',
     description: 'Dr. Rajesh Garg is the visionary founder and chairman of Saraswati Eye Care Centre, Jind. A distinguished anterior segment surgeon with a passion for innovation, he completed his MBBS from PGIMS Rohtak, MS in Ophthalmology from GMC Patiala, and Fellowship in Glaucoma from the world-renowned Aravind Eye Hospital, Madurai. Inspired by his grandmother Saraswati Devi, he established this centre which expanded to its current state-of-the-art premises in 2016. Dr. Garg has a special interest in advanced, customized cataract surgeries, using cutting-edge technologies to provide high-definition visual outcomes tailored to each patient. His love for technology and innovation reflects in every aspect of the hospital\'s infrastructure and clinical services. Under his leadership, Saraswati Eye Care Centre has evolved into a super-speciality eye hospital. He envisions expanding the legacy by establishing a world-class super-speciality eye hospital in Haryana and scaling advanced eye care across India.',
     specializations: ['Customized Cataract Surgery', 'Phacoemulsification', 'Premium IOL Implantation', 'FLACS (Femto Laser Cataract)', 'Glaucoma Management'],
-    achievements: ['Founded First NABH Certified Eye Hospital in Jind', 'Fellowship from Aravind Eye Hospital', 'Pioneer in AI-based IOL Selection', '50,000+ Happy Patients'],
+    achievements: ['Founded First NABH Accredited Eye Hospital in Jind', 'Fellowship from Aravind Eye Hospital', 'Pioneer in AI-based IOL Selection', '50,000+ Happy Patients'],
   },
   {
     name: 'Dr. Ajay Garg',
@@ -154,7 +154,7 @@ export default function DoctorCards() {
                   width={120}
                   height={120}
                   quality={100}
-                  style={{ objectFit: 'contain' }}
+                  style={{ objectFit: 'cover', objectPosition: 'center 45%' }}
                 />
               </div>
               <div className="modal-title">

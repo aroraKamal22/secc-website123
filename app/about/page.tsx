@@ -21,7 +21,7 @@ const doctors = [
     qualifications: 'MBBS (PGIMS Rohtak), MS Ophthalmology (GMC Patiala), Fellowship in Glaucoma (Aravind Eye Hospital, Madurai)',
     description: 'Dr. Rajesh Garg is the visionary founder and chairman of Saraswati Eye Care Centre, Jind. A distinguished anterior segment surgeon with a passion for innovation, he completed his MBBS from PGIMS Rohtak, MS in Ophthalmology from GMC Patiala, and Fellowship in Glaucoma from the world-renowned Aravind Eye Hospital, Madurai. Inspired by his grandmother Saraswati Devi, he established this centre which expanded to its current state-of-the-art premises in 2016. Dr. Garg has a special interest in advanced, customized cataract surgeries, using cutting-edge technologies to provide high-definition visual outcomes tailored to each patient. Under his leadership, Saraswati Eye Care Centre has evolved into a super-speciality eye hospital. He envisions expanding the legacy by establishing a world-class super-speciality eye hospital in Haryana and scaling advanced eye care across India.',
     specializations: ['Customized Cataract Surgery', 'Phacoemulsification', 'Premium IOL Implantation', 'FLACS (Femto Laser Cataract)', 'Glaucoma Management'],
-    achievements: ['Founded First NABH Certified Eye Hospital in Jind', 'Fellowship from Aravind Eye Hospital', 'Pioneer in AI-based IOL Selection', '50,000+ Happy Patients'],
+    achievements: ['Founded First NABH Accredited Eye Hospital in Jind', 'Fellowship from Aravind Eye Hospital', 'Pioneer in AI-based IOL Selection', '50,000+ Happy Patients'],
   },
   {
     name: 'Dr. Ajay Garg',
@@ -83,7 +83,7 @@ const milestones = [
 ];
 
 const accreditations = [
-  { name: 'NABH Certified', icon: '🏆', desc: 'National Accreditation Board for Hospitals' },
+  { name: 'NABH Accredited', icon: '🏆', desc: 'National Accreditation Board for Hospitals' },
   { name: 'PM-JAY Empanelled', icon: '🏛️', desc: 'Ayushman Bharat Scheme' },
   { name: 'Haryana Govt', icon: '🏛️', desc: 'Haryana Government Health Scheme' },
   { name: 'ECHS Approved', icon: '⭐', desc: 'Ex-Servicemen Healthcare' },
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-icon">🏆</span>
-            <span>NABH Certified Eye Hospital</span>
+            <span>NABH Accredited Eye Hospital</span>
           </div>
           <h1>Saraswati Eye Care Centre</h1>
           <h2>Leading Super-Speciality Eye Hospital in Jind, Haryana</h2>
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <div className="story-features">
                 <div className="feature">
                   <span className="feature-icon">✓</span>
-                  <span>First NABH Certified Eye Hospital in Jind</span>
+                  <span>First NABH Accredited Eye Hospital in Jind</span>
                 </div>
                 <div className="feature">
                   <span className="feature-icon">✓</span>
@@ -168,10 +168,18 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="story-visual">
-              <div className="visual-card">
-                <div className="visual-icon">👁️</div>
-                <h3>Caring for Your Vision</h3>
-                <p>Since 2010</p>
+              <div className="hospital-image-wrapper">
+                <Image
+                  src="/images/front11.JPG"
+                  alt="Saraswati Eye Care Centre - Our Modern Healthcare Facility"
+                  fill
+                  quality={90}
+                  style={{ objectFit: 'cover', borderRadius: '20px' }}
+                />
+                <div className="image-overlay-text">
+                  <h3>Caring for Your Vision</h3>
+                  <p>Since 2010</p>
+                </div>
               </div>
               <div className="rating-badge">
                 <span className="rating-stars">⭐⭐⭐⭐⭐</span>
@@ -223,7 +231,12 @@ export default function AboutPage() {
                 onClick={() => setSelectedDoctor(doctor)}
               >
                 <div className="doctor-image">
-                  <div className="image-placeholder">👨‍⚕️</div>
+                  <Image
+                    src={doctor.image}
+                    alt={doctor.name}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
                   <div className="experience-badge">{doctor.experience}</div>
                 </div>
                 <div className="doctor-content">
@@ -341,7 +354,14 @@ export default function AboutPage() {
             <button className="modal-close" onClick={() => setSelectedDoctor(null)}>✕</button>
 
             <div className="modal-header">
-              <div className="modal-image">👨‍⚕️</div>
+              <div className="modal-image">
+                <Image
+                  src={selectedDoctor.image}
+                  alt={selectedDoctor.name}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
               <div className="modal-info">
                 <h2>{selectedDoctor.name}</h2>
                 <span className="modal-role">{selectedDoctor.role}</span>
@@ -642,6 +662,39 @@ export default function AboutPage() {
           position: relative;
         }
 
+        .hospital-image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 400px;
+          border-radius: 24px;
+          overflow: hidden;
+          box-shadow: 0 20px 60px rgba(113, 87, 160, 0.3);
+        }
+
+        .image-overlay-text {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to top, rgba(113, 87, 160, 0.95) 0%, rgba(113, 87, 160, 0.7) 50%, transparent 100%);
+          padding: 40px 30px 30px;
+          text-align: center;
+        }
+
+        .image-overlay-text h3 {
+          font-size: 28px;
+          color: white;
+          margin: 0 0 8px;
+          font-weight: 700;
+        }
+
+        .image-overlay-text p {
+          color: #FFD600;
+          font-size: 18px;
+          font-weight: 600;
+          margin: 0;
+        }
+
         .visual-card {
           background: linear-gradient(135deg, #f8f6fc 0%, #efe8f8 100%);
           border-radius: 24px;
@@ -764,16 +817,13 @@ export default function AboutPage() {
         }
 
         .doctor-image {
-          height: 180px;
+          height: 220px;
           background: linear-gradient(135deg, #f8f6fc, #efe8f8);
           display: flex;
           align-items: center;
           justify-content: center;
           position: relative;
-        }
-
-        .image-placeholder {
-          font-size: 80px;
+          overflow: hidden;
         }
 
         .experience-badge {
@@ -1148,10 +1198,9 @@ export default function AboutPage() {
           height: 80px;
           background: white;
           border-radius: 20px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 40px;
+          position: relative;
+          overflow: hidden;
+          flex-shrink: 0;
         }
 
         .modal-info h2 {
@@ -1308,6 +1357,33 @@ export default function AboutPage() {
           .story-grid {
             grid-template-columns: 1fr;
           }
+          .story-visual {
+            order: -1;
+          }
+          .hospital-image-wrapper {
+            height: 280px;
+            border-radius: 16px;
+          }
+          .image-overlay-text {
+            padding: 30px 20px 20px;
+          }
+          .image-overlay-text h3 {
+            font-size: 22px;
+          }
+          .image-overlay-text p {
+            font-size: 16px;
+          }
+          .rating-badge {
+            bottom: -15px;
+            right: 15px;
+            padding: 12px 18px;
+          }
+          .rating-stars {
+            font-size: 14px;
+          }
+          .rating-text {
+            font-size: 12px;
+          }
           .vision-grid {
             grid-template-columns: 1fr;
           }
@@ -1325,6 +1401,27 @@ export default function AboutPage() {
           }
           .cta-content h2 {
             font-size: 28px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hospital-image-wrapper {
+            height: 220px;
+            border-radius: 14px;
+          }
+          .image-overlay-text {
+            padding: 25px 15px 15px;
+          }
+          .image-overlay-text h3 {
+            font-size: 18px;
+          }
+          .image-overlay-text p {
+            font-size: 14px;
+          }
+          .rating-badge {
+            bottom: -12px;
+            right: 10px;
+            padding: 10px 14px;
           }
         }
       `}</style>

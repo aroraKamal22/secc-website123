@@ -165,11 +165,11 @@ export default function PrivacyPolicyPage() {
         <div className="hospital-card">
           <div className="hospital-icon">🏥</div>
           <h2>Saraswati Eye Care Centre, Jind</h2>
-          <p>NABH Certified | Committed to Protecting Your Personal Information and Medical Data</p>
+          <p>NABH Accredited | Committed to Protecting Your Personal Information and Medical Data</p>
           <div className="trust-badges">
             <span className="badge">🔒 Secure Data</span>
             <span className="badge">📋 HIPAA Compliant</span>
-            <span className="badge">🏆 NABH Certified</span>
+            <span className="badge">🏆 NABH Accredited</span>
           </div>
         </div>
 
