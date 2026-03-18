@@ -678,11 +678,22 @@ export default function HeroSlider() {
           }
 
           .hero-container {
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            align-items: start;
+            text-align: left;
+          }
+
+          .hero-content {
+            order: 1;
+          }
+
+          .hero-visual {
+            order: 0;
           }
 
           .title-line {
-            font-size: 2.2rem;
+            font-size: 1.3rem;
             letter-spacing: -0.5px;
           }
 
@@ -695,27 +706,31 @@ export default function HeroSlider() {
             color: #7157A0 !important;
             position: relative;
             display: inline-block;
-            padding-bottom: 4px;
-            border-bottom: 3px solid #FFD600;
+            padding-bottom: 2px;
+            border-bottom: 2px solid #FFD600;
           }
 
           .hero-subtitle {
-            font-size: 1rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
+            margin-bottom: 10px;
           }
 
           .hero-description {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 20px;
+            font-size: 0.75rem;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
 
           .trust-stats {
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 0;
-            padding: 16px;
-            border-radius: 18px;
+            padding: 10px;
+            border-radius: 12px;
             background: linear-gradient(135deg, #7157A0, #8B6BC4);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -724,12 +739,10 @@ export default function HeroSlider() {
           }
 
           .stat {
-            flex: 1;
-            min-width: 80px;
-            flex-direction: column;
-            text-align: center;
-            gap: 4px;
-            padding: 8px 4px;
+            flex-direction: row;
+            text-align: left;
+            gap: 6px;
+            padding: 6px 4px;
             position: relative;
           }
 
@@ -737,10 +750,10 @@ export default function HeroSlider() {
           .stat:not(:last-child)::after {
             content: '';
             position: absolute;
-            right: 0;
-            top: 20%;
-            height: 60%;
-            width: 1px;
+            bottom: 0;
+            left: 10%;
+            width: 80%;
+            height: 1px;
             background: rgba(255, 255, 255, 0.2);
           }
 
@@ -749,54 +762,76 @@ export default function HeroSlider() {
           }
 
           .stat-value {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
           }
 
           .stat-info {
-            align-items: center;
+            align-items: flex-start;
           }
 
           .stars {
-            font-size: 0.6rem;
+            font-size: 0.5rem;
           }
 
           .stat-label {
-            font-size: 0.65rem;
-            text-align: center;
+            font-size: 0.6rem;
+            text-align: left;
           }
 
           .main-image {
-            height: 200px;
+            height: 180px;
             max-width: 100%;
           }
 
           .nabh-badge {
-            padding: 8px 12px;
-          }
-
-          .nabh-badge span {
-            font-size: 0.85rem;
+            display: none;
           }
 
           .badge-wrapper {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
           }
 
           .badge {
-            animation: float-subtle 3s ease-in-out infinite;
+            font-size: 9px;
+            padding: 6px 10px;
+            gap: 5px;
           }
 
-          @keyframes float-subtle {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-3px); }
+          .badge-dot {
+            width: 5px;
+            height: 5px;
           }
 
           .feature-pills {
-            margin-bottom: 20px;
+            margin-bottom: 12px;
+            gap: 4px;
+            flex-wrap: wrap;
+          }
+
+          .pill {
+            padding: 4px 8px;
+            font-size: 0.65rem;
+            border-radius: 20px;
+            gap: 4px;
+          }
+
+          .pill i {
+            font-size: 0.6rem;
           }
 
           .hero-cta {
-            margin-bottom: 25px;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 15px;
+          }
+
+          .btn-primary, .btn-secondary {
+            width: 100%;
+            justify-content: center;
+            padding: 10px 16px;
+            font-size: 0.75rem;
+            border-radius: 12px;
+            gap: 6px;
           }
 
           /* Enhanced button styles for mobile */
@@ -828,83 +863,80 @@ export default function HeroSlider() {
           }
 
           .hero-container {
-            gap: 20px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 12px;
           }
 
           .title-line {
-            font-size: 1.75rem;
+            font-size: 1.1rem;
           }
 
           .badge {
-            font-size: 10px;
-            padding: 8px 12px;
-            gap: 6px;
+            font-size: 8px;
+            padding: 5px 8px;
+            gap: 4px;
           }
 
           .badge-dot {
-            width: 6px;
-            height: 6px;
+            width: 4px;
+            height: 4px;
           }
 
           .feature-pills {
-            gap: 6px;
-            justify-content: center;
+            gap: 4px;
           }
 
           .pill {
-            padding: 6px 12px;
-            font-size: 0.75rem;
-            border-radius: 30px;
+            padding: 3px 6px;
+            font-size: 0.6rem;
+            border-radius: 15px;
           }
 
           .pill i {
-            font-size: 0.7rem;
+            font-size: 0.55rem;
           }
 
           .hero-cta {
-            flex-direction: column;
-            width: 100%;
-            gap: 10px;
+            gap: 6px;
           }
 
           .btn-primary, .btn-secondary {
-            width: 100%;
-            justify-content: center;
-            padding: 14px 20px;
-            font-size: 0.9rem;
-            border-radius: 14px;
+            padding: 8px 12px;
+            font-size: 0.7rem;
+            border-radius: 10px;
           }
 
           .main-image {
-            height: 180px;
-            border-radius: 16px;
+            height: 160px;
+            border-radius: 12px;
           }
 
           .trust-stats {
-            padding: 12px 8px;
-            border-radius: 14px;
+            padding: 8px 6px;
+            border-radius: 10px;
           }
 
           .stat {
-            padding: 6px 2px;
+            padding: 4px 2px;
           }
 
           .stat-value {
-            font-size: 1.3rem;
+            font-size: 1rem;
           }
 
           .stat-label {
-            font-size: 0.6rem;
+            font-size: 0.55rem;
           }
 
           .hero-subtitle {
-            font-size: 0.9rem;
-            margin-bottom: 12px;
+            font-size: 0.7rem;
+            margin-bottom: 8px;
           }
 
           .hero-description {
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+            font-size: 0.7rem;
+            margin-bottom: 10px;
+            -webkit-line-clamp: 2;
           }
         }
 

@@ -700,47 +700,33 @@ export default function DoctorCards() {
           }
 
           .section-header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
           }
 
           .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
           }
 
           .section-header p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
           }
 
           .section-tag {
-            padding: 8px 18px;
-            font-size: 0.8rem;
+            padding: 6px 14px;
+            font-size: 0.7rem;
           }
 
           .doctors-grid {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 15px;
-            padding: 10px 5px 20px;
-            margin: 0 -15px;
-            padding-left: 15px;
-            padding-right: 15px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-          }
-
-          .doctors-grid::-webkit-scrollbar {
-            display: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
           }
 
           .doctor-card {
-            flex: 0 0 280px;
-            scroll-snap-align: start;
-            border-radius: 20px;
+            border-radius: 14px;
             background: linear-gradient(145deg, #ffffff 0%, #faf9fc 100%);
             border: 1px solid rgba(113, 87, 160, 0.1);
-            box-shadow: 0 8px 32px rgba(113, 87, 160, 0.12);
-            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(113, 87, 160, 0.1);
           }
 
           .doctor-card:active {
@@ -748,67 +734,66 @@ export default function DoctorCards() {
           }
 
           .card-image-section {
-            height: 170px;
-            padding-top: 15px;
+            height: 100px;
+            padding-top: 10px;
             background: linear-gradient(180deg, rgba(113, 87, 160, 0.08) 0%, rgba(139, 107, 196, 0.04) 100%);
-            border-radius: 20px 20px 0 0;
+            border-radius: 14px 14px 0 0;
           }
 
           .doctor-image {
-            width: 110px;
-            height: 110px;
+            width: 70px;
+            height: 70px;
           }
 
           .image-ring {
-            width: 120px;
-            height: 120px;
+            width: 78px;
+            height: 78px;
           }
 
           .card-content {
-            padding: 16px;
+            padding: 10px;
           }
 
           .card-content h3 {
-            font-size: 1.05rem;
+            font-size: 0.75rem;
+            margin-bottom: 2px;
           }
 
           .designation {
-            font-size: 0.8rem;
+            font-size: 0.6rem;
           }
 
           .specialty {
-            font-size: 0.75rem;
-            margin-bottom: 12px;
+            font-size: 0.55rem;
+            margin-bottom: 8px;
           }
 
           .specializations {
-            gap: 5px;
-            margin-bottom: 12px;
-          }
-
-          .spec-tag {
-            padding: 3px 8px;
-            font-size: 0.65rem;
+            display: none;
           }
 
           .view-profile-btn {
-            padding: 8px 16px;
-            font-size: 0.8rem;
-            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.65rem;
+            border-radius: 15px;
+            width: 100%;
+            justify-content: center;
           }
 
           .experience-badge {
-            padding: 5px 12px;
-            font-size: 0.7rem;
+            padding: 3px 8px;
+            font-size: 0.55rem;
+            top: 8px;
+            right: 8px;
           }
 
           .view-all-wrap {
-            margin-top: 30px;
+            margin-top: 25px;
           }
 
           .view-all-link {
-            padding: 12px 28px;
-            font-size: 0.9rem;
+            padding: 10px 24px;
+            font-size: 0.8rem;
           }
 
           /* Modal Mobile */
@@ -889,24 +874,67 @@ export default function DoctorCards() {
 
         @media (max-width: 480px) {
           .doctors-section {
-            padding: 35px 12px;
+            padding: 30px 12px;
           }
 
           .section-header h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+          }
+
+          .section-header p {
+            font-size: 0.75rem;
+          }
+
+          .doctors-grid {
+            gap: 10px;
           }
 
           .doctor-card {
-            flex: 0 0 260px;
+            border-radius: 12px;
           }
 
           .card-image-section {
-            height: 150px;
+            height: 85px;
+            padding-top: 8px;
           }
 
           .doctor-image {
-            width: 95px;
-            height: 95px;
+            width: 60px;
+            height: 60px;
+          }
+
+          .image-ring {
+            width: 68px;
+            height: 68px;
+          }
+
+          .card-content {
+            padding: 8px;
+          }
+
+          .card-content h3 {
+            font-size: 0.7rem;
+          }
+
+          .designation {
+            font-size: 0.55rem;
+          }
+
+          .specialty {
+            font-size: 0.5rem;
+            margin-bottom: 6px;
+          }
+
+          .view-profile-btn {
+            padding: 5px 10px;
+            font-size: 0.6rem;
+          }
+
+          .experience-badge {
+            padding: 2px 6px;
+            font-size: 0.5rem;
+            top: 5px;
+            right: 5px;
           }
         }
       `}</style>

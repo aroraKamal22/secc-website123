@@ -484,59 +484,66 @@ export default function WhyChooseUs() {
           }
 
           .why-container {
-            gap: 35px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
           }
 
           .section-tag {
-            padding: 8px 18px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            margin-bottom: 10px;
           }
 
           .why-content h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
           }
 
           .section-desc {
-            font-size: 0.95rem;
-            margin-bottom: 25px;
+            font-size: 0.8rem;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
 
           .features-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 15px;
           }
 
           .feature-card {
-            padding: 12px;
-            border-radius: 12px;
-            flex-direction: column;
-            text-align: center;
-            gap: 8px;
+            padding: 10px;
+            border-radius: 10px;
+            flex-direction: row;
+            text-align: left;
+            gap: 10px;
           }
 
           .feature-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            margin: 0 auto;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            margin: 0;
+            flex-shrink: 0;
           }
 
           .feature-text h4 {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
           }
 
           .feature-text p {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             line-height: 1.3;
           }
 
           .why-visual {
-            order: -1;
+            order: 0;
           }
 
           .visual-wrapper {
@@ -544,15 +551,15 @@ export default function WhyChooseUs() {
             min-height: auto;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
           }
 
           .main-image {
             position: relative;
-            height: 200px;
+            height: 150px;
             width: 100%;
             top: 0;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
           }
 
@@ -561,24 +568,24 @@ export default function WhyChooseUs() {
             top: auto;
             left: auto;
             transform: none;
-            padding: 12px 16px;
-            border-radius: 12px;
-            gap: 10px;
+            padding: 8px 12px;
+            border-radius: 10px;
+            gap: 8px;
             align-self: flex-start;
             display: inline-flex;
           }
 
           .nabh-badge :global(img) {
-            width: 35px !important;
-            height: 35px !important;
+            width: 28px !important;
+            height: 28px !important;
           }
 
           .nabh-title {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
           }
 
           .nabh-subtitle {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
           }
 
           .experience-badge {
@@ -589,13 +596,13 @@ export default function WhyChooseUs() {
             position: relative;
             margin-top: 0;
             width: 100%;
-            padding: 16px;
-            border-radius: 14px;
+            padding: 12px;
+            border-radius: 12px;
           }
 
           .stats-grid {
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
           }
 
           .stat-number {

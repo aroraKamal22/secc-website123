@@ -363,124 +363,162 @@ export default function AboutSection() {
           }
 
           .about-container {
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: start;
           }
 
           .about-title {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
           }
 
           .about-desc {
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
           }
 
           .section-tag {
-            padding: 8px 18px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
+            padding: 6px 14px;
+            font-size: 0.7rem;
+            margin-bottom: 10px;
           }
 
           .features-grid {
             grid-template-columns: 1fr;
-            gap: 12px;
-            margin: 25px 0;
+            gap: 8px;
+            margin: 15px 0;
           }
 
           .feature-card {
-            padding: 16px;
-            border-radius: 14px;
-            gap: 12px;
+            padding: 10px;
+            border-radius: 10px;
+            gap: 10px;
           }
 
           .feature-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            font-size: 1rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            font-size: 0.85rem;
           }
 
           .feature-info h4 {
-            font-size: 0.9rem;
-          }
-
-          .feature-info p {
             font-size: 0.8rem;
           }
 
-          .image-main {
-            height: 280px;
-            border-radius: 20px;
+          .feature-info p {
+            font-size: 0.7rem;
           }
 
+          .image-main {
+            height: 200px;
+            border-radius: 16px;
+          }
 
           .deco-dots, .deco-circle {
             display: none;
           }
 
           .experience-badge {
-            top: auto;
-            bottom: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 15px 20px;
-            border-radius: 14px;
+            top: -15px;
+            left: -10px;
+            padding: 10px 14px;
+            border-radius: 10px;
           }
 
           .exp-number {
-            font-size: 2rem;
+            font-size: 1.4rem;
           }
 
           .exp-text {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
           }
 
           .about-cta {
-            flex-direction: column;
-            gap: 10px;
+            flex-direction: row;
+            gap: 8px;
           }
 
           .btn-primary, .btn-outline {
-            width: 100%;
-            justify-content: center;
-            padding: 14px 24px;
-            border-radius: 14px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
           }
         }
 
         @media (max-width: 480px) {
           .about-section {
-            padding: 35px 12px;
+            padding: 30px 12px;
+          }
+
+          .about-container {
+            grid-template-columns: 1fr 1.2fr;
+            gap: 15px;
           }
 
           .about-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
           }
 
           .about-desc {
-            font-size: 0.9rem;
+            font-size: 0.75rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .about-desc:last-of-type {
+            display: none;
           }
 
           .image-main {
-            height: 220px;
+            height: 180px;
           }
 
           .features-grid {
-            gap: 10px;
+            gap: 6px;
+            margin: 10px 0;
           }
 
           .feature-card {
-            padding: 14px;
+            padding: 8px;
+          }
+
+          .feature-icon {
+            width: 30px;
+            height: 30px;
+            font-size: 0.75rem;
+          }
+
+          .feature-info h4 {
+            font-size: 0.7rem;
+          }
+
+          .feature-info p {
+            font-size: 0.6rem;
           }
 
           .experience-badge {
-            padding: 12px 16px;
+            padding: 8px 10px;
           }
 
           .exp-number {
-            font-size: 1.7rem;
+            font-size: 1.2rem;
+          }
+
+          .about-cta {
+            flex-direction: column;
+            gap: 6px;
+          }
+
+          .btn-primary, .btn-outline {
+            width: 100%;
+            justify-content: center;
+            padding: 10px 14px;
+            font-size: 0.7rem;
           }
         }
       `}</style>
