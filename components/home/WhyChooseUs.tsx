@@ -489,8 +489,12 @@ export default function WhyChooseUs() {
             gap: 25px;
           }
 
+          .why-content {
+            order: 1;
+          }
+
           .why-visual {
-            order: -1;
+            order: 2;
             width: 100%;
           }
 
@@ -561,28 +565,7 @@ export default function WhyChooseUs() {
           }
 
           .nabh-badge {
-            position: relative;
-            top: auto;
-            left: auto;
-            transform: none;
-            padding: 10px 14px;
-            border-radius: 12px;
-            gap: 10px;
-            align-self: flex-start;
-            display: inline-flex;
-          }
-
-          .nabh-badge :global(img) {
-            width: 32px !important;
-            height: 32px !important;
-          }
-
-          .nabh-title {
-            font-size: 0.8rem;
-          }
-
-          .nabh-subtitle {
-            font-size: 0.65rem;
+            display: none;
           }
 
           .experience-badge {
@@ -602,12 +585,18 @@ export default function WhyChooseUs() {
             gap: 10px;
           }
 
+          .stat-item {
+            text-align: center;
+          }
+
           .stat-number {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            display: block;
           }
 
           .stat-label {
-            font-size: 0.55rem;
+            font-size: 0.6rem;
+            display: block;
           }
 
           .deco-ring, .deco-dots {
@@ -668,36 +657,31 @@ export default function WhyChooseUs() {
             height: 180px;
           }
 
-          .nabh-badge {
-            padding: 8px 12px;
-          }
-
-          .nabh-badge :global(img) {
-            width: 28px !important;
-            height: 28px !important;
-          }
-
           .stats-card {
-            padding: 12px;
+            padding: 14px;
           }
 
           .stats-grid {
             grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
+            gap: 6px;
           }
 
           .stat-item {
-            padding: 6px;
+            padding: 8px 4px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 8px;
+            text-align: center;
           }
 
           .stat-number {
-            font-size: 0.95rem;
+            font-size: 1rem;
+            display: block;
+            white-space: nowrap;
           }
 
           .stat-label {
-            font-size: 0.45rem;
+            font-size: 0.5rem;
+            display: block;
           }
 
           .cta-buttons {
