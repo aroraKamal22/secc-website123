@@ -16,6 +16,10 @@ const galleryImages = [
   { src: '/frontimage.png', title: 'Hospital Exterior', description: 'Saraswati Eye Care Centre Building', category: 'facility' },
   { src: '/images/front11.JPG', title: 'Saraswati Eye Care Centre', description: 'Our Modern Healthcare Facility', category: 'facility' },
   { src: '/frontimage.png', title: 'Main Entrance', description: 'State-of-the-art Infrastructure', category: 'facility' },
+  { src: '/k.jpeg', title: 'Patient Ward', description: 'Private Patient Rooms 4-6', category: 'patients' },
+  { src: '/kk.jpeg', title: 'Patient Ward', description: 'Private Patient Rooms 1-3', category: 'patients' },
+  { src: '/kkk.jpeg', title: 'Patient Ward', description: 'Comfortable Hospital Beds with IV Facility', category: 'patients' },
+  { src: '/kkkkk.jpeg', title: 'Patient Room', description: 'Private Room with Attendant Seating', category: 'patients' },
   { src: '/images/AdvancedMachine.jpg', title: 'Advanced Diagnostic Equipment', description: 'Latest Medical Technology', category: 'equipment' },
   { src: '/images/media4.png', title: 'Operation Theatre', description: 'Modern Surgical Suite', category: 'facility' },
   { src: '/images/media5.png', title: 'Diagnostic Center', description: 'Comprehensive Eye Testing', category: 'equipment' },
@@ -29,6 +33,13 @@ const galleryImages = [
   { src: '/images/Saraswati DR Ajay Garg[1].png', title: 'Dr. Ajay Garg', description: 'Retina Specialist', category: 'team' },
   { src: '/images/Saraswati DR Khushboo Gupta[1].png', title: 'Dr. Khushboo Gupta', description: 'Pediatric Ophthalmologist', category: 'team' },
   { src: '/images/dryogendergupt.png', title: 'Dr. Yogendra Gupta', description: 'Consultant Anaesthesiologist', category: 'team' },
+  { src: '/hhh.jpeg', title: 'Dr. Rajesh Garg', description: 'Founder & Senior Eye Surgeon', category: 'team' },
+  { src: '/hh.jpeg', title: 'Dr. Ajay Garg', description: 'Retina & Vitreous Specialist', category: 'team' },
+  { src: '/hhhhh.jpeg', title: 'Dr. Khushboo Gupta', description: 'Pediatric Ophthalmologist & Squint Specialist', category: 'team' },
+  { src: '/h.jpeg', title: 'Administrative Staff', description: 'Patient Care Coordinator', category: 'team' },
+  { src: '/m.jpg', title: 'Eye Examination', description: 'Slit Lamp Checkup by Dr. Ajay Garg', category: 'patients' },
+  { src: '/mmm.jpg', title: 'Eye Examination', description: 'Comprehensive Eye Testing', category: 'patients' },
+  { src: '/j.jpg', title: 'Eye Checkup', description: 'Patient Eye Examination', category: 'patients' },
 ];
 
 const stats = [
