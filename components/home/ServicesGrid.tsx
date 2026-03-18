@@ -625,92 +625,87 @@ export default function ServicesGrid() {
           }
 
           .section-header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
           }
 
           .section-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
           }
 
           .section-header p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
           }
 
           .section-tag {
-            padding: 8px 18px;
-            font-size: 0.8rem;
+            padding: 6px 14px;
+            font-size: 0.7rem;
           }
 
           .services-grid {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 15px;
-            padding: 10px 5px 20px;
-            margin: 0 -15px;
-            padding-left: 15px;
-            padding-right: 15px;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-          }
-
-          .services-grid::-webkit-scrollbar {
-            display: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
           }
 
           .service-card {
-            flex: 0 0 280px;
-            scroll-snap-align: start;
-            padding: 22px;
-            border-radius: 20px;
+            padding: 14px;
+            border-radius: 14px;
             background: linear-gradient(145deg, #ffffff 0%, #fcfbfe 100%);
             border: 1px solid rgba(113, 87, 160, 0.1);
-            box-shadow: 0 8px 32px rgba(113, 87, 160, 0.1);
-            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(113, 87, 160, 0.08);
           }
 
           .service-card:active {
             transform: scale(0.98);
           }
 
+          .card-glow {
+            display: none;
+          }
+
           .service-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 1rem;
+            margin-bottom: 10px;
           }
 
           .service-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
+            font-size: 0.8rem;
+            margin-bottom: 6px;
           }
 
           .service-desc {
-            font-size: 0.85rem;
-            margin-bottom: 12px;
+            font-size: 0.7rem;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
 
           .service-highlight {
-            padding: 6px 10px;
-            margin-bottom: 12px;
-          }
-
-          .service-highlight span {
-            font-size: 0.75rem;
+            display: none;
           }
 
           .learn-more {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #7157A0, #8B6BC4);
+            color: white;
+            border-radius: 15px;
+            width: 100%;
+            justify-content: center;
           }
 
           .view-all-wrap {
-            margin-top: 30px;
+            margin-top: 25px;
           }
 
           .view-all-btn {
-            padding: 14px 32px;
-            font-size: 0.95rem;
+            padding: 12px 28px;
+            font-size: 0.85rem;
           }
 
           /* Modal Mobile */
@@ -788,22 +783,41 @@ export default function ServicesGrid() {
 
         @media (max-width: 480px) {
           .services-section {
-            padding: 35px 12px;
+            padding: 30px 12px;
           }
 
           .section-header h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+          }
+
+          .services-grid {
+            gap: 10px;
           }
 
           .service-card {
-            flex: 0 0 260px;
-            padding: 18px;
+            padding: 12px;
+            border-radius: 12px;
           }
 
           .service-icon {
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
+            width: 36px;
+            height: 36px;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+          }
+
+          .service-card h3 {
+            font-size: 0.75rem;
+          }
+
+          .service-desc {
+            font-size: 0.65rem;
+            -webkit-line-clamp: 2;
+          }
+
+          .learn-more {
+            font-size: 0.65rem;
+            padding: 5px 10px;
           }
         }
       `}</style>

@@ -484,53 +484,53 @@ export default function WhyChooseUs() {
           }
 
           .why-container {
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+          }
+
+          .why-visual {
+            order: -1;
+            width: 100%;
           }
 
           .section-tag {
-            padding: 6px 14px;
-            font-size: 0.7rem;
-            margin-bottom: 10px;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
           }
 
           .why-content h2 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
           }
 
           .section-desc {
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
           }
 
           .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-            margin-bottom: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
           }
 
           .feature-card {
-            padding: 10px;
-            border-radius: 10px;
-            flex-direction: row;
-            text-align: left;
-            gap: 10px;
+            padding: 12px;
+            border-radius: 12px;
+            flex-direction: column;
+            text-align: center;
+            gap: 8px;
           }
 
           .feature-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            margin: 0;
-            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            margin: 0 auto;
           }
 
           .feature-text h4 {
@@ -540,10 +540,7 @@ export default function WhyChooseUs() {
           .feature-text p {
             font-size: 0.65rem;
             line-height: 1.3;
-          }
-
-          .why-visual {
-            order: 0;
+            display: none;
           }
 
           .visual-wrapper {
@@ -551,15 +548,15 @@ export default function WhyChooseUs() {
             min-height: auto;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
           }
 
           .main-image {
             position: relative;
-            height: 150px;
+            height: 200px;
             width: 100%;
             top: 0;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
           }
 
@@ -568,24 +565,24 @@ export default function WhyChooseUs() {
             top: auto;
             left: auto;
             transform: none;
-            padding: 8px 12px;
-            border-radius: 10px;
-            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 12px;
+            gap: 10px;
             align-self: flex-start;
             display: inline-flex;
           }
 
           .nabh-badge :global(img) {
-            width: 28px !important;
-            height: 28px !important;
+            width: 32px !important;
+            height: 32px !important;
           }
 
           .nabh-title {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
           }
 
           .nabh-subtitle {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
           }
 
           .experience-badge {
@@ -596,17 +593,17 @@ export default function WhyChooseUs() {
             position: relative;
             margin-top: 0;
             width: 100%;
-            padding: 12px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 14px;
           }
 
           .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 6px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
           }
 
           .stat-number {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
           }
 
           .stat-label {
@@ -618,15 +615,16 @@ export default function WhyChooseUs() {
           }
 
           .cta-buttons {
-            flex-direction: column;
+            flex-direction: row;
             gap: 10px;
           }
 
           .btn-primary, .btn-secondary {
-            width: 100%;
+            flex: 1;
             justify-content: center;
-            padding: 14px 24px;
-            border-radius: 14px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.8rem;
           }
         }
 
@@ -636,7 +634,7 @@ export default function WhyChooseUs() {
           }
 
           .why-container {
-            gap: 25px;
+            gap: 20px;
           }
 
           .why-content h2 {
@@ -648,62 +646,69 @@ export default function WhyChooseUs() {
           }
 
           .features-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 8px;
           }
 
           .feature-card {
-            padding: 10px;
+            padding: 10px 6px;
           }
 
           .feature-icon {
-            width: 36px;
-            height: 36px;
-            font-size: 0.85rem;
-          }
-
-          .feature-text h4 {
+            width: 32px;
+            height: 32px;
             font-size: 0.75rem;
           }
 
-          .feature-text p {
+          .feature-text h4 {
             font-size: 0.65rem;
           }
 
           .main-image {
-            height: 160px;
+            height: 180px;
           }
 
           .nabh-badge {
-            padding: 10px 14px;
+            padding: 8px 12px;
           }
 
           .nabh-badge :global(img) {
-            width: 30px !important;
-            height: 30px !important;
+            width: 28px !important;
+            height: 28px !important;
           }
 
           .stats-card {
-            padding: 14px;
+            padding: 12px;
           }
 
           .stats-grid {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
           }
 
           .stat-item {
-            padding: 8px;
+            padding: 6px;
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
+            border-radius: 8px;
           }
 
           .stat-number {
-            font-size: 1rem;
+            font-size: 0.95rem;
           }
 
           .stat-label {
-            font-size: 0.5rem;
+            font-size: 0.45rem;
+          }
+
+          .cta-buttons {
+            flex-direction: column;
+            gap: 8px;
+          }
+
+          .btn-primary, .btn-secondary {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 0.75rem;
           }
         }
       `}</style>

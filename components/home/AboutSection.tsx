@@ -363,18 +363,33 @@ export default function AboutSection() {
           }
 
           .about-container {
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+          }
+
+          .about-visual {
+            width: 100%;
+            max-width: 100%;
+          }
+
+          .image-stack {
+            width: 100%;
+          }
+
+          .image-main {
+            height: 220px;
+            border-radius: 16px;
+            width: 100%;
           }
 
           .about-title {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             margin-bottom: 12px;
           }
 
           .about-desc {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             line-height: 1.6;
             margin-bottom: 10px;
           }
@@ -386,14 +401,14 @@ export default function AboutSection() {
           }
 
           .features-grid {
-            grid-template-columns: 1fr;
-            gap: 8px;
-            margin: 15px 0;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin: 20px 0;
           }
 
           .feature-card {
-            padding: 10px;
-            border-radius: 10px;
+            padding: 12px;
+            border-radius: 12px;
             gap: 10px;
           }
 
@@ -410,11 +425,6 @@ export default function AboutSection() {
 
           .feature-info p {
             font-size: 0.7rem;
-          }
-
-          .image-main {
-            height: 200px;
-            border-radius: 16px;
           }
 
           .deco-dots, .deco-circle {
@@ -438,13 +448,13 @@ export default function AboutSection() {
 
           .about-cta {
             flex-direction: row;
-            gap: 8px;
+            gap: 10px;
           }
 
           .btn-primary, .btn-outline {
-            padding: 10px 16px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.8rem;
           }
         }
 
@@ -454,20 +464,15 @@ export default function AboutSection() {
           }
 
           .about-container {
-            grid-template-columns: 1fr 1.2fr;
-            gap: 15px;
+            gap: 20px;
           }
 
           .about-title {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
           }
 
           .about-desc {
-            font-size: 0.75rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
+            font-size: 0.85rem;
           }
 
           .about-desc:last-of-type {
@@ -475,30 +480,30 @@ export default function AboutSection() {
           }
 
           .image-main {
-            height: 180px;
+            height: 200px;
           }
 
           .features-grid {
-            gap: 6px;
-            margin: 10px 0;
+            gap: 8px;
+            margin: 15px 0;
           }
 
           .feature-card {
-            padding: 8px;
+            padding: 10px;
           }
 
           .feature-icon {
-            width: 30px;
-            height: 30px;
-            font-size: 0.75rem;
+            width: 32px;
+            height: 32px;
+            font-size: 0.8rem;
           }
 
           .feature-info h4 {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
           }
 
           .feature-info p {
-            font-size: 0.6rem;
+            font-size: 0.65rem;
           }
 
           .experience-badge {
@@ -511,14 +516,14 @@ export default function AboutSection() {
 
           .about-cta {
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
           }
 
           .btn-primary, .btn-outline {
             width: 100%;
             justify-content: center;
-            padding: 10px 14px;
-            font-size: 0.7rem;
+            padding: 12px 16px;
+            font-size: 0.75rem;
           }
         }
       `}</style>
