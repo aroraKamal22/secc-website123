@@ -10,22 +10,33 @@ const doctors = [
 ];
 
 const services = [
-  { id: 'consultation', name: 'General Consultation', icon: '👁️' },
-  { id: 'cataract', name: 'Cataract Surgery', icon: '🔬' },
-  { id: 'retina', name: 'Retina Treatment', icon: '🩺' },
-  { id: 'glaucoma', name: 'Glaucoma Treatment', icon: '💧' },
-  { id: 'pediatric', name: 'Pediatric Eye Care', icon: '👶' },
-  { id: 'diabetic', name: 'Diabetic Eye Screening', icon: '🩸' },
+  { id: 'consultation', name: 'General Consultation' },
+  { id: 'cataract', name: 'Cataract Surgery' },
+  { id: 'retina', name: 'Retina Treatment' },
+  { id: 'glaucoma', name: 'Glaucoma Treatment' },
+  { id: 'pediatric', name: 'Pediatric Eye Care' },
+  { id: 'diabetic', name: 'Diabetic Eye Screening' },
+  { id: 'squint', name: 'Squint Surgery' },
 ];
 
 const timeSlots = [
-  '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
-  '12:00 PM', '12:30 PM', '1:00 PM'
+  '10:00 AM', '10:15 AM', '10:30 AM', '10:45 AM',
+  '11:00 AM', '11:15 AM', '11:30 AM', '11:45 AM',
+  '12:00 PM', '12:15 PM', '12:30 PM', '12:45 PM', '1:00 PM'
 ];
 
-// Mock booked slots data (in real app, this would come from backend API)
-const bookedSlotsData: Record<string, string[]> = {
-  // Example: '2024-03-20': ['10:00 AM', '11:30 AM']
+// Booked slots data per doctor (connect to backend API)
+// Format: { doctorId: { date: [bookedSlots] } }
+const bookedSlotsData: Record<string, Record<string, string[]>> = {};
+
+// Helper function to format date as "19 March 2026"
+const formatDateToDDMMYYYY = (dateString: string): string => {
+  if (!dateString) return '';
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                  'July', 'August', 'September', 'October', 'November', 'December'];
+  const [year, month, day] = dateString.split('-');
+  const monthName = months[parseInt(month) - 1];
+  return `${parseInt(day)} ${monthName} ${year}`;
 };
 
 export default function AppointmentPage() {
@@ -51,12 +62,26 @@ export default function AppointmentPage() {
   const [isConfirmed, setIsConfirmed] = useState(false);
   const [bookedSlots, setBookedSlots] = useState<string[]>([]);
 
-  // Get booked slots when date changes
+  // Get booked slots when date or doctor changes
+  const updateBookedSlots = (doctor: string, date: string) => {
+    if (doctor && date) {
+      // In real app, fetch booked slots from API for this doctor and date
+      const doctorSlots = bookedSlotsData[doctor] || {};
+      const slots = doctorSlots[date] || [];
+      setBookedSlots(slots);
+    } else {
+      setBookedSlots([]);
+    }
+  };
+
   const handleDateChange = (date: string) => {
     setFormData({ ...formData, appointmentDate: date, appointmentTime: '' });
-    // In real app, fetch booked slots from API for this date
-    const slots = bookedSlotsData[date] || [];
-    setBookedSlots(slots);
+    updateBookedSlots(formData.doctor, date);
+  };
+
+  const handleDoctorChange = (doctorId: string) => {
+    setFormData({ ...formData, doctor: doctorId, appointmentTime: '' });
+    updateBookedSlots(doctorId, formData.appointmentDate);
   };
 
   const isSlotBooked = (time: string) => bookedSlots.includes(time);
@@ -99,7 +124,7 @@ export default function AppointmentPage() {
   const prevStep = () => setStep(step - 1);
 
   const canProceedStep1 = formData.patientName && formData.age && formData.gender && formData.phone;
-  const canProceedStep2 = formData.appointmentDate && formData.appointmentTime && formData.serviceType;
+  const canProceedStep2 = formData.doctor && formData.appointmentDate && formData.appointmentTime && formData.serviceType;
 
   return (
     <>
@@ -266,24 +291,68 @@ export default function AppointmentPage() {
                     <span className="step-icon">📅</span>
                     <div>
                       <h2>Schedule Your Visit</h2>
-                      <p>Choose your preferred date, time, and service</p>
+                      <p>Select doctor, date, time and service</p>
                     </div>
                   </div>
 
+                  {/* Doctor Selection - FIRST */}
                   <div className="form-group">
-                    <label>Appointment Date *</label>
-                    <input
-                      type="date"
-                      required
-                      min={new Date().toISOString().split('T')[0]}
-                      value={formData.appointmentDate}
-                      onChange={(e) => handleDateChange(e.target.value)}
-                    />
+                    <label>Select Doctor *</label>
+                    <div className="doctor-grid">
+                      {doctors.map((doctor) => (
+                        <button
+                          key={doctor.id}
+                          type="button"
+                          className={`doctor-card ${formData.doctor === doctor.id ? 'selected' : ''}`}
+                          onClick={() => handleDoctorChange(doctor.id)}
+                        >
+                          <span className="doctor-avatar">👨‍⚕️</span>
+                          <div className="doctor-info">
+                            <span className="doctor-name">{doctor.name}</span>
+                            <span className="doctor-specialty">{doctor.specialty}</span>
+                            <span className="doctor-available">{doctor.available}</span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                    {formData.doctor && (
+                      <div className="doctor-note">
+                        <span className="note-icon">ℹ️</span>
+                        <p><strong>Note:</strong> We will try our best to arrange consultation with your selected doctor. If the selected doctor is unavailable due to leave, surgery, or emergency, the patient will be consulted by another available qualified eye specialist to avoid delay in care.</p>
+                      </div>
+                    )}
                   </div>
 
+                  {/* Date Selection - SECOND */}
+                  <div className="form-group">
+                    <label>Appointment Date *</label>
+                    {formData.doctor ? (
+                      <div className="date-input-wrapper">
+                        <input
+                          type="date"
+                          required
+                          min={new Date().toISOString().split('T')[0]}
+                          value={formData.appointmentDate}
+                          onChange={(e) => handleDateChange(e.target.value)}
+                        />
+                        {formData.appointmentDate && (
+                          <span className="selected-date-display">
+                            📅 {formatDateToDDMMYYYY(formData.appointmentDate)}
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="select-doctor-first">
+                        <span>👨‍⚕️</span>
+                        <p>Please select a doctor first</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Time Selection - THIRD */}
                   <div className="form-group">
                     <label>Preferred Time * <span className="time-range-hint">(10:00 AM - 1:00 PM)</span></label>
-                    {formData.appointmentDate ? (
+                    {formData.doctor && formData.appointmentDate ? (
                       <div className="time-slots-grid">
                         {timeSlots.map((time) => {
                           const isBooked = isSlotBooked(time);
@@ -304,7 +373,7 @@ export default function AppointmentPage() {
                     ) : (
                       <div className="select-date-first">
                         <span>📅</span>
-                        <p>Please select a date first to see available time slots</p>
+                        <p>{!formData.doctor ? 'Please select a doctor first' : 'Please select a date to see available time slots'}</p>
                       </div>
                     )}
                   </div>
@@ -319,38 +388,10 @@ export default function AppointmentPage() {
                           className={`service-card ${formData.serviceType === service.id ? 'selected' : ''}`}
                           onClick={() => setFormData({ ...formData, serviceType: service.id })}
                         >
-                          <span className="service-icon">{service.icon}</span>
-                          <span className="service-name">{service.name}</span>
+                          {service.name}
                         </button>
                       ))}
                     </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label>Preferred Doctor (Optional)</label>
-                    <div className="doctor-grid">
-                      {doctors.map((doctor) => (
-                        <button
-                          key={doctor.id}
-                          type="button"
-                          className={`doctor-card ${formData.doctor === doctor.id ? 'selected' : ''}`}
-                          onClick={() => setFormData({ ...formData, doctor: doctor.id })}
-                        >
-                          <span className="doctor-avatar">👨‍⚕️</span>
-                          <div className="doctor-info">
-                            <span className="doctor-name">{doctor.name}</span>
-                            <span className="doctor-specialty">{doctor.specialty}</span>
-                            <span className="doctor-available">{doctor.available}</span>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                    {formData.doctor && (
-                      <div className="doctor-note">
-                        <span className="note-icon">ℹ️</span>
-                        <p><strong>Note:</strong> We will try our best to arrange consultation with your preferred doctor. If the selected doctor is unavailable due to leave, surgery, or emergency, the patient will be consulted by another available qualified eye specialist to avoid delay in care.</p>
-                      </div>
-                    )}
                   </div>
 
                   <div className="form-actions">
@@ -414,7 +455,7 @@ export default function AppointmentPage() {
                       <div className="summary-grid">
                         <div className="summary-item">
                           <span className="label">Date</span>
-                          <span className="value">{formData.appointmentDate}</span>
+                          <span className="value">{formatDateToDDMMYYYY(formData.appointmentDate)}</span>
                         </div>
                         <div className="summary-item">
                           <span className="label">Time</span>
@@ -426,7 +467,7 @@ export default function AppointmentPage() {
                         </div>
                         <div className="summary-item">
                           <span className="label">Doctor</span>
-                          <span className="value">{formData.doctor ? doctors.find(d => d.id === formData.doctor)?.name : 'Any Available'}</span>
+                          <span className="value">{doctors.find(d => d.id === formData.doctor)?.name}</span>
                         </div>
                       </div>
                     </div>
@@ -483,6 +524,7 @@ export default function AppointmentPage() {
               <h3>🕐 Working Hours</h3>
               <p>Monday - Saturday</p>
               <p className="time">9:00 AM - 5:00 PM</p>
+              <p className="opd-time">OPD: 10:00 AM - 1:00 PM</p>
               <p className="closed">Sunday: Closed</p>
             </div>
 
@@ -523,7 +565,7 @@ export default function AppointmentPage() {
                     </div>
                     <div className="detail-row">
                       <span className="detail-label">Date & Time</span>
-                      <span className="detail-value">{formData.appointmentDate} at {formData.appointmentTime}</span>
+                      <span className="detail-value">{formatDateToDDMMYYYY(formData.appointmentDate)} at {formData.appointmentTime}</span>
                     </div>
                     <div className="detail-row">
                       <span className="detail-label">Service</span>
@@ -565,8 +607,9 @@ export default function AppointmentPage() {
 
                 <div className="success-details">
                   <p><strong>{formData.patientName}</strong></p>
-                  <p>{formData.appointmentDate} at {formData.appointmentTime}</p>
+                  <p>{formatDateToDDMMYYYY(formData.appointmentDate)} at {formData.appointmentTime}</p>
                   <p>{services.find(s => s.id === formData.serviceType)?.name}</p>
+                  <p>Doctor: {doctors.find(d => d.id === formData.doctor)?.name}</p>
                 </div>
 
                 <p className="success-note">
@@ -826,40 +869,32 @@ export default function AppointmentPage() {
         .service-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 12px;
+          gap: 10px;
         }
 
         .service-card {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 8px;
-          padding: 15px 10px;
+          padding: 14px 16px;
           border: 2px solid #e8e8e8;
-          border-radius: 12px;
+          border-radius: 10px;
           background: white;
           cursor: pointer;
           transition: all 0.3s;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #555;
+          text-align: center;
         }
 
         .service-card:hover {
           border-color: #7157A0;
+          background: #faf8fc;
+          color: #7157A0;
         }
 
         .service-card.selected {
           border-color: #7157A0;
-          background: #f8f6fc;
-        }
-
-        .service-icon {
-          font-size: 1.5rem;
-        }
-
-        .service-name {
-          font-size: 0.8rem;
-          font-weight: 600;
-          color: #555;
-          text-align: center;
+          background: #7157A0;
+          color: white;
         }
 
         .time-range-hint {
@@ -870,7 +905,7 @@ export default function AppointmentPage() {
 
         .time-slots-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
+          grid-template-columns: repeat(5, 1fr);
           gap: 10px;
         }
 
@@ -949,6 +984,51 @@ export default function AppointmentPage() {
           margin: 0;
           color: #7157A0;
           font-size: 0.9rem;
+        }
+
+        .select-doctor-first {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 30px;
+          background: #f8f6fc;
+          border: 2px dashed #d0c4e8;
+          border-radius: 12px;
+          text-align: center;
+        }
+
+        .select-doctor-first span {
+          font-size: 2rem;
+        }
+
+        .select-doctor-first p {
+          margin: 0;
+          color: #7157A0;
+          font-size: 0.9rem;
+        }
+
+        .date-format-hint {
+          font-weight: 400;
+          color: #7157A0;
+          font-size: 0.85rem;
+        }
+
+        .date-input-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .selected-date-display {
+          font-size: 0.9rem;
+          color: #7157A0;
+          font-weight: 600;
+          padding: 8px 12px;
+          background: #f8f6fc;
+          border-radius: 8px;
+          display: inline-block;
         }
 
         .doctor-grid {
@@ -1197,6 +1277,12 @@ export default function AppointmentPage() {
           font-weight: 600;
         }
 
+        .info-card .opd-time {
+          color: #4CAF50;
+          font-weight: 600;
+          font-size: 0.85rem;
+        }
+
         .info-card .closed {
           color: #e74c3c;
         }
@@ -1431,6 +1517,9 @@ export default function AppointmentPage() {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
           }
+          .time-slots-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
         }
 
         @media (max-width: 700px) {
@@ -1457,7 +1546,7 @@ export default function AppointmentPage() {
           }
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
           .time-slots-grid {
             grid-template-columns: repeat(2, 1fr);
           }

@@ -95,7 +95,7 @@ export default function Testimonials() {
             className="write-review-btn"
           >
             <i className="fas fa-star"></i>
-            Read Reviews
+            Read More Reviews
           </a>
         </div>
 

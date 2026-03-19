@@ -25,7 +25,7 @@ export default function HeroSlider() {
           <h1 className="hero-title">
             <span className="title-line">The Highest</span>
             <span className="title-line gradient-text">Google Reviewed</span>
-            <span className="title-line">Eye Hospital</span>
+            <span className="title-line">Eye Hospital in Jind</span>
           </h1>
 
           <p className="hero-subtitle">Saraswati Eye Care Centre</p>
@@ -405,13 +405,13 @@ export default function HeroSlider() {
         .visual-wrapper {
           position: relative;
           width: 100%;
-          max-width: 550px;
+          max-width: 720px;
         }
 
         .main-image {
           position: relative;
           width: 100%;
-          height: 500px;
+          height: 650px;
           border-radius: 0;
           overflow: visible;
           box-shadow: none;

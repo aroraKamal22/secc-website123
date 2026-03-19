@@ -26,10 +26,10 @@ export default function Home() {
       <InsuranceLogos />
       <WhyChooseUs />
       <MediaGallery />
+      <VideoGallery />
       <GoogleReviews />
       <Testimonials />
       <BlogSection />
-      <VideoGallery />
       <CTASection />
     </>
   );

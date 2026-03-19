@@ -88,6 +88,22 @@ const ServiceIcons: { [key: string]: React.ReactElement } = {
       <circle cx="10" cy="32" r="3" fill="#3498db"/>
     </svg>
   ),
+  squint: (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="22" cy="32" rx="14" ry="10" stroke="#7157A0" strokeWidth="2.5" fill="#f8f6fc"/>
+      <ellipse cx="42" cy="32" rx="14" ry="10" stroke="#7157A0" strokeWidth="2.5" fill="#f8f6fc"/>
+      <circle cx="22" cy="32" r="5" fill="#7157A0"/>
+      <circle cx="46" cy="32" r="5" fill="#7157A0"/>
+      <circle cx="21" cy="31" r="1.5" fill="white"/>
+      <circle cx="45" cy="31" r="1.5" fill="white"/>
+      <path d="M10 24C10 24 14 20 22 20" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M54 24C54 24 50 20 42 20" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M32 28V36" stroke="#7157A0" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M28 32H36" stroke="#7157A0" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M16 44L22 40" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M48 44L42 40" stroke="#06B6D4" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  ),
 };
 
 const services = [
@@ -321,11 +337,60 @@ const services = [
     doctor: 'Dr. Rajesh Garg',
     highlight: 'Specialized',
   },
+  {
+    id: 'squint',
+    title: 'Squint Surgery',
+    icon: '👁️',
+    image: '/images/squint.png',
+    shortDesc: 'Advanced squint (strabismus) correction surgery for children and adults with expert care.',
+    fullDesc: 'Squint (Strabismus) is a condition where the eyes do not align properly - one eye may turn inward, outward, upward, or downward while the other eye focuses straight ahead. At Saraswati Eye Care Centre, our expert team led by Dr. Khushboo Gupta provides comprehensive evaluation and surgical correction for all types of squint in both children and adults.',
+    conditions: [
+      'Esotropia (Inward turning eye)',
+      'Exotropia (Outward turning eye)',
+      'Hypertropia (Upward turning eye)',
+      'Hypotropia (Downward turning eye)',
+      'Paralytic Squint',
+      'Congenital Squint',
+    ],
+    diagnostics: [
+      'Comprehensive Squint Assessment',
+      'Prism Bar Cover Test',
+      'Synoptophore Evaluation',
+      'Diplopia Charting',
+      'Forced Duction Test',
+      'Hess Chart Analysis',
+    ],
+    treatments: [
+      'Squint Surgery (Eye Muscle Surgery)',
+      'Adjustable Suture Technique',
+      'Botox Injection for Squint',
+      'Prism Glasses',
+      'Vision Therapy & Eye Exercises',
+      'Amblyopia Treatment (if associated)',
+    ],
+    whenToVisit: [
+      'If you notice misaligned eyes in your child',
+      'Double vision (diplopia)',
+      'Eye strain or fatigue',
+      'Head tilting to see clearly',
+      'Difficulty with depth perception',
+    ],
+    features: [
+      'Expert squint specialist with fellowship training',
+      'Advanced diagnostic equipment',
+      'Minimally invasive surgical techniques',
+      'Child-friendly environment',
+      'Post-operative vision therapy support',
+      'High success rate with excellent outcomes',
+    ],
+    doctor: 'Dr. Khushboo Gupta',
+    highlight: 'Expert Care',
+  },
 ];
 
 const stats = [
   { number: '10,000+', label: 'Surgeries Performed', icon: '🏥' },
-  { number: '6', label: 'Specialized Services', icon: '⚕️' },
+  { number: '7', label: 'Specialized Services', icon: '⚕️' },
   { number: '4', label: 'Expert Doctors', icon: '👨‍⚕️' },
   { number: '100%', label: 'NABH Standards', icon: '🏆' },
 ];

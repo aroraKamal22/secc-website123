@@ -98,6 +98,22 @@ const services = [
       'Long-term Follow-up Care'
     ],
   },
+  {
+    id: 'squint',
+    title: 'Squint Surgery',
+    icon: 'fa-eye-slash',
+    color: '#06B6D4',
+    shortDesc: 'Advanced squint correction surgery for children and adults.',
+    highlight: 'Led by Dr. Khushboo Gupta - Squint Specialist',
+    fullDesc: 'Squint (Strabismus) is a condition where the eyes do not align properly. Our expert team provides comprehensive evaluation and surgical correction for all types of squint in both children and adults.',
+    features: [
+      'Comprehensive Squint Assessment',
+      'Pediatric & Adult Squint Surgery',
+      'Adjustable Suture Technique',
+      'Botox Injection for Squint',
+      'Post-operative Vision Therapy'
+    ],
+  },
 ];
 
 export default function ServicesGrid() {
