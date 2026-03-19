@@ -5,13 +5,11 @@ import Image from 'next/image';
 export default function HeroSlider() {
   return (
     <section className="hero-section">
-      {/* Animated Sky Background with Clouds */}
+      {/* Sky Background with Static Cloud Shade from Right */}
       <div className="hero-bg">
-        <div className="cloud cloud-1"></div>
-        <div className="cloud cloud-2"></div>
-        <div className="cloud cloud-3"></div>
-        <div className="cloud cloud-4"></div>
-        <div className="cloud cloud-5"></div>
+        <div className="cloud-shade"></div>
+        <div className="cloud-shade-2"></div>
+        <div className="cloud-shade-3"></div>
       </div>
 
       <div className="hero-container">
@@ -126,144 +124,44 @@ export default function HeroSlider() {
           padding: 120px 20px 80px;
         }
 
-        /* Sky Background with Clouds */
+        /* Sky Background with Static Cloud Shades from Right */
         .hero-bg {
           position: absolute;
           inset: 0;
           overflow: hidden;
         }
 
-        .cloud {
+        .cloud-shade {
           position: absolute;
-          background: white;
-          border-radius: 100px;
-          opacity: 0.9;
-          box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
-        }
-
-        .cloud::before,
-        .cloud::after {
-          content: '';
-          position: absolute;
-          background: white;
+          top: -5%;
+          right: -10%;
+          width: 50%;
+          height: 45%;
+          background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.2) 60%, transparent 80%);
           border-radius: 50%;
+          filter: blur(40px);
         }
 
-        .cloud-1 {
-          width: 200px;
-          height: 60px;
-          top: 10%;
-          left: -200px;
-          animation: cloud-move 25s linear infinite;
-        }
-        .cloud-1::before {
-          width: 80px;
-          height: 80px;
-          top: -40px;
-          left: 30px;
-        }
-        .cloud-1::after {
-          width: 100px;
-          height: 100px;
-          top: -50px;
-          left: 80px;
-        }
-
-        .cloud-2 {
-          width: 160px;
-          height: 50px;
-          top: 20%;
-          left: -160px;
-          animation: cloud-move 30s linear infinite;
-          animation-delay: 5s;
-          opacity: 0.8;
-        }
-        .cloud-2::before {
-          width: 60px;
-          height: 60px;
-          top: -30px;
-          left: 20px;
-        }
-        .cloud-2::after {
-          width: 80px;
-          height: 80px;
-          top: -40px;
-          left: 60px;
-        }
-
-        .cloud-3 {
-          width: 180px;
-          height: 55px;
-          top: 35%;
-          left: -180px;
-          animation: cloud-move 35s linear infinite;
-          animation-delay: 10s;
-          opacity: 0.7;
-        }
-        .cloud-3::before {
-          width: 70px;
-          height: 70px;
-          top: -35px;
-          left: 25px;
-        }
-        .cloud-3::after {
-          width: 90px;
-          height: 90px;
-          top: -45px;
-          left: 70px;
-        }
-
-        .cloud-4 {
-          width: 140px;
-          height: 45px;
-          top: 5%;
-          right: 20%;
-          animation: cloud-float 8s ease-in-out infinite;
-          opacity: 0.85;
-        }
-        .cloud-4::before {
-          width: 50px;
-          height: 50px;
-          top: -25px;
-          left: 15px;
-        }
-        .cloud-4::after {
-          width: 70px;
-          height: 70px;
-          top: -35px;
-          left: 50px;
-        }
-
-        .cloud-5 {
-          width: 120px;
-          height: 40px;
+        .cloud-shade-2 {
+          position: absolute;
           top: 25%;
-          right: 10%;
-          animation: cloud-float 10s ease-in-out infinite;
-          animation-delay: 2s;
-          opacity: 0.75;
-        }
-        .cloud-5::before {
-          width: 45px;
-          height: 45px;
-          top: -22px;
-          left: 12px;
-        }
-        .cloud-5::after {
-          width: 60px;
-          height: 60px;
-          top: -30px;
-          left: 45px;
+          right: -5%;
+          width: 40%;
+          height: 35%;
+          background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.5) 35%, rgba(255, 255, 255, 0.15) 65%, transparent 85%);
+          border-radius: 50%;
+          filter: blur(50px);
         }
 
-        @keyframes cloud-move {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(calc(100vw + 300px)); }
-        }
-
-        @keyframes cloud-float {
-          0%, 100% { transform: translateY(0) translateX(0); }
-          50% { transform: translateY(-15px) translateX(10px); }
+        .cloud-shade-3 {
+          position: absolute;
+          top: 55%;
+          right: -8%;
+          width: 45%;
+          height: 40%;
+          background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.1) 70%, transparent 90%);
+          border-radius: 50%;
+          filter: blur(45px);
         }
 
         /* Container */
