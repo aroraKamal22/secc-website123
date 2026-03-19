@@ -1,7 +1,5 @@
 'use client';
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import Link from 'next/link';
 
 const YOUTUBE_CHANNEL = 'https://www.youtube.com/@saraswatieyecarecentre6185';
@@ -67,11 +65,15 @@ const videos = [
 export default function VideoPage() {
   return (
     <>
-      <Header />
       <main className="video-page">
         {/* Hero Section */}
         <section className="video-hero">
+          <div className="hero-pattern"></div>
           <div className="hero-content">
+            <span className="hero-badge">
+              <span className="badge-icon">🎬</span>
+              <span>Educational Content</span>
+            </span>
             <h1>Our Video <span>Gallery</span></h1>
             <p>Explore our collection of informative and educational videos about eye care and treatments</p>
           </div>
@@ -107,40 +109,76 @@ export default function VideoPage() {
           </div>
         </section>
 
-        {/* Back to Home */}
-        <section className="back-section">
-          <Link href="/" className="back-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Back to Home
-          </Link>
+        {/* CTA Section */}
+        <section className="video-cta">
+          <div className="cta-content">
+            <h2>Want to Learn More About Eye Care?</h2>
+            <p>Subscribe to our YouTube channel for the latest educational videos and eye care tips.</p>
+            <div className="cta-buttons">
+              <a href={YOUTUBE_CHANNEL} target="_blank" rel="noopener noreferrer" className="cta-btn primary">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Subscribe on YouTube
+              </a>
+              <Link href="/appointment" className="cta-btn secondary">
+                Book Appointment
+              </Link>
+            </div>
+          </div>
         </section>
       </main>
-      <Footer />
 
       <style jsx>{`
         .video-page {
           min-height: 100vh;
-          background: linear-gradient(135deg, #7157A0 0%, #8B6FC3 100%);
+          background: #f8f6fc;
         }
 
         .video-hero {
-          padding: 140px 20px 60px;
+          padding: 80px 20px;
           text-align: center;
+          background: linear-gradient(135deg, #7157A0 0%, #9b7bc7 50%, #7157A0 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-pattern {
+          position: absolute;
+          inset: 0;
+          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .hero-content {
           max-width: 800px;
           margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .hero-badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          background: rgba(255, 214, 0, 0.2);
+          border: 1px solid rgba(255, 214, 0, 0.5);
+          padding: 10px 24px;
+          border-radius: 50px;
+          color: #FFD600;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 24px;
+        }
+
+        .badge-icon {
+          font-size: 18px;
         }
 
         .hero-content h1 {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 800;
           color: white;
           margin: 0 0 15px;
-          text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-content h1 span {
@@ -148,13 +186,15 @@ export default function VideoPage() {
         }
 
         .hero-content p {
-          font-size: 1.1rem;
+          font-size: 1.15rem;
           color: rgba(255,255,255,0.9);
           margin: 0;
+          line-height: 1.7;
         }
 
         .videos-section {
-          padding: 0 20px 60px;
+          padding: 60px 20px 80px;
+          background: #f8f6fc;
         }
 
         .videos-container {
@@ -164,21 +204,21 @@ export default function VideoPage() {
 
         .videos-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           gap: 30px;
         }
 
         .video-card {
           background: white;
-          border-radius: 15px;
+          border-radius: 20px;
           overflow: hidden;
-          box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 20px rgba(113, 87, 160, 0.08);
           transition: all 0.3s ease;
         }
 
         .video-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+          transform: translateY(-8px);
+          box-shadow: 0 15px 40px rgba(113, 87, 160, 0.2);
         }
 
         .video-wrapper {
@@ -198,12 +238,12 @@ export default function VideoPage() {
         }
 
         .video-info {
-          padding: 20px;
+          padding: 25px;
           background: white;
         }
 
         .video-info h3 {
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           font-weight: 700;
           color: #333;
           margin: 0 0 10px;
@@ -211,50 +251,143 @@ export default function VideoPage() {
         }
 
         .doctor-name {
-          color: #666;
-          font-size: 0.95rem;
+          color: #7157A0;
+          font-size: 0.9rem;
           margin: 0;
+          font-weight: 500;
         }
 
         .video-desc {
           color: #666;
-          font-size: 0.95rem;
+          font-size: 0.9rem;
           margin: 0;
-          line-height: 1.5;
+          line-height: 1.6;
         }
 
         .back-section {
           text-align: center;
-          padding: 0 20px 60px;
+          padding: 0 20px 80px;
+          background: #f8f6fc;
         }
 
         .back-btn {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: white;
-          color: #7157A0;
-          padding: 15px 35px;
-          border-radius: 30px;
+          background: linear-gradient(135deg, #7157A0, #8B6BC4);
+          color: white;
+          padding: 16px 36px;
+          border-radius: 50px;
           text-decoration: none;
-          font-weight: bold;
+          font-weight: 600;
           transition: all 0.3s ease;
-          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          box-shadow: 0 4px 15px rgba(113, 87, 160, 0.2);
         }
 
         .back-btn:hover {
-          background: #f0f0f0;
           transform: translateY(-2px);
-          box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+          box-shadow: 0 10px 30px rgba(113, 87, 160, 0.3);
+        }
+
+        .video-cta {
+          background: linear-gradient(135deg, #7157A0 0%, #9b7bc7 50%, #7157A0 100%);
+          padding: 80px 20px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .video-cta::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .cta-content {
+          max-width: 700px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 1;
+        }
+
+        .cta-content h2 {
+          font-size: 2.2rem;
+          font-weight: 800;
+          color: white;
+          margin: 0 0 15px;
+        }
+
+        .cta-content p {
+          font-size: 1.1rem;
+          color: rgba(255,255,255,0.9);
+          margin: 0 0 30px;
+          line-height: 1.7;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 16px;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .cta-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          padding: 16px 32px;
+          border-radius: 50px;
+          font-weight: 600;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: all 0.3s ease;
+        }
+
+        .cta-btn.primary {
+          background: #FF0000;
+          color: white;
+          box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .cta-btn.primary:hover {
+          background: #CC0000;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        .cta-btn.secondary {
+          background: white;
+          color: #7157A0;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-btn.secondary:hover {
+          background: #FFD600;
+          color: #333;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 25px rgba(255, 214, 0, 0.3);
         }
 
         @media (max-width: 768px) {
           .hero-content h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
           }
           .videos-grid {
             grid-template-columns: 1fr;
             gap: 20px;
+          }
+          .cta-content h2 {
+            font-size: 1.6rem;
+          }
+          .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+          .cta-btn {
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
           }
         }
       `}</style>

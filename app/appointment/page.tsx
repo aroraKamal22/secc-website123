@@ -19,10 +19,14 @@ const services = [
 ];
 
 const timeSlots = [
-  '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
-  '12:00 PM', '12:30 PM', '1:00 PM', '2:00 PM', '2:30 PM',
-  '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM'
+  '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM',
+  '12:00 PM', '12:30 PM', '1:00 PM'
 ];
+
+// Mock booked slots data (in real app, this would come from backend API)
+const bookedSlotsData: Record<string, string[]> = {
+  // Example: '2024-03-20': ['10:00 AM', '11:30 AM']
+};
 
 export default function AppointmentPage() {
   const [step, setStep] = useState(1);
@@ -45,6 +49,17 @@ export default function AppointmentPage() {
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isConfirmed, setIsConfirmed] = useState(false);
+  const [bookedSlots, setBookedSlots] = useState<string[]>([]);
+
+  // Get booked slots when date changes
+  const handleDateChange = (date: string) => {
+    setFormData({ ...formData, appointmentDate: date, appointmentTime: '' });
+    // In real app, fetch booked slots from API for this date
+    const slots = bookedSlotsData[date] || [];
+    setBookedSlots(slots);
+  };
+
+  const isSlotBooked = (time: string) => bookedSlots.includes(time);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -151,7 +166,7 @@ export default function AppointmentPage() {
                       onClick={() => setFormData({ ...formData, patientType: 'old' })}
                     >
                       <span className="toggle-icon">🔄</span>
-                      Returning Patient
+                      Old Patient
                     </button>
                   </div>
 
@@ -255,30 +270,43 @@ export default function AppointmentPage() {
                     </div>
                   </div>
 
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label>Appointment Date *</label>
-                      <input
-                        type="date"
-                        required
-                        min={new Date().toISOString().split('T')[0]}
-                        value={formData.appointmentDate}
-                        onChange={(e) => setFormData({ ...formData, appointmentDate: e.target.value })}
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label>Preferred Time *</label>
-                      <select
-                        required
-                        value={formData.appointmentTime}
-                        onChange={(e) => setFormData({ ...formData, appointmentTime: e.target.value })}
-                      >
-                        <option value="">Select Time</option>
-                        {timeSlots.map((time) => (
-                          <option key={time} value={time}>{time}</option>
-                        ))}
-                      </select>
-                    </div>
+                  <div className="form-group">
+                    <label>Appointment Date *</label>
+                    <input
+                      type="date"
+                      required
+                      min={new Date().toISOString().split('T')[0]}
+                      value={formData.appointmentDate}
+                      onChange={(e) => handleDateChange(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label>Preferred Time * <span className="time-range-hint">(10:00 AM - 1:00 PM)</span></label>
+                    {formData.appointmentDate ? (
+                      <div className="time-slots-grid">
+                        {timeSlots.map((time) => {
+                          const isBooked = isSlotBooked(time);
+                          return (
+                            <button
+                              key={time}
+                              type="button"
+                              className={`time-slot ${formData.appointmentTime === time ? 'selected' : ''} ${isBooked ? 'booked' : ''}`}
+                              onClick={() => !isBooked && setFormData({ ...formData, appointmentTime: time })}
+                              disabled={isBooked}
+                            >
+                              <span className="time-text">{time}</span>
+                              {isBooked && <span className="booked-label">Booked</span>}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    ) : (
+                      <div className="select-date-first">
+                        <span>📅</span>
+                        <p>Please select a date first to see available time slots</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="form-group">
@@ -317,6 +345,12 @@ export default function AppointmentPage() {
                         </button>
                       ))}
                     </div>
+                    {formData.doctor && (
+                      <div className="doctor-note">
+                        <span className="note-icon">ℹ️</span>
+                        <p><strong>Note:</strong> We will try our best to arrange consultation with your preferred doctor. If the selected doctor is unavailable due to leave, surgery, or emergency, the patient will be consulted by another available qualified eye specialist to avoid delay in care.</p>
+                      </div>
+                    )}
                   </div>
 
                   <div className="form-actions">
@@ -828,6 +862,95 @@ export default function AppointmentPage() {
           text-align: center;
         }
 
+        .time-range-hint {
+          font-weight: 400;
+          color: #7157A0;
+          font-size: 0.85rem;
+        }
+
+        .time-slots-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+        }
+
+        .time-slot {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          padding: 14px 8px;
+          border: 2px solid #e8e8e8;
+          border-radius: 10px;
+          background: white;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+
+        .time-slot:hover:not(.booked) {
+          border-color: #7157A0;
+          background: #faf8fc;
+        }
+
+        .time-slot.selected {
+          border-color: #7157A0;
+          background: #7157A0;
+        }
+
+        .time-slot.selected .time-text {
+          color: white;
+          font-weight: 700;
+        }
+
+        .time-slot.booked {
+          background: #f5f5f5;
+          border-color: #e0e0e0;
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+
+        .time-text {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #333;
+        }
+
+        .time-slot.booked .time-text {
+          color: #999;
+          text-decoration: line-through;
+        }
+
+        .booked-label {
+          font-size: 0.65rem;
+          color: #e74c3c;
+          font-weight: 600;
+          text-transform: uppercase;
+        }
+
+        .select-date-first {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          padding: 30px;
+          background: #f8f6fc;
+          border: 2px dashed #d0c4e8;
+          border-radius: 12px;
+          text-align: center;
+        }
+
+        .select-date-first span {
+          font-size: 2rem;
+        }
+
+        .select-date-first p {
+          margin: 0;
+          color: #7157A0;
+          font-size: 0.9rem;
+        }
+
         .doctor-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
@@ -879,6 +1002,46 @@ export default function AppointmentPage() {
         .doctor-available {
           font-size: 0.7rem;
           color: #888;
+        }
+
+        .doctor-note {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+          margin-top: 15px;
+          padding: 15px;
+          background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+          border: 1px solid #ffc107;
+          border-radius: 12px;
+          animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .doctor-note .note-icon {
+          font-size: 1.3rem;
+          flex-shrink: 0;
+          margin-top: 2px;
+        }
+
+        .doctor-note p {
+          margin: 0;
+          font-size: 0.85rem;
+          color: #5d4037;
+          line-height: 1.5;
+        }
+
+        .doctor-note strong {
+          color: #e65100;
         }
 
         .summary-card {
@@ -1277,6 +1440,9 @@ export default function AppointmentPage() {
           .service-grid {
             grid-template-columns: repeat(2, 1fr);
           }
+          .time-slots-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
           .doctor-grid {
             grid-template-columns: 1fr;
           }
@@ -1288,6 +1454,12 @@ export default function AppointmentPage() {
           }
           .appointment-hero h1 {
             font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 400px) {
+          .time-slots-grid {
+            grid-template-columns: repeat(2, 1fr);
           }
         }
       `}</style>
