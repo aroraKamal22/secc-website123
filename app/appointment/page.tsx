@@ -4,9 +4,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 
 const doctors = [
-  { id: 'dr-rajesh', name: 'Dr. Rajesh Garg', specialty: 'Cataract & Glaucoma', available: 'Mon-Sat' },
-  { id: 'dr-ajay', name: 'Dr. Ajay Garg', specialty: 'Retina Specialist', available: 'Mon-Sat' },
-  { id: 'dr-khushboo', name: 'Dr. Khushboo Gupta', specialty: 'Pediatric Ophthalmology', available: 'Mon-Sat' },
+  { id: 'dr-rajesh', name: 'Dr. Rajesh Garg', qualification: 'MBBS, MS Ophthalmology, Fellowship in Glaucoma' },
+  { id: 'dr-ajay', name: 'Dr. Ajay Garg', qualification: 'MBBS, DOMS Ophthalmology, Fellowship in Vitreo-Retina' },
+  { id: 'dr-khushboo', name: 'Dr. Khushboo Gupta', qualification: 'MBBS, MS Ophthalmology, Fellowship in Pediatric Ophthalmology' },
 ];
 
 const services = [
@@ -297,7 +297,7 @@ export default function AppointmentPage() {
 
                   {/* Doctor Selection - FIRST */}
                   <div className="form-group">
-                    <label>Select Doctor *</label>
+                    <label>Select Preferred Doctor *</label>
                     <div className="doctor-grid">
                       {doctors.map((doctor) => (
                         <button
@@ -309,8 +309,7 @@ export default function AppointmentPage() {
                           <span className="doctor-avatar">👨‍⚕️</span>
                           <div className="doctor-info">
                             <span className="doctor-name">{doctor.name}</span>
-                            <span className="doctor-specialty">{doctor.specialty}</span>
-                            <span className="doctor-available">{doctor.available}</span>
+                            <span className="doctor-qualification">{doctor.qualification}</span>
                           </div>
                         </button>
                       ))}
@@ -1074,14 +1073,9 @@ export default function AppointmentPage() {
           font-size: 0.9rem;
         }
 
-        .doctor-specialty {
+        .doctor-qualification {
           font-size: 0.75rem;
           color: #7157A0;
-        }
-
-        .doctor-available {
-          font-size: 0.7rem;
-          color: #888;
         }
 
         .doctor-note {
